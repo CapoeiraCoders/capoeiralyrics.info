@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "gulp-concat-json": "^1.0.0",
+    "gulp-copy": "0.0.2",
     "gulp-data": "^1.2.1",
     "gulp-inject": "^4.0.0",
     "gulp-merge-json": "^0.4.0",
@@ -18,7 +19,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "songs:dev:split-json": "gulp songs:dev:split-json",
+    "build": "gulp build",
+    "build:index": "gulp build:index",
+    "build:sitemap": "gulp build:sitemap",
     "songs:build": "gulp songs:build",
     "songs:cleanup": "gulp songs:cleanup",
     "songs:build:pages": "gulp songs:build:pages",

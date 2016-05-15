@@ -12,7 +12,6 @@ var sitemap = require('gulp-sitemap');
 var slugify = require('speakingurl');
 var jsonConcat = require('gulp-concat-json');
 var gulpSequence = require('gulp-sequence');
-var data = require('gulp-data');
 
 
 gulp.task('default', () => {
@@ -40,6 +39,35 @@ gulp.task('default', () => {
 
 
 /**
+ * Build all
+ */
+gulp.task('build', gulpSequence('songs:build', 'build:index', 'build:sitemap'));
+
+
+/**
+ * Make default index copy of songs index.html
+ * @param  {[type]} 'build:index' [description]
+ * @param  {[type]} (             [description]
+ * @return {[type]}               [description]
+ */
+gulp.task('build:index', () => {
+	return gulp.src('./public/songs/index.html')
+		.pipe(gulp.dest('./public'));
+});
+
+
+/**
+ * Builds пдщифд sitemap file
+ */
+gulp.task('build:sitemap', done => {
+	return gulp.src(['./public/songs/songs-sitemap.xml'])
+	.pipe(concat('sitemap.xml'))
+	.pipe(gulp.dest('./public'));
+});
+
+
+
+/**
  * Generate all songs + sitemaps from sources from ignored data folder
  */
 gulp.task('songs:build', gulpSequence('songs:cleanup', 'songs:build:pages', 'songs:build:index', 'songs:build:sitemap'));
@@ -48,7 +76,7 @@ gulp.task('songs:build', gulpSequence('songs:cleanup', 'songs:build:pages', 'son
  * Cleanup folder before new build
  */
 gulp.task('songs:cleanup', done => {  
-	return gulp.src('public/songs', {read: false})
+	return gulp.src('./public/songs', {read: false})
 	.pipe(clean());
 });
 
