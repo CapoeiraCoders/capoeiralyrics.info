@@ -26,7 +26,9 @@
     "songs:cleanup": "gulp songs:cleanup",
     "songs:build:pages": "gulp songs:build:pages",
     "songs:build:index": "gulp songs:build:index",
-    "songs:build:sitemap": "gulp songs:build:sitemap"
+    "songs:build:sitemap": "gulp songs:build:sitemap",
+    
+    "deploy": "aws s3 sync ./public s3://capoeiralyrics.info"
   },
   "author": "Vlad Tsepelev <reg.yeti@gmail.com> (http://yetithefoot.com/)",
   "license": "ISC"
