@@ -111,31 +111,6 @@ gulp.task('songs:build:pages', done => {
 	.pipe(gulp.dest('./public/songs/'));
 });
 
-gulp.task('songs:build:page', done => {
-// 	return gulp.src('./data/songs/__test.json')
-// 	// process markdown
-// 	.pipe(jsonTransform(function(data) {
-// 		data.Text = marked(data.Text);
-// 		return data;
-// 	}))
-// 	// generate youtube embed
-// 	.pipe(jsonTransform(function(data) {
-// 		if(data.VideoUrl){
-// 			var youtubeId = data.VideoUrl.split('/').pop();
-// 			data.youtubeEmbed = `<iframe id="ytplayer" type="text/html" width="360" height="240" src="http://www.youtube.com/embed/${youtubeId}?autoplay=0" frameborder="0"></iframe>`
-// 		}
-// 		return data;
-// 	}))
-// 	.pipe(rename('__test.json.transformed'))
-// 	.pipe(gulp.dest('./data/songs/'))
-// 	.on('end', () =>{
-// 		return gulp.src('./templates/song.mustache')
-// 		    .pipe(mustache('./data/songs/__test.json.transformed'))
-// 		    .pipe(rename('__test.html'))
-// 			.pipe(gulp.dest('./public/songs/'));
-// 	})
-	
-});
 
 /**
  * Generates sitemap file for songs
@@ -150,17 +125,14 @@ gulp.task('songs:build:index', done => {
 		}; 
 	}))
 	.pipe(jsonConcat('concated-songs.tmp.json'))
+	.pipe(through.obj(function (file, enc, cb) {
+		var tpl = fs.readFileSync('./templates/song.index.mustache', "utf-8");
+		var view = JSON.parse(file.contents.toString());
+		file.contents = new Buffer(mustache.render(tpl, view));
+		cb(null, file)
+	}))
+	.pipe(rename('index.html'))
 	.pipe(gulp.dest('./public/songs/'))
-	.on('end', () =>{
-		return gulp.src('./templates/song.index.mustache')
-		.pipe(mustache('./public/songs/concated-songs.tmp.json'))
-		.pipe(rename('index.html'))
-		.pipe(gulp.dest('./public/songs/'))
-		.on('end', () =>{
-			return gulp.src('./public/songs/concated-songs.tmp.json', {read: false})
-			    .pipe(clean());
-		})
-	})
 });
 
 /**
