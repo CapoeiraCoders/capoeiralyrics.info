@@ -11,6 +11,8 @@
     "gulp-merge-json": "^0.4.0",
     "gulp-sequence": "^0.4.5",
     "gulp-sitemap": "^4.1.1",
+    "marked": "^0.3.5",
+    "mustache": "^2.2.1",
     "speakingurl": "^9.0.0"
   },
   "devDependencies": {
@@ -24,10 +26,10 @@
     "build:sitemap": "gulp build:sitemap",
     "songs:build": "gulp songs:build",
     "songs:cleanup": "gulp songs:cleanup",
+    "songs:build:page": "gulp songs:build:page",
     "songs:build:pages": "gulp songs:build:pages",
     "songs:build:index": "gulp songs:build:index",
     "songs:build:sitemap": "gulp songs:build:sitemap",
-    
     "deploy": "aws s3 sync ./public s3://capoeiralyrics.info"
   },
   "author": "Vlad Tsepelev <reg.yeti@gmail.com> (http://yetithefoot.com/)",

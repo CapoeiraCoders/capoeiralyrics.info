@@ -6,12 +6,14 @@ var clean = require('gulp-clean');
 var concat = require('gulp-concat');   
 var jsonTransform = require('gulp-json-transform');
 var rename = require('gulp-rename');  
-var mustache = require('gulp-mustache');  
+var mustache = require('mustache');  
+var marked = require('marked');  
 var foreach = require('gulp-foreach');
 var sitemap = require('gulp-sitemap');
 var slugify = require('speakingurl');
 var jsonConcat = require('gulp-concat-json');
 var gulpSequence = require('gulp-sequence');
+
 
 
 gulp.task('default', () => {
@@ -84,33 +86,55 @@ gulp.task('songs:cleanup', done => {
  * Generates HTML files from template and json files
  */
 gulp.task('songs:build:pages', done => {
+
 	return gulp.src('./data/songs/*.json')
+	// process markdown
+	.pipe(jsonTransform(function(data) {
+		data.Text = marked(data.Text);
+		return data;
+	}))
 	// generate youtube embed
 	.pipe(jsonTransform(function(data) {
 		if(data.VideoUrl){
 			var youtubeId = data.VideoUrl.split('/').pop();
 			data.youtubeEmbed = `<iframe id="ytplayer" type="text/html" width="360" height="240" src="http://www.youtube.com/embed/${youtubeId}?autoplay=0" frameborder="0"></iframe>`
-		}
+		}	
 		return data;
 	}))
-	.pipe(jsonTransform(function(data) {
-
-		if(data.Text) 
-			data.Text = data.Text.replace(/\[coro\]/gi, '<b>').replace(/\[\/coro\]/gi, '</b>')
-		else
-			console.error(`There is no Text for song ${data.ID}`);
-		if(data.EngText) data.EngText = data.EngText.replace(/\[coro\]/gi, '<b>').replace(/\[\/coro\]/gi, '</b>')
-		if(data.RusText) data.RusText = data.RusText.replace(/\[coro\]/gi, '<b>').replace(/\[\/coro\]/gi, '</b>')
-		return data;
+	.pipe(through.obj(function (file, enc, cb) {
+		var tpl = fs.readFileSync('./templates/song.mustache', "utf-8");
+		var view = JSON.parse(file.contents.toString());
+		file.contents = new Buffer(mustache.render(tpl, view));
+		cb(null, file)
 	}))
-	// .pipe(gulp.dest('./public/songs/')) // copy original json files
-	// render to template
-	.pipe(foreach(function(stream, file){
-      return gulp.src('./templates/song.mustache')
-        .pipe(mustache(file.path))
-        .pipe(rename(path.basename(file.path, '.json') +'.html'))
-    }))
+ 	.pipe(rename({extname:'.html'}))
 	.pipe(gulp.dest('./public/songs/'));
+});
+
+gulp.task('songs:build:page', done => {
+// 	return gulp.src('./data/songs/__test.json')
+// 	// process markdown
+// 	.pipe(jsonTransform(function(data) {
+// 		data.Text = marked(data.Text);
+// 		return data;
+// 	}))
+// 	// generate youtube embed
+// 	.pipe(jsonTransform(function(data) {
+// 		if(data.VideoUrl){
+// 			var youtubeId = data.VideoUrl.split('/').pop();
+// 			data.youtubeEmbed = `<iframe id="ytplayer" type="text/html" width="360" height="240" src="http://www.youtube.com/embed/${youtubeId}?autoplay=0" frameborder="0"></iframe>`
+// 		}
+// 		return data;
+// 	}))
+// 	.pipe(rename('__test.json.transformed'))
+// 	.pipe(gulp.dest('./data/songs/'))
+// 	.on('end', () =>{
+// 		return gulp.src('./templates/song.mustache')
+// 		    .pipe(mustache('./data/songs/__test.json.transformed'))
+// 		    .pipe(rename('__test.html'))
+// 			.pipe(gulp.dest('./public/songs/'));
+// 	})
+	
 });
 
 /**
