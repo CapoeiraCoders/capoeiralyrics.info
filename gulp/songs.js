@@ -70,11 +70,10 @@ var middlewares = {
 	meta: () => {
 		return jsonTransform(data => {
 			data.meta = {};
-			data.meta.author = data.Artist;
+			data.meta.title = `${data.Artist} — ${data.Name} | Capoeira Lyrics`;
 			data.meta.description = data.Text.stripTags().compact().to(150);
-			// data.meta.author = data.Artist;
-			// data.meta.author = data.Artist;
-			// data.meta.author = data.Artist;
+			data.meta.author = data.Artist;
+
 			return data;
 		})
 	}
