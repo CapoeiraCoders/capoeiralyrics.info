@@ -3,19 +3,23 @@
 	<meta charset="utf-8">
 	<title>{{Artist}} — {{Name}} | Capoeira Lyrics</title>
 
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-	<style type="text/css">
-		body {
-			font-size: 17px;
-			font-family: Helvetica,Arial,sans-serif;
-			line-height: 1.5;
-			-webkit-font-smoothing: antialiased;
-		}
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		article {
-			white-space: pre;
-		}
-	</style>
+	<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/skeleton.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/songs/song.css">
 
 </head>
 <body>
@@ -52,19 +56,24 @@
 	}
 	</script>
 
-	<h1>{{Name}} by {{Artist}}</h1>
-	<div>{{{youtubeEmbed}}}</div>
-	<a name="text"></a>
+	<h1 class='title'>{{Name}}</h1>
+	<h1 class='subtitle'>{{Artist}}</h1>
+	
+	{{#youtubeEmbed}}
+		<div class='video'>{{{youtubeEmbed}}}</div>
+	{{/youtubeEmbed}}
+
+	<a name='text'></a>
 	<article>{{{Text}}}</article>
 	
 	{{#EngText}}
-		<a name="en"></a>
+		<a name='en'></a>
 		<h3>English</h3>
 		<article>{{{EngText}}}</article>
 	{{/EngText}}
 	
 	{{#RusText}}
-		<a name="ru"></a>
+		<a name='ru'></a>
 		<h3>Русский</h3>
 		<article>{{{RusText}}}</article>
 	{{/RusText}}
