@@ -1,37 +1,36 @@
 {
-  "name": "new.capoeiralyrics.info",
+  "name": "capoeiralyrics.info",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
+  "description": "capoeiralyrics.info website",
+  "main": "gulp build",
+  "devDependencies": {
     "gulp-concat-json": "^1.0.0",
     "gulp-copy": "0.0.2",
     "gulp-data": "^1.2.1",
     "gulp-inject": "^4.0.0",
+    "gulp-json-transform": "^0.3.0",
     "gulp-merge-json": "^0.4.0",
+    "gulp-mustache": "^2.2.0",
     "gulp-sequence": "^0.4.5",
     "gulp-sitemap": "^4.1.1",
     "marked": "^0.3.5",
     "mustache": "^2.2.1",
     "speakingurl": "^9.0.0"
   },
-  "devDependencies": {
-    "gulp-json-transform": "^0.3.0",
-    "gulp-mustache": "^2.2.0"
-  },
+  "repository": "CapoeiraCoders/capoeiralyrics.info",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "build": "gulp build",
     "cleanup": "gulp cleanup",
+    "deploy": "aws s3 sync ./public s3://capoeiralyrics.info",
     "build:index": "gulp build:index",
     "build:sitemap": "gulp build:sitemap",
     "songs:build": "gulp songs:build",
     "songs:cleanup": "gulp songs:cleanup",
     "songs:build:pages": "gulp songs:build:pages",
     "songs:build:index": "gulp songs:build:index",
-    "songs:build:sitemap": "gulp songs:build:sitemap",
-    "deploy": "aws s3 sync ./public s3://capoeiralyrics.info"
+    "songs:build:sitemap": "gulp songs:build:sitemap"
   },
-  "author": "Vlad Tsepelev <reg.yeti@gmail.com> (http://yetithefoot.com/)",
-  "license": "ISC"
+  "author": "Vlad Borg <reg.yeti@gmail.com>",
+  "license": "UNLICENSED"
 }
