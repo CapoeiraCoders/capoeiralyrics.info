@@ -38,6 +38,8 @@ node_modules
 
 # Ignore content of data folder
 data/*
+!data/README.md
 
 # Ignore content of public folder
 public/*
+!public/README.md
