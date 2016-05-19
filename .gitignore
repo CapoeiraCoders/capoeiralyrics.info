@@ -38,6 +38,7 @@ node_modules
 
 # Ignore content of data folder
 data/*
+!data/songs/a-amizade.json
 !data/README.md
 
 # Ignore content of public folder

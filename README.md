@@ -29,3 +29,9 @@ Build
 - `npm run deploy` - to deploy website
 
 
+Colophon
+===
+Build with love.
+Style is based on http://getskeleton.com/.
+
+
