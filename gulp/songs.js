@@ -35,23 +35,25 @@ gulp.task('songs:build:pages', done => {
 
 	return gulp.src('./data/songs/*.json')
 	// process markdown
-	.pipe(jsonTransform(function(data) {
-		data.Text = marked(data.Text);
+	.pipe(jsonTransform(data => {
+		if(data.Text) data.Text = marked(data.Text);
+		if(data.EngText) data.EngText = marked(data.EngText);
+		if(data.RusText) data.RusText = marked(data.RusText);
 		return data;
 	}))
 	// generate youtube embed
-	.pipe(jsonTransform(function(data) {
+	.pipe(jsonTransform(data => {
 		if(data.VideoUrl){
 			var youtubeId = data.VideoUrl.split('/').pop();
 			data.youtubeEmbed = `<iframe id="ytplayer" type="text/html" width="360" height="240" src="http://www.youtube.com/embed/${youtubeId}?autoplay=0" frameborder="0"></iframe>`
 		}	
 		return data;
 	}))
-	.pipe(jsonTransform(function(data) {
+	.pipe(jsonTransform(data =>  {
 		data.slug = slugify(`${data.Name}`);
 		return data;
 	}))
-	.pipe(through.obj(function (file, enc, cb) {
+	.pipe(through.obj((file, enc, cb) => {
 		var tpl = fs.readFileSync('./templates/song.mustache', "utf-8");
 		var view = JSON.parse(file.contents.toString());
 		file.contents = new Buffer(mustache.render(tpl, view));
@@ -67,7 +69,7 @@ gulp.task('songs:build:pages', done => {
  */
 gulp.task('songs:build:index', done => {
 	return gulp.src('./data/songs/*.json')
-	.pipe(jsonTransform(function(data) {
+	.pipe(jsonTransform(data => {
 		var slug = slugify(`${data.Name}`);
 		return {
 			slug: `${slug}`,
@@ -75,7 +77,7 @@ gulp.task('songs:build:index', done => {
 		}; 
 	}))
 	.pipe(jsonConcat('concated-songs.tmp.json'))
-	.pipe(through.obj(function (file, enc, cb) {
+	.pipe(through.obj((file, enc, cb) => {
 		var tpl = fs.readFileSync('./templates/song.index.mustache', "utf-8");
 		var view = JSON.parse(file.contents.toString());
 		file.contents = new Buffer(mustache.render(tpl, view));
