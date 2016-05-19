@@ -15,7 +15,8 @@
     "gulp-sitemap": "^4.1.1",
     "marked": "^0.3.5",
     "mustache": "^2.2.1",
-    "speakingurl": "^9.0.0"
+    "speakingurl": "^9.0.0",
+    "sugar": "^1.4.1"
   },
   "repository": "CapoeiraCoders/capoeiralyrics.info",
   "scripts": {
@@ -32,5 +33,7 @@
     "songs:build:sitemap": "gulp songs:build:sitemap"
   },
   "author": "Vlad Borg <reg.yeti@gmail.com>",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+  }
 }

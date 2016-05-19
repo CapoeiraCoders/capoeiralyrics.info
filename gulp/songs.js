@@ -1,5 +1,6 @@
 var path = require('path');  
 var fs = require('fs');  
+var sugar = require('sugar');
 var through = require('through2');
 var gulp = require('gulp');  
 var clean = require('gulp-clean');  
@@ -61,6 +62,21 @@ var middlewares = {
 			file.contents = new Buffer(mustache.render(tpl, view));
 			callback(null, file)
 		})
+	},
+
+	/**
+	 * Generates metas
+	 */
+	meta: () => {
+		return jsonTransform(data => {
+			data.meta = {};
+			data.meta.author = data.Artist;
+			data.meta.description = data.Text.stripTags().compact().to(150);
+			// data.meta.author = data.Artist;
+			// data.meta.author = data.Artist;
+			// data.meta.author = data.Artist;
+			return data;
+		})
 	}
 }
 
@@ -85,6 +101,7 @@ gulp.task('songs:build:pages', done => {
 
 	return gulp.src('./data/songs/*.json') // read all source files
 	.pipe(middlewares.markdown()) // process markdown
+	.pipe(middlewares.meta()) // process markdown
 	.pipe(middlewares.youtube()) // generate youtube embed
 	.pipe(middlewares.slug()) // make slug
 	.pipe(middlewares.mustache('./templates/song.mustache')) // render via mustache
