@@ -16,6 +16,10 @@ var jsonConcat = require('gulp-concat-json');
 var gulpSequence = require('gulp-sequence');
 
 
+var SONG_TEMPLATE_PATH = './templates/songs/song.mustache';
+var INDEX_TEMPLATE_PATH = './templates/songs/index.mustache';
+
+
 var middlewares = {
 	/**
 	 * Process markdown texts to html
@@ -103,7 +107,7 @@ gulp.task('songs:build:pages', done => {
 	.pipe(middlewares.meta()) // process markdown
 	.pipe(middlewares.youtube()) // generate youtube embed
 	.pipe(middlewares.slug()) // make slug
-	.pipe(middlewares.mustache('./templates/song.mustache')) // render via mustache
+	.pipe(middlewares.mustache(SONG_TEMPLATE_PATH)) // render via mustache
  	.pipe(rename({extname:'.html'}))
 	.pipe(gulp.dest('./public/songs/'));
 });
@@ -115,7 +119,7 @@ gulp.task('songs:build:index', done => {
 	return gulp.src('./data/songs/*.json')
 	.pipe(middlewares.slug())
 	.pipe(jsonConcat('concated-songs.tmp.json')) // NOTE: easiest way to concat multiple jsons to one json array
-	.pipe(middlewares.mustache('./templates/song.index.mustache'))
+	.pipe(middlewares.mustache(INDEX_TEMPLATE_PATH))
 	.pipe(rename('index.html'))
 	.pipe(gulp.dest('./public/songs/'))
 });
@@ -132,3 +136,32 @@ gulp.task('songs:build:sitemap', done => {
 	}))
 	.pipe(gulp.dest('./public/songs'));
 });
+
+/**
+ * Generate redirection config for S3 resources
+ */
+gulp.task('songs:build:s3-bucket-redirect-config', done => {
+	return gulp.src('public/songs/*.html', {read: false})
+	.pipe(sitemap({
+		fileName: 'songs-sitemap.xml',
+		siteUrl: 'http://capoeiralyrics.info/songs/',
+		changefreq: 'weekly'
+	}))
+	.pipe(gulp.dest('./public/songs'));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
