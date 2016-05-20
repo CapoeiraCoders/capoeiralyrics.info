@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var songs = require('./gulp/songs.js');
+var songs = require('./gulp/dev.js');
 
 var concat = require('gulp-concat');
 var jsonConcat = require('gulp-concat-json');

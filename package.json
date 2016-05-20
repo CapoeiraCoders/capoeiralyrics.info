@@ -8,6 +8,7 @@
     "gulp-copy": "0.0.2",
     "gulp-data": "^1.2.1",
     "gulp-inject": "^4.0.0",
+    "gulp-inject-string": "^1.1.0",
     "gulp-json-transform": "^0.3.0",
     "gulp-merge-json": "^0.4.0",
     "gulp-mustache": "^2.2.0",
@@ -34,6 +35,5 @@
   },
   "author": "Vlad Borg <reg.yeti@gmail.com>",
   "license": "UNLICENSED",
-  "dependencies": {
-  }
+  "dependencies": {}
 }

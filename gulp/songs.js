@@ -50,7 +50,7 @@ var middlewares = {
 	 * Generates slugs based on song name
 	 */
 	slug: () => {
-		return jsonTransform(	data => {
+		return jsonTransform(data => {
 			data.slug = slugify(`${data.Name}`);
 			return data;
 		})
@@ -136,32 +136,3 @@ gulp.task('songs:build:sitemap', done => {
 	}))
 	.pipe(gulp.dest('./public/songs'));
 });
-
-/**
- * Generate redirection config for S3 resources
- */
-gulp.task('songs:build:s3-bucket-redirect-config', done => {
-	return gulp.src('public/songs/*.html', {read: false})
-	.pipe(sitemap({
-		fileName: 'songs-sitemap.xml',
-		siteUrl: 'http://capoeiralyrics.info/songs/',
-		changefreq: 'weekly'
-	}))
-	.pipe(gulp.dest('./public/songs'));
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
