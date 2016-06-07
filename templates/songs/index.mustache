@@ -36,7 +36,14 @@
 	<div>
 		<ul>
 			{{#.}}
-				<li><a href='/songs/{{slug}}.html'>{{Name}}</a></li>
+				<li class="song">
+					<a href='/songs/{{slug}}.html'>{{Name}}</a>
+					<div class="tags">
+					{{#tags}}
+						<a class="tag" href='/tags/{{slug}}.html'>#{{name}}</a>
+					{{/tags}}
+					</div>
+				</li>
 			{{/.}}
 		</ul>
 	</div>

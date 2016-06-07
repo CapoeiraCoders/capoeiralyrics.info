@@ -57,6 +57,18 @@ var middlewares = {
 	},
 
 	/**
+	 * Generates tags name + slug
+	 */
+	tags: () => {
+		return jsonTransform(data => {
+			if(!data.tags) return data;
+
+			data.tags = data.tags.map(t => {return {slug:slugify(t), name:t}});
+			return data;
+		})
+	},
+
+	/**
 	 * Rendering template middleware
 	 */
 	mustache: template => {
@@ -118,6 +130,7 @@ gulp.task('songs:build:pages', done => {
 gulp.task('songs:build:index', done => {
 	return gulp.src('./data/songs/*.json')
 	.pipe(middlewares.slug())
+	.pipe(middlewares.tags())
 	.pipe(jsonConcat('concated-songs.tmp.json')) // NOTE: easiest way to concat multiple jsons to one json array
 	.pipe(middlewares.mustache(INDEX_TEMPLATE_PATH))
 	.pipe(rename('index.html'))

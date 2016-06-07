@@ -37,15 +37,35 @@ article {
 @media (min-width: 750px) {
 	.video-container {
 		position: relative;
-		padding-bottom: initial;
-		padding-top: initial;
-		height: initial;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
 		overflow: initial;
 	}
 	.video-container iframe, .video-container object, .video-container embed {
-		position:initial;
-		width:640px;
-		height:480px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 90%;
+		height: 90%;
+	}
+}
+
+@media (max-width: 420px) {
+	.video-container {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+		overflow: initial;
+	}
+	.video-container iframe, .video-container object, .video-container embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 90%;
+		max-width: 390px
+		height: 90%;
 	}
 }
 

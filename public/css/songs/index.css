@@ -1,0 +1,9 @@
+li {
+	margin-bottom: 1.5rem;
+}
+
+.song .tag {
+	color: gray;
+	font-size: smaller;
+	font-style: italic;
+}

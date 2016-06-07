@@ -1,11 +1,12 @@
 // This file holds infrequent tasks
+var fs = require('fs');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var inject = require('gulp-inject-string');
 var slugify = require('speakingurl');
 var jsonTransform = require('gulp-json-transform');
 
-
+var slugify = require('speakingurl');
 // /**
 //  * Splits one JSON file with N-length array to N separate JSON files 
 //  */
@@ -46,7 +47,27 @@ gulp.task('dev:generate:s3-bucket-redirect-config', done => {
 });
 
 
+gulp.task('tts', done => {
+	// read all songs
+	// read all tags
+	var tags = require('../data/tags.json');
+	var songs = require('../data/songs.json');
 
+	songs.forEach(s => {
+		var tt = tags.filter(t => t.Song_ID === s.ID).map(t => t.Tagline).exclude('realcapoeira.ru');
+		if(tt.length){
+			var filename = slugify(`${s.Name}`)+ '.json';
+			console.log(filename, ':', tt)
+
+			var content = require(`../data/songs/${filename}`);
+			content.tags = tt.unique();
+			fs.writeFileSync(`./data/songs/${filename}`, JSON.stringify(content, null, 4));
+		}
+
+	})
+
+	// console.log(tags)
+});
 
 
 
