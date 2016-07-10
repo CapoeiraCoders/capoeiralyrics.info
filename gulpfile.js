@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var songs = require('./gulp/songs.js');
+var tags = require('./gulp/tags.js');
 var songs = require('./gulp/dev.js');
 
 var concat = require('gulp-concat');
@@ -21,7 +22,7 @@ gulp.task('cleanup', gulpSequence('songs:cleanup'));
  */
 gulp.task('build:index', () => {
 	return gulp.src('./public/songs/index.html')
-		.pipe(gulp.dest('./public'));
+	.pipe(gulp.dest('./public'));
 });
 
 

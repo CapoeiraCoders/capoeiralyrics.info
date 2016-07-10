@@ -1,0 +1,78 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{meta.title}}</title>
+
+	<meta name="description" content="{{meta.description}}">
+	<meta name="author" content="{{meta.author}}">
+
+	<meta property="og:url" content="http://capoeiralyrics.info/songs/{{slug}}.html"/>
+	<meta property="og:title" content="{{meta.title}}"/>
+	<meta property="og:description" content="{{meta.description}}"/>
+	<meta property="og:ite_name" content="Capoeira Lyrics"/>
+	<meta property="og:type" content="music.song"/>
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- FONT -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/skeleton.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/tags/index.css">
+
+</head>
+<body>
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M9LHWZ"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-M9LHWZ');</script>
+	<!-- End Google Tag Manager -->
+
+
+	<script type="application/ld+json">
+	{
+	"@context": "http://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [{
+		"@type": "ListItem",
+		"position": 1,
+		"item": {
+		  "@id": "http://capoeiralyrics.info/tags",
+		  "name": "Tags"
+		}
+	},{
+		"@type": "ListItem",
+		"position": 2,
+		"item": {
+			"@id": "http://capoeiralyrics.info/tags/{{slug}}.html",
+			"name": "{{Name}}"
+		}
+	}]
+	}
+	</script>
+
+	<h1>Songs by tag <b>#{{name}}</b></h1>
+	<div>
+		<ul>
+			{{#songs}}
+				<li class="song">
+					<a href='/songs/{{slug}}.html'>{{name}}</a>
+					<div class="tags">
+					{{#tags}}
+						<a class="tag" href='/tags/{{slug}}.html'>#{{name}}</a>
+					{{/tags}}
+					</div>
+				</li>
+			{{/songs}}
+		</ul>
+	</div>
+</body>
+</html>

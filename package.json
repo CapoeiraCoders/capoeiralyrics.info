@@ -35,5 +35,9 @@
   },
   "author": "Vlad Borg <reg.yeti@gmail.com>",
   "license": "UNLICENSED",
-  "dependencies": {}
+  "dependencies": {
+    "gulp-file": "^0.3.0",
+    "gulp-hydra": "^1.0.1",
+    "merge-stream": "^1.0.0"
+  }
 }
