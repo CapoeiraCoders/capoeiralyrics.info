@@ -14,32 +14,36 @@ var merge = require('merge-stream');
 var mustache = require('mustache');  
 var marked = require('marked');  
 var foreach = require('gulp-foreach');
-var sitemap = require('gulp-sitemap');
 var slugify = require('speakingurl');
 var jsonConcat = require('gulp-concat-json');
 var gulpSequence = require('gulp-sequence');
 
 
-var BASE_TEMPLATE_PATH = './templates/tags/tag.mustache';
+var BASE_TEMPLATE_PATH = './templates/tags/tag.mu';
 
 
 var middlewares = {
 
-	/**
-	 * Generates slugs based on song name
-	 */
-	slug: () => {
-		return jsonTransform(data => {
-			data.slug = slugify(`${data.Name}`);
-			return data;
-		})
-	},
+	// /**
+	//  * Generates slugs based on song name
+	//  */
+	// slug: () => {
+	// 	return jsonTransform(data => {
+	// 		data.slug = slugify(`${data.name}`);
+	// 		return data;
+	// 	})
+	// },
 
 	/**
 	 * Rendering template middleware
 	 */
-	mustache: template => {
-		return through.obj((file, enc, callback) => { // generate html from template
+	mustache: () => {
+		return through.obj((file, enc, callback) => {
+			// we will use overrided template file if exists
+			// if there is file with ${tagname}.mu use it instead of base template
+			var basename = path.basename(file.basename, '.json');
+			var template = `./templates/tags/${basename}.mu`;
+			template = fs.existsSync(template) ?template :BASE_TEMPLATE_PATH;
 			var tpl = fs.readFileSync(template, "utf-8");
 			var view = JSON.parse(file.contents.toString());
 			file.contents = new Buffer(mustache.render(tpl, view));
@@ -47,26 +51,26 @@ var middlewares = {
 		})
 	},
 
-	/**
-	 * Generates metas
-	 */
-	meta: () => {
-		return jsonTransform(data => {
-			data.meta = {};
-			data.meta.title = `${data.Artist} — ${data.Name} | Capoeira Lyrics`;
-			data.meta.description = data.Text.stripTags().compact().to(150);
-			data.meta.author = data.Artist;
+	// /**
+	//  * Generates metas
+	//  */
+	// meta: () => {
+	// 	return jsonTransform(data => {
+	// 		data.meta = {};
+	// 		data.meta.title = `${data.Name} songs | Capoeira Lyrics`;
+	// 		data.meta.description = data.Text.stripTags().compact().to(150);
+	// 		data.meta.author = data.Artist;
 
-			return data;
-		})
-	}
+	// 		return data;
+	// 	})
+	// }
 }
 
 
 /**
  * Generate all songs + sitemaps from sources from ignored data folder
  */
-gulp.task('tags:build', gulpSequence('tags:cleanup', 'tags:build:pages', 'tags:build:sitemap'));
+gulp.task('tags:build', gulpSequence('tags:cleanup', 'tags:build:pages'));
 
 /**
  * Cleanup folder before new build
@@ -84,7 +88,7 @@ gulp.task('tags:build:pages', done => {
 	var tags = {}; // container for tags
 
 	return gulp.src('./data/songs/*.json')
-	// split songs by tag
+	// group songs by tag
 	.pipe(
 		jsonTransform(data => {
 			if(data.tags) {
@@ -119,28 +123,13 @@ gulp.task('tags:build:pages', done => {
 							}
 						})
 					})),
-					path: './'+slugify(tag)+'.json'
-
+					path: './'+slugify(tag)+'.json' // vinyl files requires path
 				}));
 			}
 			this.emit('end');
 		}
 	))
-	.pipe(middlewares.mustache(BASE_TEMPLATE_PATH)) // render via mustache
+	.pipe(middlewares.mustache()) // render via mustache
 	.pipe(rename({extname:'.html'}))
-	
 	.pipe(gulp.dest('./public/tags/'));
-});
-
-/**
- * Builds songs sitemap file
- */
-gulp.task('tags:build:sitemap', done => {
-	// return gulp.src('public/songs/*.html', {read: false})
-	// .pipe(sitemap({
-	// 	fileName: 'songs-sitemap.xml',
-	// 	siteUrl: 'http://capoeiralyrics.info/songs/',
-	// 	changefreq: 'weekly'
-	// }))
-	// .pipe(gulp.dest('./public/songs'));
 });

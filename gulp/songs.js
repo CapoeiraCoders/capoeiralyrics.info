@@ -16,8 +16,8 @@ var jsonConcat = require('gulp-concat-json');
 var gulpSequence = require('gulp-sequence');
 
 
-var SONG_TEMPLATE_PATH = './templates/songs/song.mustache';
-var INDEX_TEMPLATE_PATH = './templates/songs/index.mustache';
+var SONG_TEMPLATE_PATH = './templates/songs/song.mu';
+var INDEX_TEMPLATE_PATH = './templates/songs/index.mu';
 
 
 var middlewares = {
@@ -99,7 +99,7 @@ var middlewares = {
 /**
  * Generate all songs + sitemaps from sources from ignored data folder
  */
-gulp.task('songs:build', gulpSequence('songs:cleanup', 'songs:build:pages', 'songs:build:index', 'songs:build:sitemap'));
+gulp.task('songs:build', gulpSequence('songs:cleanup', 'songs:build:pages', 'songs:build:index'));
 
 /**
  * Cleanup folder before new build
@@ -135,17 +135,4 @@ gulp.task('songs:build:index', done => {
 	.pipe(middlewares.mustache(INDEX_TEMPLATE_PATH))
 	.pipe(rename('index.html'))
 	.pipe(gulp.dest('./public/songs/'))
-});
-
-/**
- * Builds songs sitemap file
- */
-gulp.task('songs:build:sitemap', done => {
-	return gulp.src('public/songs/*.html', {read: false})
-	.pipe(sitemap({
-		fileName: 'songs-sitemap.xml',
-		siteUrl: 'http://capoeiralyrics.info/songs/',
-		changefreq: 'weekly'
-	}))
-	.pipe(gulp.dest('./public/songs'));
 });

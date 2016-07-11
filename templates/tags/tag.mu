@@ -1,15 +1,14 @@
-<html>
+<html lang="pt" xml:lang="pt" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8">
-	<title>{{meta.title}}</title>
+	<title>Tag {{name}} | Capoeira Lyrics</title>
 
-	<meta name="description" content="{{meta.description}}">
-	<meta name="author" content="{{meta.author}}">
+	<meta name="description" content="Capoeira lyrics with tag {{name}}">
 
-	<meta property="og:url" content="http://capoeiralyrics.info/songs/{{slug}}.html"/>
-	<meta property="og:title" content="{{meta.title}}"/>
-	<meta property="og:description" content="{{meta.description}}"/>
-	<meta property="og:ite_name" content="Capoeira Lyrics"/>
+	<meta property="og:url" content="http://capoeiralyrics.info/tags/{{slug}}.html"/>
+	<meta property="og:title" content="Tag {{name}} | Capoeira Lyrics"/>
+	<meta property="og:description" content="Capoeira lyrics with tag {{name}}"/>
+	<meta property="og:item_name" content="Capoeira Lyrics | Tag {{name}}"/>
 	<meta property="og:type" content="music.song"/>
 
 	<!-- Mobile Specific Metas -->
@@ -22,7 +21,8 @@
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/skeleton.css">
 	<link rel="stylesheet" href="/css/common.css">
-	<link rel="stylesheet" href="/css/tags/index.css">
+	<link rel="stylesheet" href="/css/lists.css">
+	<link rel="stylesheet" href="/css/tags/tag.css">
 
 </head>
 <body>
@@ -53,7 +53,7 @@
 		"position": 2,
 		"item": {
 			"@id": "http://capoeiralyrics.info/tags/{{slug}}.html",
-			"name": "{{Name}}"
+			"name": "{{name}}"
 		}
 	}]
 	}
