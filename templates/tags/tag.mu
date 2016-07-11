@@ -59,7 +59,8 @@
 	}
 	</script>
 
-	<h1>Songs by tag <b>#{{name}}</b></h1>
+	<h1 class="title">#{{name}}</h1>
+	<h1 class="subtitle">Songs by tag</h1>
 	<div>
 		<ul>
 			{{#songs}}
