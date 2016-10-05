@@ -39,6 +39,7 @@ Build
 
 Thanx
 ===
-Build with love with styles based on http://getskeleton.com/.
+- Build with love with styles based on http://getskeleton.com/
+- Hosted on AWS S3
 
 
