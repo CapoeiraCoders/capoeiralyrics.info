@@ -1,8 +1,16 @@
-#Capoeira Lyrics website
+# Capoeira Lyrics
+
+[Capoeira Lyrics](http://capoeiralyrics.info) is an open source project. It's non-commercial and targeted on sharing capoeira songs lyrics as a part of world cultural heritage.
+
+If you're interested in contributing, contact:
+- [Add content](mailto:reg.yeti@gmail.com)
+- [Localize content](mailto:reg.yeti@gmail.com)
+- [Fix mistakes](mailto:reg.yeti@gmail.com)
+- [...or anything else](mailto:reg.yeti@gmail.com)
 
 Concept
 ===
-Project is a static website generated from sources that lives in JSON files from `data` folder. `data/songs` folder contains JSON sources, each of them in format:
+Project is a static website generated from sources that live in JSON files from `data` folder. `data/songs` folder contains JSON sources, each of them in format:
 ```
 {
     "ID": 554,
@@ -29,9 +37,8 @@ Build
 - `npm run deploy` - to deploy website
 
 
-Colophon
+Thanx
 ===
-Build with love.
-Style is based on http://getskeleton.com/.
+Build with love with styles based on http://getskeleton.com/.
 
 
