@@ -2,34 +2,32 @@
 'use strict';
 
 /**
- * Publish the exported site to GitHub Pages.
+ * Publish the built site to GitHub Pages on this repository.
  *
- * CapoeiraCoders is on GitHub Free, which only serves Pages from a public
- * repository. This private repo keeps the song JSON. The script copies
- * ./s3-export to the public site repo and never reads ./data.
+ * Pages for a project repository can serve the /docs folder on master.
+ * Song JSON stays gitignored. The script copies ./public into ./docs, commits
+ * that folder, pushes master, and selects /docs as the Pages source.
  *
- * The export lands on a case-insensitive disk as Songs/, while every page
+ * A case-insensitive disk can store the song folder as Songs/ while every page
  * links to /songs/. GitHub Pages is case-sensitive, so the copy renames that
- * folder to songs/. Extensionless HTML, such as the old Details URLs, is
- * published as index.html so the original path still renders.
+ * folder to songs/. Extensionless HTML is published as index.html so the
+ * original path still renders.
  *
- *   npm run deploy -- --preview   https://capoeiracoders.github.io
- *   npm run deploy                 same site, with the capoeiralyrics.info domain
+ *   npm run deploy
  */
 
 const { execFileSync } = require('child_process');
 const fs = require('fs');
-const os = require('os');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const SITE_DIR = path.join(ROOT, 's3-export');
+const SITE_DIR = path.join(ROOT, 'public');
+const DOCS_DIR = path.join(ROOT, 'docs');
 const SONGS_DATA_DIR = path.join(ROOT, 'data', 'songs');
-const PAGES_REMOTE = 'git@github.com:CapoeiraCoders/CapoeiraCoders.github.io.git';
+const PAGES_REPO = 'CapoeiraCoders/capoeiralyrics.info';
 const CUSTOM_DOMAIN = 'capoeiralyrics.info';
 const SKIP_NAMES = new Set(['.DS_Store', 'README.md']);
 
-const preview = process.argv.includes('--preview');
 const allowPartial = process.argv.includes('--allow-partial');
 
 function run(args, options) {
@@ -53,7 +51,7 @@ function songPagesDir() {
 
 function assertSiteIsReady() {
 	if (!fs.existsSync(path.join(SITE_DIR, 'index.html'))) {
-		console.error('s3-export/index.html is missing. Export the site from S3 into s3-export/ before deploy.');
+		console.error('public/index.html is missing. Run npm run build before deploy.');
 		process.exit(1);
 	}
 
@@ -61,7 +59,7 @@ function assertSiteIsReady() {
 	const pages = countFiles(songPagesDir(), '.html');
 	if (!allowPartial && pages < songs) {
 		console.error(`Refusing to publish ${pages} song pages while data/songs has ${songs} files.`);
-		console.error('Export a complete site into s3-export/, or pass --allow-partial.');
+		console.error('Run npm run build for a complete site, or pass --allow-partial.');
 		process.exit(1);
 	}
 }
@@ -126,75 +124,78 @@ function copyPublicSite(destDir) {
 	}
 
 	fs.writeFileSync(path.join(destDir, '.nojekyll'), '');
-	if (!preview) {
-		fs.writeFileSync(path.join(destDir, 'CNAME'), `${CUSTOM_DOMAIN}\n`);
-	}
+	fs.writeFileSync(path.join(destDir, 'CNAME'), `${CUSTOM_DOMAIN}\n`);
 
 	const readme = [
 		'# capoeiralyrics.info',
 		'',
 		'Published website. Rendered HTML only.',
 		'',
-		'Song JSON and the generator stay in the private `CapoeiraCoders/capoeiralyrics.info` repository.',
+		'Song JSON stays out of git. The generator lives in this repository.',
 		''
 	].join('\n');
 	fs.writeFileSync(path.join(destDir, 'README.md'), readme);
 }
 
-function clearWorkTree(workDir) {
-	for (const entry of fs.readdirSync(workDir)) {
-		if (entry === '.git') continue;
-		fs.rmSync(path.join(workDir, entry), { recursive: true, force: true });
+function gitOutput(args) {
+	return execFileSync('git', args, {
+		cwd: ROOT,
+		encoding: 'utf8'
+	});
+}
+
+function assertOnMaster() {
+	const branch = gitOutput(['rev-parse', '--abbrev-ref', 'HEAD']).trim();
+	if (branch !== 'master') {
+		console.error(`Deploy publishes docs/ on master. Current branch is ${branch}.`);
+		process.exit(1);
 	}
+}
+
+function updateMaster() {
+	run(['fetch', 'origin', 'master'], { cwd: ROOT });
+	run(['pull', '--rebase', '--autostash', 'origin', 'master'], { cwd: ROOT });
+}
+
+function configurePages() {
+	const body = JSON.stringify({
+		source: {
+			branch: 'master',
+			path: '/docs'
+		}
+	});
+	execFileSync('gh', [
+		'api',
+		'--method', 'PUT',
+		`repos/${PAGES_REPO}/pages`,
+		'--input', '-'
+	], {
+		cwd: ROOT,
+		input: body,
+		stdio: ['pipe', 'inherit', 'inherit']
+	});
 }
 
 function publish() {
 	assertSiteIsReady();
+	assertOnMaster();
+	updateMaster();
 
-	const workDir = fs.mkdtempSync(path.join(os.tmpdir(), 'capoeira-pages-'));
-	let exitCode = 0;
-	try {
-		let cloned = false;
-		try {
-			run(['clone', '--depth', '1', PAGES_REMOTE, workDir], { cwd: ROOT });
-			cloned = true;
-		} catch (error) {
-			console.error(`Could not clone ${PAGES_REMOTE}.`);
-			console.error('The public repository CapoeiraCoders/CapoeiraCoders.github.io has to exist.');
-			exitCode = 1;
-		}
+	fs.rmSync(DOCS_DIR, { recursive: true, force: true });
+	copyPublicSite(DOCS_DIR);
+	run(['add', '-A', '--', 'docs'], { cwd: ROOT });
 
-		if (cloned) {
-			clearWorkTree(workDir);
-			copyPublicSite(workDir);
-			run(['add', '-A'], { cwd: workDir });
-
-			const status = execFileSync('git', ['status', '--porcelain'], {
-				cwd: workDir,
-				encoding: 'utf8'
-			});
-			if (!status.trim()) {
-				console.log('GitHub Pages already matches s3-export/. Nothing to publish.');
-			} else {
-				const message = preview
-					? 'Publish S3 export preview'
-					: `Publish S3 export for ${CUSTOM_DOMAIN}`;
-				run(['commit', '-m', message], { cwd: workDir });
-				run(['push', 'origin', 'HEAD'], { cwd: workDir });
-
-				if (preview) {
-					console.log('Preview: https://capoeiracoders.github.io');
-				} else {
-					console.log(`Published with custom domain ${CUSTOM_DOMAIN}.`);
-					console.log('Point DNS at GitHub Pages, then turn on Enforce HTTPS in the site repository.');
-				}
-			}
-		}
-	} finally {
-		fs.rmSync(workDir, { recursive: true, force: true });
+	const status = gitOutput(['status', '--porcelain', '--', 'docs']);
+	if (!status.trim()) {
+		console.log('docs/ already matches public/. Nothing new to commit.');
+	} else {
+		run(['commit', '-m', `Publish site for ${CUSTOM_DOMAIN}`], { cwd: ROOT });
+		run(['push', 'origin', 'HEAD'], { cwd: ROOT });
 	}
 
-	if (exitCode) process.exit(exitCode);
+	configurePages();
+	console.log(`Published ${CUSTOM_DOMAIN} from master /docs.`);
+	console.log('GitHub rebuilds Pages after the push. Turn on Enforce HTTPS in the repository settings.');
 }
 
 publish();

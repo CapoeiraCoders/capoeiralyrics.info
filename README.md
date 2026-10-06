@@ -36,10 +36,9 @@ Build
 
 - `npm run build` - build the website from local `data/` files into `public/`
 - `npm run preview` - open that build at http://localhost:8080 with caching off, so a refresh shows the latest `public/` files
-- `npm run deploy -- --preview` - publish `s3-export/` to https://capoeiracoders.github.io
-- `npm run deploy` - publish `s3-export/` for https://capoeiralyrics.info
+- `npm run deploy` - copy `public/` into `docs/`, push `master`, and serve that folder with GitHub Pages for https://capoeiralyrics.info
 
-`data/` stays on this machine. GitHub Free only serves Pages from a public repository, so deploy copies the S3 export in `s3-export/` to `CapoeiraCoders/CapoeiraCoders.github.io`.
+`data/` stays on this machine. Deploy commits only the rendered site in `docs/`.
 
 
 

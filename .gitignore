@@ -49,6 +49,6 @@ public/*
 !public/README.md
 s3-bucket-redirect-config.xml
 
-# S3 website export used as the GitHub Pages publish source
+# Local S3 website archive. Deploy publishes public/ as docs/ on master.
 s3-export/*
 !s3-export/README.md
