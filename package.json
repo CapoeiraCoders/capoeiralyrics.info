@@ -4,6 +4,7 @@
   "description": "capoeiralyrics.info website",
   "main": "gulp build",
   "devDependencies": {
+    "defaults": "^1.0.3",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
@@ -15,7 +16,6 @@
     "gulp-foreach": "^0.1.0",
     "gulp-hydra": "^1.0.1",
     "gulp-inject": "^4.0.0",
-    "gulp-inject-string": "^1.1.0",
     "gulp-json-modifier": "^1.0.0",
     "gulp-json-transform": "^0.3.2",
     "gulp-merge-json": "^0.4.0",
@@ -25,6 +25,7 @@
     "gulp-sitemap": "^4.1.1",
     "http-server": "^14.1.1",
     "marked": "^0.3.5",
+    "merge-stream": "^1.0.0",
     "mustache": "^2.2.1",
     "speakingurl": "^9.0.0",
     "sugar": "^1.4.1",
@@ -46,10 +47,5 @@
     "songs:build:sitemap": "gulp songs:build:sitemap"
   },
   "author": "Vlad Borg <reg.yeti@gmail.com>",
-  "license": "UNLICENSED",
-  "dependencies": {
-    "algoliasearch": "^3.20.4",
-    "defaults": "^1.0.3",
-    "merge-stream": "^1.0.0"
-  }
+  "license": "UNLICENSED"
 }

@@ -40,15 +40,3 @@ node_modules
 data/*
 !data/songs/a-amizade.json
 !data/README.md
-
-# Ignore content of public folder
-public/*
-!public/css
-!public/img
-!public/js
-!public/README.md
-s3-bucket-redirect-config.xml
-
-# Local S3 website archive. Deploy publishes public/ as docs/ on master.
-s3-export/*
-!s3-export/README.md
