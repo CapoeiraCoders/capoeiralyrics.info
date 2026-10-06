@@ -41,24 +41,5 @@ Build
 
 `data/` stays on this machine. GitHub Free only serves Pages from a public repository, so deploy copies the S3 export in `s3-export/` to `CapoeiraCoders/CapoeiraCoders.github.io`.
 
-Before `capoeiralyrics.info` leaves S3, set these DNS records, run `npm run deploy`, then turn on Enforce HTTPS in that public repository:
-
-- `A` `@` `185.199.108.153`
-- `A` `@` `185.199.109.153`
-- `A` `@` `185.199.110.153`
-- `A` `@` `185.199.111.153`
-- `AAAA` `@` `2606:50c0:8000::153`
-- `AAAA` `@` `2606:50c0:8001::153`
-- `AAAA` `@` `2606:50c0:8002::153`
-- `AAAA` `@` `2606:50c0:8003::153`
-- `CNAME` `www` `CapoeiraCoders.github.io`
-
-`npm run deploy:s3` still syncs the old bucket.
-
-
-Thanx
-===
-- Build with love with styles based on http://getskeleton.com/
-- Hosted on GitHub Pages
 
 
