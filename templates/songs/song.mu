@@ -1,84 +1,82 @@
-<html>
+<html lang="pt">
 <head>
 	<meta charset="utf-8">
 	<title>{{meta.title}}</title>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="{{meta.description}}">
 	<meta name="author" content="{{meta.author}}">
-
-	<meta property="og:url" content="http://capoeiralyrics.info/songs/{{slug}}.html"/>
-	<meta property="og:title" content="{{meta.title}}"/>
-	<meta property="og:description" content="{{meta.description}}"/>
-	<meta property="og:ite_name" content="Capoeira Lyrics"/>
-	<meta property="og:type" content="music.song"/>
-
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- FONT -->
-	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-	<!-- CSS -->
+	<meta property="og:url" content="http://capoeiralyrics.info/songs/{{slug}}.html">
+	<meta property="og:title" content="{{meta.title}}">
+	<meta property="og:description" content="{{meta.description}}">
+	<meta property="og:type" content="music.song">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
 	<link rel="stylesheet" href="/css/normalize.css">
-	<link rel="stylesheet" href="/css/skeleton.css">
 	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/lists.css">
 	<link rel="stylesheet" href="/css/songs/song.css">
-
 </head>
 <body>
-	<!-- Google Tag Manager -->
-	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M9LHWZ"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-M9LHWZ');</script>
-	<!-- End Google Tag Manager -->
+	<a class="skip" href="#main">Skip to lyrics</a>
+	<header class="site">
+		<div class="toolbar">
+			<a class="brand" href="/">Capoeira Lyrics</a>
+		</div>
+		<div class="pin">
+			<nav class="sections" aria-label="Sections">
+				<a href="/" aria-current="page">All songs</a>
+				<a href="/tags/">Tags</a>
+				<a href="/artists/">Artists</a>
+			</nav>
+			<nav class="crumbs" aria-label="Breadcrumb">
+				<ol>
+					<li><a href="/artists/{{artistSlug}}.html">{{artistName}}</a></li>
+					<li aria-current="page">{{Name}}</li>
+				</ol>
+			</nav>
+		</div>
+	</header>
+	<main id="main">
+		<h1>{{Name}}</h1>
+		<p class="byline">
+			<a class="artist" href="/artists/{{artistSlug}}.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">{{artistName}}</a>
+		</p>
+		{{#hasTags}}
+		<ul class="tags song-tags" aria-label="Tags">
+			{{#tags}}
+			<li><a href="/tags/{{slug}}.html">#{{name}}</a></li>
+			{{/tags}}
+		</ul>
+		{{/hasTags}}
 
+		{{#noLyrics}}
+		<p class="empty">No lyrics for this song yet.</p>
+		{{/noLyrics}}
 
-	<script type="application/ld+json">
-	{
-	"@context": "http://schema.org",
-	"@type": "BreadcrumbList",
-	"itemListElement": [{
-		"@type": "ListItem",
-		"position": 1,
-		"item": {
-		  "@id": "http://capoeiralyrics.info/songs",
-		  "name": "Songs"
-		}
-	},{
-		"@type": "ListItem",
-		"position": 2,
-		"item": {
-			"@id": "http://capoeiralyrics.info/songs/{{slug}}.html",
-			"name": "{{Name}}"
-		}
-	}]
-	}
-	</script>
+		{{#showLanguageTabs}}
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			{{#languages}}
+			<button type="button" role="tab" id="tab-{{id}}" aria-controls="panel-{{id}}" aria-selected="{{#active}}true{{/active}}{{^active}}false{{/active}}" tabindex="{{#active}}0{{/active}}{{^active}}-1{{/active}}">{{label}}</button>
+			{{/languages}}
+		</div>
+		{{#languages}}
+		<div class="lyrics" role="tabpanel" id="panel-{{id}}" aria-labelledby="tab-{{id}}" lang="{{lang}}" tabindex="0" {{^active}}hidden{{/active}}>
+			{{{html}}}
+		</div>
+		{{/languages}}
+		{{/showLanguageTabs}}
 
-	<h1 class='title'>{{Name}}</h1>
-	<h1 class='subtitle'>{{Artist}}</h1>
-	
-	{{#youtubeEmbed}}
-		<div class='video video-container'>{{{youtubeEmbed}}}</div>
-	{{/youtubeEmbed}}
+		{{^showLanguageTabs}}
+		{{#languages}}
+		<div class="lyrics" lang="{{lang}}">{{{html}}}</div>
+		{{/languages}}
+		{{/showLanguageTabs}}
 
-	<a name='text'></a>
-	<article>{{{Text}}}</article>
-	
-	{{#EngText}}
-		<a name='en'></a>
-		<h3>English</h3>
-		<article>{{{EngText}}}</article>
-	{{/EngText}}
-	
-	{{#RusText}}
-		<a name='ru'></a>
-		<h3>Русский</h3>
-		<article>{{{RusText}}}</article>
-	{{/RusText}}
+		{{#youtubeEmbed}}
+		<div class="video">{{{youtubeEmbed}}}</div>
+		{{/youtubeEmbed}}
+	</main>
+	{{#showLanguageTabs}}
+	<script src="/js/language-tabs.js"></script>
+	{{/showLanguageTabs}}
 </body>
 </html>

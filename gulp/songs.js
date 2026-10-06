@@ -1,138 +1,241 @@
-var path = require('path');  
-var fs = require('fs');  
-var sugar = require('sugar');
-var through = require('through2');
-var gulp = require('gulp');  
-var clean = require('gulp-clean');  
-var concat = require('gulp-concat');   
-var jsonTransform = require('gulp-json-transform');
-var rename = require('gulp-rename');  
-var mustache = require('mustache');  
-var marked = require('marked');  
-var foreach = require('gulp-foreach');
-var sitemap = require('gulp-sitemap');
-var slugify = require('speakingurl');
-var jsonConcat = require('gulp-concat-json');
-var gulpSequence = require('gulp-sequence');
+/* jshint node:true, esversion:6 */
+const path = require('path');
+const del = require('del');
+const fs = require('fs');
+const defaults = require('defaults');
+const sugar = require('sugar');
+const through = require('through2');
+const gulp = require('gulp');
+const {series, parallel} = require('gulp');
+const { src, dest } = require('gulp');
+const clean = require('gulp-clean');
+const concat = require('gulp-concat');
+const jsonTransform = require('gulp-json-transform');
+const jsonModifier = require('gulp-json-modifier');
+const rename = require('gulp-rename');
+const mustache = require('mustache');
+const marked = require('marked');
+const foreach = require('gulp-foreach');
+const sitemap = require('gulp-sitemap');
+const slugify = require('speakingurl');
+const compareSongTitles = require('./compare-song-titles');
 
 
-var SONG_TEMPLATE_PATH = './templates/songs/song.mu';
-var INDEX_TEMPLATE_PATH = './templates/songs/index.mu';
+const SONG_TEMPLATE_PATH = './templates/songs/song.mu';
+const INDEX_TEMPLATE_PATH = './templates/songs/index.mu';
+
+function youtubeIdFromUrl(url) {
+	try {
+		var parsed = new URL(url);
+		var fromQuery = parsed.searchParams.get('v');
+		if (fromQuery) return fromQuery;
+		var parts = parsed.pathname.split('/').filter(Boolean);
+		return parts.pop();
+	} catch (error) {
+		var bits = String(url).split('/').filter(Boolean);
+		return bits.pop();
+	}
+}
 
 
-var middlewares = {
+const middlewares = {
+
 	/**
 	 * Process markdown texts to html
 	 */
 	markdown: () => {
-		return jsonTransform(data => {
-			if(data.Text) data.Text = marked(data.Text);
-			if(data.EngText) data.EngText = marked(data.EngText);
-			if(data.RusText) data.RusText = marked(data.RusText);
+		return jsonModifier(data => {
+			if (data.Text) data.Text = marked(data.Text);
+			if (data.EngText) data.EngText = marked(data.EngText);
+			if (data.RusText) data.RusText = marked(data.RusText);
 			return data;
-		})
+		});
 	},
 
 	/**
 	 * Generates youtube embed object based on video url
 	 */
 	youtube: () => {
-		return jsonTransform(data => {
-			if(data.VideoUrl){
-				var youtubeId = data.VideoUrl.split('/').pop();
-				data.youtubeEmbed = `<iframe id="ytplayer" type="text/html" width="100%" style:"max-width:640px" src="http://www.youtube.com/embed/${youtubeId}?autoplay=0" frameborder="0"></iframe>`
-			}
+		return jsonModifier(data => {
+			if (!data.VideoUrl) return data;
+
+			var youtubeId = youtubeIdFromUrl(data.VideoUrl);
+			if (!youtubeId) return data;
+
+			var title = String(data.Name || 'Song video').replace(/"/g, '&quot;');
+			data.youtubeEmbed = `<iframe title="${title}" src="https://www.youtube.com/embed/${youtubeId}" allow="fullscreen" allowfullscreen loading="lazy"></iframe>`;
 			return data;
-		})
+		});
 	},
 
 	/**
 	 * Generates slugs based on song name
 	 */
 	slug: () => {
-		return jsonTransform(data => {
+		return jsonModifier(data => {
 			data.slug = slugify(`${data.Name}`);
+			data.artistName = data.Artist || 'Unknown artist';
+			data.artistSlug = slugify(data.artistName);
 			return data;
-		})
+		});
 	},
 
 	/**
 	 * Generates tags name + slug
 	 */
 	tags: () => {
-		return jsonTransform(data => {
-			if(!data.tags) return data;
+		return jsonModifier(data => {
+			if (!Array.isArray(data.tags)) {
+				data.hasTags = false;
+				return data;
+			}
 
-			data.tags = data.tags.map(t => {return {slug:slugify(t), name:t}});
+			data.tags = data.tags.map(t => ({
+				slug: slugify(t),
+				name: t
+			}));
+			data.hasTags = data.tags.length > 0;
 			return data;
-		})
+		});
+	},
+
+	/**
+	 * One tab per language that has lyrics. Portuguese stays first.
+	 */
+	languages: () => {
+		return jsonModifier(data => {
+			var languages = [];
+			if (data.Text) languages.push({ id: 'pt', lang: 'pt', label: 'Português', html: data.Text });
+			if (data.EngText) languages.push({ id: 'en', lang: 'en', label: 'English', html: data.EngText });
+			if (data.RusText) languages.push({ id: 'ru', lang: 'ru', label: 'Русский', html: data.RusText });
+
+			languages.forEach((language, index) => {
+				language.active = index === 0;
+			});
+
+			data.languages = languages;
+			data.showLanguageTabs = languages.length > 1;
+			data.noLyrics = languages.length === 0;
+			return data;
+		});
 	},
 
 	/**
 	 * Rendering template middleware
 	 */
-	mustache: template => {
+	mustache: (template) => {
 		return through.obj((file, enc, callback) => { // generate html from template
 			var tpl = fs.readFileSync(template, "utf-8");
 			var view = JSON.parse(file.contents.toString());
-			file.contents = new Buffer(mustache.render(tpl, view));
-			callback(null, file)
-		})
+			file.contents = Buffer.from(mustache.render(tpl, view));
+			callback(null, file);
+		});
 	},
 
 	/**
 	 * Generates metas
 	 */
 	meta: () => {
-		return jsonTransform(data => {
+		return jsonModifier(data => {
 			data.meta = {};
 			data.meta.title = `${data.Artist} — ${data.Name} | Capoeira Lyrics`;
 			data.meta.description = data.Text.stripTags().compact().to(150);
 			data.meta.author = data.Artist;
 
 			return data;
-		})
+		});
 	}
-}
-
+};
 
 /**
- * Generate all songs + sitemaps from sources from ignored data folder
+ * Join song JSON files into one Vinyl file. gulp-concat-json uses an old
+ * stream implementation that Gulp 4 closes early.
  */
-gulp.task('songs:build', gulpSequence('songs:cleanup', 'songs:build:pages', 'songs:build:index'));
+const concatSongJson = (fileName) => {
+	const songs = [];
+	let firstFile = null;
+
+	return through.obj(function (file, enc, callback) {
+		if (!firstFile) firstFile = file;
+		if (!file.isNull()) {
+			songs.push(JSON.parse(file.contents.toString()));
+		}
+		callback();
+	}, function (callback) {
+		if (!firstFile) {
+			callback();
+			return;
+		}
+
+		songs.sort(compareSongTitles);
+
+		const joined = firstFile.clone({ contents: false });
+		joined.path = path.join(firstFile.base, fileName);
+		joined.contents = Buffer.from(JSON.stringify(songs));
+		this.push(joined);
+		callback();
+	});
+};
+
+const chains = {
+	buildPages: () => {
+		return src('data/songs/*.json') // read all source files
+			.pipe(middlewares.markdown()) // process markdown
+			.pipe(middlewares.meta()) // process markdown
+			.pipe(middlewares.youtube()) // generate youtube embed
+			.pipe(middlewares.slug())
+			.pipe(middlewares.tags())
+			.pipe(middlewares.languages())
+			.pipe(middlewares.mustache(SONG_TEMPLATE_PATH))
+			.pipe(rename({
+				extname: '.html'
+			}))
+			.pipe(dest('public/songs/'));
+	},
+
+	buildIndex: (options) => {
+
+		options = defaults(options, {
+			src: './data/songs/*.json',
+			dest: './public/songs/',
+			template: INDEX_TEMPLATE_PATH
+		});
+
+		return gulp.src(options.src)
+			.pipe(middlewares.slug())
+			.pipe(middlewares.tags())
+			.pipe(concatSongJson('concated-songs.tmp.json'))
+			.pipe(middlewares.mustache(options.template))
+			.pipe(rename('index.html'))
+			.pipe(gulp.dest(options.dest));
+	},
+
+	cleanup: () => {
+		return del([
+			'public/songs/**/*'
+		]);
+	}
+};
+
+
+module.exports = {
+	middlewares,
+	chains
+};
 
 /**
  * Cleanup folder before new build
  */
-gulp.task('songs:cleanup', done => {  
-	return gulp.src('./public/songs', {read: false})
-	.pipe(clean());
-});
-
+gulp.task('songs:cleanup', chains.cleanup);
 /**
  * Generates HTML files from template and json files
  */
-gulp.task('songs:build:pages', done => {
-
-	return gulp.src('./data/songs/*.json') // read all source files
-	.pipe(middlewares.markdown()) // process markdown
-	.pipe(middlewares.meta()) // process markdown
-	.pipe(middlewares.youtube()) // generate youtube embed
-	.pipe(middlewares.slug()) // make slug
-	.pipe(middlewares.mustache(SONG_TEMPLATE_PATH)) // render via mustache
- 	.pipe(rename({extname:'.html'}))
-	.pipe(gulp.dest('./public/songs/'));
-});
-
+gulp.task('songs:build:pages', chains.buildPages);
 /**
  * Generates sitemap file for songs
  */
-gulp.task('songs:build:index', done => {
-	return gulp.src('./data/songs/*.json')
-	.pipe(middlewares.slug())
-	.pipe(middlewares.tags())
-	.pipe(jsonConcat('concated-songs.tmp.json')) // NOTE: easiest way to concat multiple jsons to one json array
-	.pipe(middlewares.mustache(INDEX_TEMPLATE_PATH))
-	.pipe(rename('index.html'))
-	.pipe(gulp.dest('./public/songs/'))
-});
+gulp.task('songs:build:index', () => chains.buildIndex());
+/**
+ * Generate all songs + sitemaps from sources from ignored data folder
+ */
+gulp.task('songs:build', gulp.series('songs:cleanup', 'songs:build:pages', 'songs:build:index'));

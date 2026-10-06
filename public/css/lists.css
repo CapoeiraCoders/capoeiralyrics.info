@@ -1,13 +1,134 @@
-li {
-	margin-bottom: 1.5rem;
+.letters {
+	position: sticky;
+	top: 3.4rem;
+	z-index: 2;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.15rem 0.1rem;
+	margin: 0 0 0.5rem;
+	padding: 0.35rem 0 0.45rem;
+	background: #fff;
+	border-bottom: 1px solid var(--line);
+}
+
+.pin .letters {
+	position: static;
+	margin: 0.45rem 0 0;
+	padding: 0;
+	border-bottom: 0;
+}
+
+.letters a,
+.letters .is-empty {
+	display: inline-flex;
+	flex: 1 0 1.65rem;
+	align-items: center;
+	justify-content: center;
+	max-width: 2rem;
+	min-height: 1.65rem;
+	border-radius: 4px;
+	color: var(--link);
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 1;
+	text-decoration: none;
+}
+
+.letters a[aria-current="true"] {
+	background: var(--tag);
+	box-shadow: inset 0 -2px 0 var(--link);
+}
+
+.letters a.is-empty {
+	color: #b7c2bb;
+	background: transparent;
+	box-shadow: none;
+}
+
+.songs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.song {
+	margin: 0;
+	padding: 0.85rem 0;
+	border-top: 1px solid var(--line);
+}
+
+.song:last-child {
+	border-bottom: 1px solid var(--line);
+}
+
+.song .name {
+	display: inline-block;
+	color: var(--ink);
+	font-size: 1.2rem;
+	font-weight: 600;
+	line-height: 1.25;
+	text-decoration: none;
+}
+
+.song .name:has(.avatar) {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+}
+
+.song .count {
+	margin-left: 0.45rem;
+	color: var(--muted);
+	font-size: 0.8rem;
+}
+
+.song .artist,
+.byline .artist {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	margin-top: 0.1rem;
+	color: var(--muted);
+	font-size: 0.875rem;
+	line-height: 1.2;
+	text-decoration: none;
+}
+
+/* Shared stand-in until each artist has an icon. */
+.avatar {
+	display: block;
+	width: 1.15rem;
+	height: 1.15rem;
+	border-radius: 50%;
+	object-fit: cover;
+	background: #d5e3db;
 }
 
 .tags {
-	display: inline-block;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin: 0.15rem 0 0;
+	padding: 0;
+	list-style: none;
 }
 
-.song .tag {
-	color: gray;
-	font-size: smaller;
-	font-style: italic;
+.tags a {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.1rem 0.45rem;
+	border-radius: 999px;
+	background: var(--tag);
+	color: var(--link);
+	font-size: 0.75rem;
+	line-height: 1.35;
+	text-decoration: none;
+}
+
+.cover {
+	display: block;
+	width: 12rem;
+	max-width: 100%;
+	height: auto;
+	margin: 0 0 1rem;
 }

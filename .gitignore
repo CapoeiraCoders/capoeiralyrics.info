@@ -45,5 +45,10 @@ data/*
 public/*
 !public/css
 !public/img
+!public/js
 !public/README.md
 s3-bucket-redirect-config.xml
+
+# S3 website export used as the GitHub Pages publish source
+s3-export/*
+!s3-export/README.md

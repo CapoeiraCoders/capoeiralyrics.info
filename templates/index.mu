@@ -1,7 +1,7 @@
 <html lang="pt">
 <head>
 	<meta charset="utf-8">
-	<title>Songs | Capoeira Lyrics</title>
+	<title>Capoeira Lyrics</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Capoeira song lyrics in Portuguese, English, and Russian.">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">

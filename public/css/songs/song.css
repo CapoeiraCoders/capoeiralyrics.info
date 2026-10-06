@@ -1,72 +1,66 @@
-article {
-	white-space: pre;
+.byline {
+	margin: 0 0 0.75rem;
 }
 
-.title {
-	margin-bottom: 0px;
+.byline .artist {
+	margin-top: 0;
+	font-size: 1rem;
+	font-weight: 600;
 }
 
-.subtitle {
-	font-size: 2rem;
+.song-tags {
+	margin-bottom: 0;
 }
 
 .video {
-	margin-bottom: 50px;
+	width: 100%;
+	margin: 1.75rem 0 0;
+	background: #111;
+	aspect-ratio: 16 / 9;
 }
 
-
-
-
-// YOUTUBE RESPONSIVE CONTAINER
-.video-container {
-	position:relative;
-	padding-bottom:56.25%;
-	padding-top:30px;
-	height:0;
-	overflow:hidden;
+.video iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
 }
 
-.video-container iframe, .video-container object, .video-container embed {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
+.lang-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin: 0 0 1rem;
+	padding-top: 1.75rem;
 }
 
-@media (min-width: 750px) {
-	.video-container {
-		position: relative;
-		padding-bottom: 56.25%; /* 16:9 */
-		padding-top: 25px;
-		height: 0;
-		overflow: initial;
-	}
-	.video-container iframe, .video-container object, .video-container embed {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 90%;
-		height: 90%;
-	}
+.lang-tabs [role="tab"] {
+	min-height: 44px;
+	padding: 0 0.9rem;
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	background: #fff;
+	color: var(--ink);
+	font: inherit;
+	cursor: pointer;
 }
 
-@media (max-width: 420px) {
-	.video-container {
-		position: relative;
-		padding-bottom: 56.25%; /* 16:9 */
-		padding-top: 25px;
-		height: 0;
-		overflow: initial;
-	}
-	.video-container iframe, .video-container object, .video-container embed {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 90%;
-		max-width: 390px
-		height: 90%;
-	}
+.lang-tabs [role="tab"][aria-selected="true"] {
+	border-color: var(--link);
+	background: var(--tag);
+	font-weight: 600;
+	box-shadow: inset 0 -3px 0 var(--link);
 }
 
-// END YOUTUBE RESPONSIVE CONTAINER 
+.lyrics p {
+	margin: 0 0 1rem;
+	white-space: pre-line;
+}
+
+.lyrics strong {
+	font-weight: 600;
+}
+
+.empty {
+	color: var(--muted);
+}

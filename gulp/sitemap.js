@@ -4,11 +4,12 @@ var sitemap = require('gulp-sitemap');
 /**
  * Builds sitemap file
  */
-gulp.task('sitemap:build', done => {
+gulp.task('sitemap:build', () => {
 	// here we go thru all generated html files and build one big sitemap for this
 	return gulp.src([
 			'public/songs/*.html',
-			'public/tags/*.html'
+			'public/tags/*.html',
+			'public/artists/*.html'
 		],
 		{
 			read: false, // no need to read content of files
@@ -29,6 +30,12 @@ gulp.task('sitemap:build', done => {
 				pages: [ 'tags/*.html' ],
 				changefreq: 'weekly',
 				siteUrl: 'http://capoeiralyrics.info/tags/',
+				lastmod: Date.now()
+			},
+			{
+				pages: [ 'artists/*.html' ],
+				changefreq: 'weekly',
+				siteUrl: 'http://capoeiralyrics.info/artists/',
 				lastmod: Date.now()
 			},
 		],
