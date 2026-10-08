@@ -127,6 +127,118 @@ h1 .langs {
 	font-size: 0.8rem;
 }
 
+.tag-tools {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 0.45rem 0.75rem;
+	margin: 0 0 0.75rem;
+}
+
+.pin .tag-tools {
+	margin: 0.1rem 0 0.45rem;
+}
+
+.kinds {
+	display: flex;
+	flex: 1 1 16rem;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin: 0;
+}
+
+.kinds button {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.15rem 0.55rem;
+	border: 0;
+	border-radius: 999px;
+	background: var(--tag);
+	color: var(--link);
+	font: inherit;
+	font-size: 0.8rem;
+	line-height: 1.35;
+	cursor: pointer;
+}
+
+.kinds button[aria-pressed="true"] {
+	background: var(--link);
+	color: #fff;
+}
+
+.views {
+	display: inline-flex;
+	flex: 0 0 auto;
+	margin: 0.08rem 0 0 auto;
+	border: 1px solid var(--ink);
+	border-radius: 6px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.views button {
+	display: inline-flex;
+	align-items: center;
+	margin: 0;
+	padding: 0.22rem 0.7rem;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: var(--ink);
+	font: inherit;
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 1.2;
+	cursor: pointer;
+}
+
+.views button + button {
+	box-shadow: inset 1px 0 0 var(--ink);
+}
+
+.views button[aria-pressed="true"] {
+	background: var(--ink);
+	color: #fff;
+}
+
+.song .blurb {
+	margin: 0.2rem 0 0;
+	max-width: 40rem;
+	color: var(--muted);
+	font-size: 0.875rem;
+	line-height: 1.4;
+}
+
+body.is-cloud .pin .letters {
+	display: none;
+}
+
+body.is-cloud #songs {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: center;
+	gap: 0.45rem 0.7rem;
+	padding: 0.25rem 0 0.5rem;
+}
+
+body.is-cloud #songs .song {
+	border: 0;
+	padding: 0.05rem 0.1rem;
+}
+
+body.is-cloud #songs .count,
+body.is-cloud #songs .blurb {
+	display: none;
+}
+
+body.is-cloud #songs .name {
+	font-size: var(--cloud, 1.2rem);
+	font-weight: 600;
+	line-height: 1.15;
+}
+
 .song:has(> .artist):not([hidden]) {
 	display: flex;
 	flex-wrap: wrap;

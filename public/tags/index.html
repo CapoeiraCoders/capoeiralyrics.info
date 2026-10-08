@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<title>Tags | Capoeira Lyrics</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Tags for capoeira song lyrics.">
+	<meta name="description" content="A taxonomy of capoeira song tags: form, toque, people, history, place, and theme.">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/common.css">
@@ -21,133 +21,379 @@
 			</nav>
 			<form class="find" role="search">
 				<label for="find-songs">Find a tag</label>
-				<input id="find-songs" type="search" data-filter="#songs" placeholder="Tag" autocomplete="off">
+				<input id="find-songs" type="search" data-filter="#songs" placeholder="Tag or description" autocomplete="off">
 			</form>
 		</div>
-		<div class="pin"></div>
+		<div class="pin">
+			<div class="tag-tools">
+				<nav class="kinds" aria-label="Tag groups">
+					<button type="button" data-kind="" aria-pressed="true">All</button>
+					<button type="button" data-kind="form" aria-pressed="false">Form</button>
+					<button type="button" data-kind="toque" aria-pressed="false">Toque</button>
+					<button type="button" data-kind="game" aria-pressed="false">The game</button>
+					<button type="button" data-kind="people" aria-pressed="false">People</button>
+					<button type="button" data-kind="history" aria-pressed="false">History</button>
+					<button type="button" data-kind="spirit" aria-pressed="false">Spirit</button>
+					<button type="button" data-kind="place" aria-pressed="false">Place</button>
+					<button type="button" data-kind="folklore" aria-pressed="false">Folklore</button>
+					<button type="button" data-kind="life" aria-pressed="false">Daily life</button>
+					<button type="button" data-kind="related" aria-pressed="false">Related arts</button>
+					<button type="button" data-kind="recording" aria-pressed="false">Recordings</button>
+				</nav>
+				<div class="views" role="group" aria-label="Tag view">
+					<button type="button" data-view="list" aria-pressed="true">List</button>
+					<button type="button" data-view="cloud" aria-pressed="false">Cloud</button>
+				</div>
+			</div>
+		</div>
 	</header>
 	<main id="main">
 		<p id="find-status" class="find-status" role="status"></p>
 		<ul id="songs" class="songs" data-letters data-filter-noun="tag">
-			<li class="song">
-				<a class="name" href="/tags/afoxe.html">#afoxe</a>
-				<span class="count">1</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/africa.html">#africa</a>
-				<span class="count">1</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/angola.html">#angola</a>
-				<span class="count">45</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/areia.html">#areia</a>
-				<span class="count">1</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/barrao.html">#barrao</a>
-				<span class="count">15</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/benguela.html">#benguela</a>
-				<span class="count">33</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/berimbau.html">#berimbau</a>
-				<span class="count">1</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/capoeira.html">#capoeira</a>
-				<span class="count">34</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/chula.html">#chula</a>
-				<span class="count">1</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/corrido.html">#corrido</a>
-				<span class="count">285</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/culture.html">#culture</a>
-				<span class="count">2</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/folklore.html">#folklore</a>
-				<span class="count">5</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/history.html">#history</a>
-				<span class="count">3</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/idalina.html">#idalina</a>
-				<span class="count">2</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/instruments.html">#instruments</a>
-				<span class="count">4</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/iuna.html">#iuna</a>
-				<span class="count">1</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/ladainha.html">#ladainha</a>
-				<span class="count">14</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/legends.html">#legends</a>
-				<span class="count">3</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/maculele.html">#maculele</a>
-				<span class="count">39</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/mestres.html">#mestres</a>
-				<span class="count">15</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/orixa.html">#orixá</a>
-				<span class="count">1</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/places.html">#places</a>
-				<span class="count">8</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/quadra.html">#quadra</a>
-				<span class="count">21</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/regional.html">#regional</a>
-				<span class="count">22</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/religion.html">#religion</a>
-				<span class="count">6</span>
-			</li>
-			<li class="song">
-				<a class="name" href="/tags/roda.html">#roda</a>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.41rem">
+				<a class="name" href="/tags/aberre.html" title="9 songs">#aberrê</a>
 				<span class="count">9</span>
+				<p class="blurb">Songs that name Mestre Aberrê, an Angola mestre the repertoire often sets beside Pastinha, Waldemar, and Traíra.</p>
 			</li>
-			<li class="song">
-				<a class="name" href="/tags/samba-de-roda.html">#samba de roda</a>
+			<li class="song" data-kind="related" data-kind-name="Related arts" style="--cloud: 0.82rem">
+				<a class="name" href="/tags/afoxe.html" title="1 song">#afoxe</a>
+				<span class="count">1</span>
+				<p class="blurb">Afoxé is carnival street music from Bahia with a candomblé ijexá beat. Some capoeira groups bring these songs into demonstrations and the roda.</p>
+			</li>
+			<li class="song" data-kind="place" data-kind-name="Place" style="--cloud: 1.20rem">
+				<a class="name" href="/tags/africa.html" title="4 songs">#africa</a>
+				<span class="count">4</span>
+				<p class="blurb">Songs that remember Africa as origin, ancestry, and return — the root many lyrics name when they talk about where capoeira comes from.</p>
+			</li>
+			<li class="song" data-kind="life" data-kind-name="Daily life" style="--cloud: 1.35rem">
+				<a class="name" href="/tags/amizade.html" title="7 songs">#amizade</a>
+				<span class="count">7</span>
+				<p class="blurb">Songs about friendship, and how rare a straight friend is inside the game.</p>
+			</li>
+			<li class="song" data-kind="toque" data-kind-name="Toque" style="--cloud: 1.85rem">
+				<a class="name" href="/tags/angola.html" title="45 songs">#angola</a>
+				<span class="count">45</span>
+				<p class="blurb">Capoeira Angola is the older, closer game: played low and slow, with a strong ritual around the berimbau. The ladainha and chula belong to this circle.</p>
+			</li>
+			<li class="song" data-kind="life" data-kind-name="Daily life" style="--cloud: 1.12rem">
+				<a class="name" href="/tags/areia.html" title="3 songs">#areia</a>
 				<span class="count">3</span>
+				<p class="blurb">Songs of the sand. Some are the work corrido about gathering it (“Vamos apanhar areia”); others put the beach, or a grain of sand, in the title.</p>
 			</li>
-			<li class="song">
-				<a class="name" href="/tags/sao-bento-grande.html">#Sao bento grande</a>
-				<span class="count">26</span>
+			<li class="song" data-kind="spirit" data-kind-name="Spirit" style="--cloud: 1.64rem">
+				<a class="name" href="/tags/axe.html" title="21 songs">#axé</a>
+				<span class="count">21</span>
+				<p class="blurb">Axé is life force and blessing, a word from candomblé that the roda uses when the energy is high.</p>
 			</li>
-			<li class="song">
-				<a class="name" href="/tags/sao-bento-pequeno.html">#sao bento pequeno</a>
+			<li class="song" data-kind="place" data-kind-name="Place" style="--cloud: 1.93rem">
+				<a class="name" href="/tags/bahia.html" title="61 songs">#bahia</a>
+				<span class="count">61</span>
+				<p class="blurb">Songs that keep Bahia in the title, or come back to the name line after line.</p>
+			</li>
+			<li class="song" data-kind="recording" data-kind-name="Recordings" style="--cloud: 1.55rem">
+				<a class="name" href="/tags/barrao.html" title="15 songs">#barrao</a>
+				<span class="count">15</span>
+				<p class="blurb">Songs associated with Mestre Barrão and the Axé Capoeira repertoire.</p>
+			</li>
+			<li class="song" data-kind="toque" data-kind-name="Toque" style="--cloud: 1.77rem">
+				<a class="name" href="/tags/benguela.html" title="33 songs">#benguela</a>
+				<span class="count">33</span>
+				<p class="blurb">Benguela is a mid-tempo toque and game, between Angola and São Bento Grande: grounded, tricky, and less of a fight than the fast games.</p>
+			</li>
+			<li class="song" data-kind="game" data-kind-name="The game" style="--cloud: 1.85rem">
+				<a class="name" href="/tags/berimbau.html" title="45 songs">#berimbau</a>
+				<span class="count">45</span>
+				<p class="blurb">Songs about the berimbau, the musical bow that leads the roda: its toques, its voice, and the respect due to it.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.76rem">
+				<a class="name" href="/tags/besouro.html" title="32 songs">#besouro</a>
+				<span class="count">32</span>
+				<p class="blurb">Songs about Besouro Mangangá of Santo Amaro, the capoeirista whose fights turned into legend.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 2.10rem">
+				<a class="name" href="/tags/bimba.html" title="114 songs">#bimba</a>
+				<span class="count">114</span>
+				<p class="blurb">Songs that name Mestre Bimba (Manoel dos Reis Machado), the teacher who shaped Capoeira Regional in Salvador.</p>
+			</li>
+			<li class="song" data-kind="folklore" data-kind-name="Folklore" style="--cloud: 1.49rem">
+				<a class="name" href="/tags/boi.html" title="12 songs">#boi</a>
 				<span class="count">12</span>
+				<p class="blurb">Songs of the ox: the vaqueiro, the bumba meu boi, and the animal that does not come back from the woods.</p>
 			</li>
-			<li class="song">
-				<a class="name" href="/tags/video.html">#video</a>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.26rem">
+				<a class="name" href="/tags/caicara.html" title="5 songs">#caiçara</a>
+				<span class="count">5</span>
+				<p class="blurb">Songs that name Mestre Caiçara.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.38rem">
+				<a class="name" href="/tags/canjiquinha.html" title="8 songs">#canjiquinha</a>
+				<span class="count">8</span>
+				<p class="blurb">Songs that name Mestre Canjiquinha, a singer and Angola mestre from Bahia.</p>
+			</li>
+			<li class="song" data-kind="game" data-kind-name="The game" style="--cloud: 1.77rem">
+				<a class="name" href="/tags/capoeira.html" title="34 songs">#capoeira</a>
+				<span class="count">34</span>
+				<p class="blurb">Songs that speak of capoeira itself — what it is, who plays, and why it matters — rather than a side story in the lyric.</p>
+			</li>
+			<li class="song" data-kind="toque" data-kind-name="Toque" style="--cloud: 1.12rem">
+				<a class="name" href="/tags/cavalaria.html" title="3 songs">#cavalaria</a>
+				<span class="count">3</span>
+				<p class="blurb">Cavalaria is a warning toque. It once told the roda that police or outsiders were coming, so the game could change or stop.</p>
+			</li>
+			<li class="song" data-kind="form" data-kind-name="Form" style="--cloud: 0.82rem">
+				<a class="name" href="/tags/chula.html" title="1 song">#chula</a>
+				<span class="count">1</span>
+				<p class="blurb">In Capoeira Angola, the chula is the praise song after the ladainha. Players stay at the foot of the berimbau; the game begins when it finishes.</p>
+			</li>
+			<li class="song" data-kind="folklore" data-kind-name="Folklore" style="--cloud: 1.59rem">
+				<a class="name" href="/tags/cobra.html" title="17 songs">#cobra</a>
+				<span class="count">17</span>
+				<p class="blurb">Songs in which the cobra is a figure — the bite, the hole, the coral snake — rather than a passing comparison.</p>
+			</li>
+			<li class="song" data-kind="form" data-kind-name="Form" style="--cloud: 2.35rem">
+				<a class="name" href="/tags/corrido.html" title="285 songs">#corrido</a>
+				<span class="count">285</span>
+				<p class="blurb">Corridos are call-and-response songs sung while the game is on. The soloist calls a line and the chorus answers, keeping the roda moving.</p>
+			</li>
+			<li class="song" data-kind="life" data-kind-name="Daily life" style="--cloud: 1.01rem">
+				<a class="name" href="/tags/culture.html" title="2 songs">#culture</a>
 				<span class="count">2</span>
+				<p class="blurb">Songs about custom and everyday Bahia around the roda: food, feast days, and the life beside the game.</p>
+			</li>
+			<li class="song" data-kind="game" data-kind-name="The game" style="--cloud: 1.72rem">
+				<a class="name" href="/tags/dende.html" title="28 songs">#dendê</a>
+				<span class="count">28</span>
+				<p class="blurb">Dendê is palm oil. In the roda the word means the game has flavor and force.</p>
+			</li>
+			<li class="song" data-kind="life" data-kind-name="Daily life" style="--cloud: 1.59rem">
+				<a class="name" href="/tags/dinheiro.html" title="17 songs">#dinheiro</a>
+				<span class="count">17</span>
+				<p class="blurb">Songs about money — who has it, who lost it, and what it cannot buy.</p>
+			</li>
+			<li class="song" data-kind="history" data-kind-name="History" style="--cloud: 1.97rem">
+				<a class="name" href="/tags/escravidao.html" title="71 songs">#escravidão</a>
+				<span class="count">71</span>
+				<p class="blurb">Songs of slavery: the senzala, the overseer, the whip, and what stayed after abolition.</p>
+			</li>
+			<li class="song" data-kind="folklore" data-kind-name="Folklore" style="--cloud: 1.89rem">
+				<a class="name" href="/tags/folklore.html" title="52 songs">#folklore</a>
+				<span class="count">52</span>
+				<p class="blurb">Folk themes that sit next to the fight: animals, work, and feast-day stories sung in the round.</p>
+			</li>
+			<li class="song" data-kind="game" data-kind-name="The game" style="--cloud: 1.60rem">
+				<a class="name" href="/tags/ginga.html" title="18 songs">#ginga</a>
+				<span class="count">18</span>
+				<p class="blurb">Songs about the ginga, the swaying base step of capoeira, and the malícia inside that movement.</p>
+			</li>
+			<li class="song" data-kind="history" data-kind-name="History" style="--cloud: 2.01rem">
+				<a class="name" href="/tags/history.html" title="82 songs">#history</a>
+				<span class="count">82</span>
+				<p class="blurb">Songs that tell capoeira’s past: quilombos, persecution, revolt, and mestres who kept the game alive.</p>
+			</li>
+			<li class="song" data-kind="form" data-kind-name="Form" style="--cloud: 1.01rem">
+				<a class="name" href="/tags/idalina.html" title="2 songs">#idalina</a>
+				<span class="count">2</span>
+				<p class="blurb">Traditional corridos that call Idalina — and sometimes Catarina — into the game.</p>
+			</li>
+			<li class="song" data-kind="game" data-kind-name="The game" style="--cloud: 2.02rem">
+				<a class="name" href="/tags/instruments.html" title="85 songs">#instruments</a>
+				<span class="count">85</span>
+				<p class="blurb">Songs that name the orchestra of the roda: berimbau, pandeiro, atabaque, agogô, and reco-reco.</p>
+			</li>
+			<li class="song" data-kind="toque" data-kind-name="Toque" style="--cloud: 1.20rem">
+				<a class="name" href="/tags/iuna.html" title="4 songs">#iuna</a>
+				<span class="count">4</span>
+				<p class="blurb">Iúna is a solemn toque reserved for high-graduation games and demonstrations, usually without the usual call-and-response singing.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.12rem">
+				<a class="name" href="/tags/joao-grande.html" title="3 songs">#joão grande</a>
+				<span class="count">3</span>
+				<p class="blurb">Songs that name Mestre João Grande, the Angola mestre who learned from João Pequeno.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.26rem">
+				<a class="name" href="/tags/joao-pequeno.html" title="5 songs">#joão pequeno</a>
+				<span class="count">5</span>
+				<p class="blurb">Songs that name Mestre João Pequeno, the Angola teacher linked with Pastinha.</p>
+			</li>
+			<li class="song" data-kind="game" data-kind-name="The game" style="--cloud: 1.55rem">
+				<a class="name" href="/tags/jogo-de-dentro.html" title="15 songs">#jogo de dentro</a>
+				<span class="count">15</span>
+				<p class="blurb">Jogo de dentro is the close game, played where there is no room to run. These songs name it.</p>
+			</li>
+			<li class="song" data-kind="form" data-kind-name="Form" style="--cloud: 1.53rem">
+				<a class="name" href="/tags/ladainha.html" title="14 songs">#ladainha</a>
+				<span class="count">14</span>
+				<p class="blurb">The ladainha is the opening litany of a Capoeira Angola roda. One voice sings a story or prayer while the circle listens; the game does not start until it ends.</p>
+			</li>
+			<li class="song" data-kind="folklore" data-kind-name="Folklore" style="--cloud: 1.90rem">
+				<a class="name" href="/tags/legends.html" title="55 songs">#legends</a>
+				<span class="count">55</span>
+				<p class="blurb">Story songs of the game: Besouro, Saci, and other folk figures whose names still get called in the roda.</p>
+			</li>
+			<li class="song" data-kind="history" data-kind-name="History" style="--cloud: 1.60rem">
+				<a class="name" href="/tags/liberdade.html" title="18 songs">#liberdade</a>
+				<span class="count">18</span>
+				<p class="blurb">Songs that speak of liberdade, freedom itself. The Liberdade neighborhood in Salvador, and the epithet in “Waldemar da Liberdade,” are not this tag.</p>
+			</li>
+			<li class="song" data-kind="related" data-kind-name="Related arts" style="--cloud: 1.87rem">
+				<a class="name" href="/tags/maculele.html" title="48 songs">#maculele</a>
+				<span class="count">48</span>
+				<p class="blurb">Maculelê is a stick dance from Bahia, often taught alongside capoeira. These songs belong to that game, not to the roda proper.</p>
+			</li>
+			<li class="song" data-kind="game" data-kind-name="The game" style="--cloud: 1.62rem">
+				<a class="name" href="/tags/malicia.html" title="19 songs">#malícia</a>
+				<span class="count">19</span>
+				<p class="blurb">Songs about malícia: showing less than you know, and letting the other player step into the trap.</p>
+			</li>
+			<li class="song" data-kind="game" data-kind-name="The game" style="--cloud: 2.06rem">
+				<a class="name" href="/tags/mandinga.html" title="98 songs">#mandinga</a>
+				<span class="count">98</span>
+				<p class="blurb">Songs about mandinga: the cunning, almost magical side of capoeira — feints, charm, and not showing everything you know.</p>
+			</li>
+			<li class="song" data-kind="place" data-kind-name="Place" style="--cloud: 2.02rem">
+				<a class="name" href="/tags/mar.html" title="83 songs">#mar</a>
+				<span class="count">83</span>
+				<p class="blurb">Songs of the sea: the tide, the shore, the sailor, and the crossing.</p>
+			</li>
+			<li class="song" data-kind="life" data-kind-name="Daily life" style="--cloud: 1.62rem">
+				<a class="name" href="/tags/menino.html" title="19 songs">#menino</a>
+				<span class="count">19</span>
+				<p class="blurb">Songs with menino or menina in the title: the boy or the girl the verse is spoken to.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 2.20rem">
+				<a class="name" href="/tags/mestres.html" title="166 songs">#mestres</a>
+				<span class="count">166</span>
+				<p class="blurb">Songs that name teachers and lineage: who taught whom, and who is owed respect in the roda.</p>
+			</li>
+			<li class="song" data-kind="life" data-kind-name="Daily life" style="--cloud: 1.75rem">
+				<a class="name" href="/tags/mulher.html" title="31 songs">#mulher</a>
+				<span class="count">31</span>
+				<p class="blurb">Songs about women. A title that calls her morena, iaiá, or sinhá is included; a stray “ô iaiá” at the end of a line is not.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.38rem">
+				<a class="name" href="/tags/nago.html" title="8 songs">#nagô</a>
+				<span class="count">8</span>
+				<p class="blurb">Songs that name nagô, the Yoruba nation in Bahia, as a lineage of capoeira or as a people.</p>
+			</li>
+			<li class="song" data-kind="game" data-kind-name="The game" style="--cloud: 1.35rem">
+				<a class="name" href="/tags/navalha.html" title="7 songs">#navalha</a>
+				<span class="count">7</span>
+				<p class="blurb">Songs of the navalha and the sharpened knife, the blade the old game remembers.</p>
+			</li>
+			<li class="song" data-kind="spirit" data-kind-name="Spirit" style="--cloud: 1.84rem">
+				<a class="name" href="/tags/orixa.html" title="44 songs">#orixá</a>
+				<span class="count">44</span>
+				<p class="blurb">Songs that greet or tell of the orixás of candomblé, whose stories sit under much of the ritual around the roda.</p>
+			</li>
+			<li class="song" data-kind="form" data-kind-name="Form" style="--cloud: 1.26rem">
+				<a class="name" href="/tags/parana.html" title="5 songs">#Paraná</a>
+				<span class="count">5</span>
+				<p class="blurb">Paraná is the answer shouted back in a famous corrido. These are the songs that carry that call in the title, not the state and not Mestre Paraná.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.87rem">
+				<a class="name" href="/tags/pastinha.html" title="49 songs">#pastinha</a>
+				<span class="count">49</span>
+				<p class="blurb">Songs that name Mestre Pastinha (Vicente Ferreira Pastinha), the teacher most tied to Capoeira Angola in the twentieth century.</p>
+			</li>
+			<li class="song" data-kind="place" data-kind-name="Place" style="--cloud: 2.18rem">
+				<a class="name" href="/tags/places.html" title="150 songs">#places</a>
+				<span class="count">150</span>
+				<p class="blurb">Songs that name Bahia, Salvador, the sea, or other places the repertoire keeps coming back to.</p>
+			</li>
+			<li class="song" data-kind="form" data-kind-name="Form" style="--cloud: 1.64rem">
+				<a class="name" href="/tags/quadra.html" title="21 songs">#quadra</a>
+				<span class="count">21</span>
+				<p class="blurb">Quadras are short four-line verses. They often sit between the ladainha and the corridos, or stand as compact songs of their own.</p>
+			</li>
+			<li class="song" data-kind="history" data-kind-name="History" style="--cloud: 1.62rem">
+				<a class="name" href="/tags/quilombo.html" title="19 songs">#quilombo</a>
+				<span class="count">19</span>
+				<p class="blurb">Songs of the quilombo and of Palmares, the communities built by people who had escaped slavery.</p>
+			</li>
+			<li class="song" data-kind="toque" data-kind-name="Toque" style="--cloud: 1.66rem">
+				<a class="name" href="/tags/regional.html" title="22 songs">#regional</a>
+				<span class="count">22</span>
+				<p class="blurb">Capoeira Regional is the style created by Mestre Bimba: a faster, more upright game with its own sequence of lessons and songs.</p>
+			</li>
+			<li class="song" data-kind="spirit" data-kind-name="Spirit" style="--cloud: 1.87rem">
+				<a class="name" href="/tags/religion.html" title="48 songs">#religion</a>
+				<span class="count">48</span>
+				<p class="blurb">Songs with prayer, saints, orixás, or the church — the spiritual layer of the repertoire.</p>
+			</li>
+			<li class="song" data-kind="game" data-kind-name="The game" style="--cloud: 1.41rem">
+				<a class="name" href="/tags/roda.html" title="9 songs">#roda</a>
+				<span class="count">9</span>
+				<p class="blurb">Songs about the circle itself: who enters, who watches, and how the game is offered at the foot of the berimbau.</p>
+			</li>
+			<li class="song" data-kind="folklore" data-kind-name="Folklore" style="--cloud: 1.20rem">
+				<a class="name" href="/tags/saci.html" title="4 songs">#saci</a>
+				<span class="count">4</span>
+				<p class="blurb">Songs of Saci-Pererê, the one-legged trickster of Brazilian folklore.</p>
+			</li>
+			<li class="song" data-kind="place" data-kind-name="Place" style="--cloud: 1.41rem">
+				<a class="name" href="/tags/salvador.html" title="9 songs">#salvador</a>
+				<span class="count">9</span>
+				<p class="blurb">Songs that name Salvador, the city of the roda. “São Salvador” is included.</p>
+			</li>
+			<li class="song" data-kind="related" data-kind-name="Related arts" style="--cloud: 1.20rem">
+				<a class="name" href="/tags/samba-de-roda.html" title="4 songs">#samba de roda</a>
+				<span class="count">4</span>
+				<p class="blurb">Samba de roda from Recôncavo Baiano, a close cousin of capoeira: clapping, atabaque, and a singer in the round.</p>
+			</li>
+			<li class="song" data-kind="toque" data-kind-name="Toque" style="--cloud: 1.51rem">
+				<a class="name" href="/tags/santa-maria.html" title="13 songs">#Santa Maria</a>
+				<span class="count">13</span>
+				<p class="blurb">Santa Maria is the toque Mestre Bimba treated as the hymn of Capoeira Regional. These songs name it.</p>
+			</li>
+			<li class="song" data-kind="toque" data-kind-name="Toque" style="--cloud: 1.70rem">
+				<a class="name" href="/tags/sao-bento-grande.html" title="26 songs">#Sao bento grande</a>
+				<span class="count">26</span>
+				<p class="blurb">São Bento Grande is a fast toque for an open, upright game — the classic Regional rhythm for kicks and escapes.</p>
+			</li>
+			<li class="song" data-kind="toque" data-kind-name="Toque" style="--cloud: 1.49rem">
+				<a class="name" href="/tags/sao-bento-pequeno.html" title="12 songs">#sao bento pequeno</a>
+				<span class="count">12</span>
+				<p class="blurb">São Bento Pequeno is a quicker Angola toque, still close to the ground but livelier than the slow Angola game.</p>
+			</li>
+			<li class="song" data-kind="life" data-kind-name="Daily life" style="--cloud: 1.51rem">
+				<a class="name" href="/tags/saudade.html" title="13 songs">#saudade</a>
+				<span class="count">13</span>
+				<p class="blurb">Songs of saudade: longing for a person, a place, or a time that does not come back.</p>
+			</li>
+			<li class="song" data-kind="folklore" data-kind-name="Folklore" style="--cloud: 1.59rem">
+				<a class="name" href="/tags/sereia.html" title="17 songs">#sereia</a>
+				<span class="count">17</span>
+				<p class="blurb">Songs of the sereia, the mermaid who shows up in stories beside the roda.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.41rem">
+				<a class="name" href="/tags/suassuna.html" title="9 songs">#suassuna</a>
+				<span class="count">9</span>
+				<p class="blurb">Songs that name Mestre Suassuna in the lyric. A title that only credits him as the author is not enough.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.53rem">
+				<a class="name" href="/tags/traira.html" title="14 songs">#traíra</a>
+				<span class="count">14</span>
+				<p class="blurb">Songs that name Mestre Traíra, an old Angola mestre usually remembered with Waldemar and Aberrê.</p>
+			</li>
+			<li class="song" data-kind="recording" data-kind-name="Recordings" style="--cloud: 1.01rem">
+				<a class="name" href="/tags/video.html" title="2 songs">#video</a>
+				<span class="count">2</span>
+				<p class="blurb">Songs on this site that include a video recording.</p>
+			</li>
+			<li class="song" data-kind="game" data-kind-name="The game" style="--cloud: 1.69rem">
+				<a class="name" href="/tags/volta-ao-mundo.html" title="25 songs">#volta ao mundo</a>
+				<span class="count">25</span>
+				<p class="blurb">The volta ao mundo is the walk around the circle that pauses the game and starts it again. These songs name that walk.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.69rem">
+				<a class="name" href="/tags/waldemar.html" title="25 songs">#waldemar</a>
+				<span class="count">25</span>
+				<p class="blurb">Songs that name Mestre Waldemar, also sung as Valdemar, the Angola mestre remembered for his roda and his berimbau.</p>
+			</li>
+			<li class="song" data-kind="people" data-kind-name="People" style="--cloud: 1.57rem">
+				<a class="name" href="/tags/zumbi.html" title="16 songs">#zumbi</a>
+				<span class="count">16</span>
+				<p class="blurb">Songs that name Zumbi dos Palmares, leader of the great quilombo and a symbol of the fight against slavery.</p>
 			</li>
 		</ul>
 	</main>
@@ -156,5 +402,6 @@
 	</footer>
 	<script src="/js/list-filter.js"></script>
 	<script src="/js/letter-nav.js"></script>
+	<script src="/js/tag-index.js"></script>
 </body>
 </html>

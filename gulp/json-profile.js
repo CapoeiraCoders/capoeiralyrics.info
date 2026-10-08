@@ -24,6 +24,16 @@ function createProfileLoader(file) {
 		return cache;
 	}
 
+	function groups() {
+		const data = load();
+		const list = Array.isArray(data._groups) ? data._groups : [];
+		return list.map(group => ({
+			id: String(group && group.id || '').trim(),
+			name: String(group && group.name || '').trim(),
+			description: String(group && group.description || '').replace(/\s+/g, ' ').trim()
+		})).filter(group => group.id && group.name);
+	}
+
 	function forSlug(slug) {
 		const entry = load()[slug] || {};
 		const description = String(entry.description || '').replace(/\s+/g, ' ').trim();
@@ -32,6 +42,8 @@ function createProfileLoader(file) {
 			url: safeUrl(link && link.url)
 		})).filter(link => link.label && link.url);
 		const sourceUrl = safeUrl(entry.sourceUrl);
+		const groupId = String(entry.group || '').trim();
+		const group = groups().find(item => item.id === groupId);
 
 		return {
 			description: description,
@@ -42,12 +54,16 @@ function createProfileLoader(file) {
 			hasSource: description.length > 0 && Boolean(entry.sourceName) && Boolean(sourceUrl),
 			links: links,
 			hasLinks: links.length > 0,
-			hasAbout: description.length > 0 || links.length > 0
+			hasAbout: description.length > 0 || links.length > 0,
+			group: group ? group.name : '',
+			groupId: group ? group.id : '',
+			hasGroup: Boolean(group)
 		};
 	}
 
 	return {
-		forSlug: forSlug
+		forSlug: forSlug,
+		groups: groups
 	};
 }
 

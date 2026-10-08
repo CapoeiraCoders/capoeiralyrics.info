@@ -35,6 +35,9 @@
 		<div class="profile">
 			<div>
 				<h1>#{{name}}</h1>
+				{{#hasGroup}}
+				<p class="lede"><a href="/tags/#group-{{groupId}}">{{group}}</a></p>
+				{{/hasGroup}}
 			</div>
 		</div>
 		{{#hasAbout}}

@@ -1,128 +1,367 @@
 {
+	"_groups": [
+		{
+			"id": "form",
+			"name": "Form",
+			"description": "How a song is sung in the roda, from the opening litany to the call and response."
+		},
+		{
+			"id": "toque",
+			"name": "Toque",
+			"description": "The berimbau rhythm, and the style of game that rhythm asks for."
+		},
+		{
+			"id": "game",
+			"name": "The game",
+			"description": "The circle, the bow, the step, and the trick."
+		},
+		{
+			"id": "people",
+			"name": "People",
+			"description": "Mestres and other figures the songs call by name."
+		},
+		{
+			"id": "history",
+			"name": "History",
+			"description": "Slavery, the quilombos, and the word liberdade."
+		},
+		{
+			"id": "spirit",
+			"name": "Spirit",
+			"description": "Prayer, the orixás, and axé."
+		},
+		{
+			"id": "place",
+			"name": "Place",
+			"description": "Bahia, the sea, Africa, and the other places the songs keep in view."
+		},
+		{
+			"id": "folklore",
+			"name": "Folklore",
+			"description": "Animals, enchanted beings, and story-songs."
+		},
+		{
+			"id": "life",
+			"name": "Daily life",
+			"description": "Work, money, friendship, longing, and the day around the game."
+		},
+		{
+			"id": "related",
+			"name": "Related arts",
+			"description": "Dances and musics taught beside capoeira."
+		},
+		{
+			"id": "recording",
+			"name": "Recordings",
+			"description": "Albums and repertoire sets these songs were taken from."
+		}
+	],
+	"aberre": {
+		"group": "people",
+		"description": "Songs that name Mestre Aberrê, an Angola mestre the repertoire often sets beside Pastinha, Waldemar, and Traíra."
+	},
 	"afoxe": {
+		"group": "related",
 		"description": "Afoxé is carnival street music from Bahia with a candomblé ijexá beat. Some capoeira groups bring these songs into demonstrations and the roda."
 	},
 	"africa": {
+		"group": "place",
 		"description": "Songs that remember Africa as origin, ancestry, and return — the root many lyrics name when they talk about where capoeira comes from."
 	},
 	"amazonas": {
+		"group": "place",
 		"description": "Songs that name Amazonas, the river and the state, as a place in the repertoire."
 	},
+	"amizade": {
+		"group": "life",
+		"description": "Songs about friendship, and how rare a straight friend is inside the game."
+	},
 	"angola": {
+		"group": "toque",
 		"description": "Capoeira Angola is the older, closer game: played low and slow, with a strong ritual around the berimbau. The ladainha and chula belong to this circle."
 	},
 	"areia": {
-		"description": "Work-song images of gathering sand (areia) on the shore — a theme that turns up in corridos such as “Vamos apanhar areia.”"
+		"group": "life",
+		"description": "Songs of the sand. Some are the work corrido about gathering it (“Vamos apanhar areia”); others put the beach, or a grain of sand, in the title."
 	},
 	"axe": {
+		"group": "spirit",
 		"description": "Axé is life force and blessing, a word from candomblé that the roda uses when the energy is high."
 	},
 	"axe-capoeira-vol-1": {
+		"group": "recording",
 		"description": "First Axé Capoeira album with Mestre Barrão."
 	},
 	"axe-capoeira-vol-2": {
+		"group": "recording",
 		"description": "Second Axé Capoeira album with Mestre Barrão."
 	},
 	"axe-capoeira-vol-3": {
+		"group": "recording",
 		"description": "Third Axé Capoeira album with Mestre Barrão."
 	},
 	"axe-capoeira-vol-4": {
+		"group": "recording",
 		"description": "Fourth Axé Capoeira album with Mestre Barrão."
 	},
+	"bahia": {
+		"group": "place",
+		"description": "Songs that keep Bahia in the title, or come back to the name line after line."
+	},
 	"barrao": {
+		"group": "recording",
 		"description": "Songs associated with Mestre Barrão and the Axé Capoeira repertoire."
 	},
 	"benguela": {
+		"group": "toque",
 		"description": "Benguela is a mid-tempo toque and game, between Angola and São Bento Grande: grounded, tricky, and less of a fight than the fast games."
 	},
 	"berimbau": {
+		"group": "game",
 		"description": "Songs about the berimbau, the musical bow that leads the roda: its toques, its voice, and the respect due to it."
 	},
+	"besouro": {
+		"group": "people",
+		"description": "Songs about Besouro Mangangá of Santo Amaro, the capoeirista whose fights turned into legend."
+	},
+	"bimba": {
+		"group": "people",
+		"description": "Songs that name Mestre Bimba (Manoel dos Reis Machado), the teacher who shaped Capoeira Regional in Salvador."
+	},
+	"boi": {
+		"group": "folklore",
+		"description": "Songs of the ox: the vaqueiro, the bumba meu boi, and the animal that does not come back from the woods."
+	},
+	"caicara": {
+		"group": "people",
+		"description": "Songs that name Mestre Caiçara."
+	},
+	"canjiquinha": {
+		"group": "people",
+		"description": "Songs that name Mestre Canjiquinha, a singer and Angola mestre from Bahia."
+	},
 	"capoeira": {
+		"group": "game",
 		"description": "Songs that speak of capoeira itself — what it is, who plays, and why it matters — rather than a side story in the lyric."
 	},
 	"cavalaria": {
+		"group": "toque",
 		"description": "Cavalaria is a warning toque. It once told the roda that police or outsiders were coming, so the game could change or stop."
 	},
 	"chula": {
+		"group": "form",
 		"description": "In Capoeira Angola, the chula is the praise song after the ladainha. Players stay at the foot of the berimbau; the game begins when it finishes."
 	},
+	"cobra": {
+		"group": "folklore",
+		"description": "Songs in which the cobra is a figure — the bite, the hole, the coral snake — rather than a passing comparison."
+	},
 	"corrido": {
+		"group": "form",
 		"description": "Corridos are call-and-response songs sung while the game is on. The soloist calls a line and the chorus answers, keeping the roda moving."
 	},
 	"culture": {
+		"group": "life",
 		"description": "Songs about custom and everyday Bahia around the roda: food, feast days, and the life beside the game."
 	},
+	"dende": {
+		"group": "game",
+		"description": "Dendê is palm oil. In the roda the word means the game has flavor and force."
+	},
+	"dinheiro": {
+		"group": "life",
+		"description": "Songs about money — who has it, who lost it, and what it cannot buy."
+	},
+	"escravidao": {
+		"group": "history",
+		"description": "Songs of slavery: the senzala, the overseer, the whip, and what stayed after abolition."
+	},
 	"folklore": {
+		"group": "folklore",
 		"description": "Folk themes that sit next to the fight: animals, work, and feast-day stories sung in the round."
 	},
 	"ginga": {
+		"group": "game",
 		"description": "Songs about the ginga, the swaying base step of capoeira, and the malícia inside that movement."
 	},
 	"history": {
+		"group": "history",
 		"description": "Songs that tell capoeira’s past: quilombos, persecution, revolt, and mestres who kept the game alive."
 	},
 	"idalina": {
+		"group": "form",
 		"description": "Traditional corridos that call Idalina — and sometimes Catarina — into the game."
 	},
 	"instruments": {
+		"group": "game",
 		"description": "Songs that name the orchestra of the roda: berimbau, pandeiro, atabaque, agogô, and reco-reco."
 	},
 	"iuna": {
+		"group": "toque",
 		"description": "Iúna is a solemn toque reserved for high-graduation games and demonstrations, usually without the usual call-and-response singing."
 	},
+	"joao-grande": {
+		"group": "people",
+		"description": "Songs that name Mestre João Grande, the Angola mestre who learned from João Pequeno."
+	},
+	"joao-pequeno": {
+		"group": "people",
+		"description": "Songs that name Mestre João Pequeno, the Angola teacher linked with Pastinha."
+	},
+	"jogo-de-dentro": {
+		"group": "game",
+		"description": "Jogo de dentro is the close game, played where there is no room to run. These songs name it."
+	},
 	"ladainha": {
+		"group": "form",
 		"description": "The ladainha is the opening litany of a Capoeira Angola roda. One voice sings a story or prayer while the circle listens; the game does not start until it ends."
 	},
 	"legends": {
+		"group": "folklore",
 		"description": "Story songs of the game: Besouro, Saci, and other folk figures whose names still get called in the roda."
 	},
+	"liberdade": {
+		"group": "history",
+		"description": "Songs that speak of liberdade, freedom itself. The Liberdade neighborhood in Salvador, and the epithet in “Waldemar da Liberdade,” are not this tag."
+	},
 	"louvacao": {
+		"group": "form",
 		"description": "Songs of praise (louvação), often for mestres, orixás, or capoeira itself, sung before the game opens."
 	},
 	"maculele": {
+		"group": "related",
 		"description": "Maculelê is a stick dance from Bahia, often taught alongside capoeira. These songs belong to that game, not to the roda proper."
 	},
+	"malicia": {
+		"group": "game",
+		"description": "Songs about malícia: showing less than you know, and letting the other player step into the trap."
+	},
 	"mandinga": {
+		"group": "game",
 		"description": "Songs about mandinga: the cunning, almost magical side of capoeira — feints, charm, and not showing everything you know."
 	},
+	"mar": {
+		"group": "place",
+		"description": "Songs of the sea: the tide, the shore, the sailor, and the crossing."
+	},
+	"menino": {
+		"group": "life",
+		"description": "Songs with menino or menina in the title: the boy or the girl the verse is spoken to."
+	},
 	"mestres": {
+		"group": "people",
 		"description": "Songs that name teachers and lineage: who taught whom, and who is owed respect in the roda."
 	},
 	"mestres-boca-rica-e-bigodinho-capoeira-angola": {
+		"group": "recording",
 		"description": "Capoeira Angola recording by Mestres Boca Rica and Bigodinho."
 	},
+	"mulher": {
+		"group": "life",
+		"description": "Songs about women. A title that calls her morena, iaiá, or sinhá is included; a stray “ô iaiá” at the end of a line is not."
+	},
+	"nago": {
+		"group": "people",
+		"description": "Songs that name nagô, the Yoruba nation in Bahia, as a lineage of capoeira or as a people."
+	},
+	"navalha": {
+		"group": "game",
+		"description": "Songs of the navalha and the sharpened knife, the blade the old game remembers."
+	},
 	"orixa": {
+		"group": "spirit",
 		"description": "Songs that greet or tell of the orixás of candomblé, whose stories sit under much of the ritual around the roda."
 	},
+	"parana": {
+		"group": "form",
+		"description": "Paraná is the answer shouted back in a famous corrido. These are the songs that carry that call in the title, not the state and not Mestre Paraná."
+	},
+	"pastinha": {
+		"group": "people",
+		"description": "Songs that name Mestre Pastinha (Vicente Ferreira Pastinha), the teacher most tied to Capoeira Angola in the twentieth century."
+	},
 	"places": {
+		"group": "place",
 		"description": "Songs that name Bahia, Salvador, the sea, or other places the repertoire keeps coming back to."
 	},
 	"quadra": {
+		"group": "form",
 		"description": "Quadras are short four-line verses. They often sit between the ladainha and the corridos, or stand as compact songs of their own."
 	},
+	"quilombo": {
+		"group": "history",
+		"description": "Songs of the quilombo and of Palmares, the communities built by people who had escaped slavery."
+	},
 	"regional": {
+		"group": "toque",
 		"description": "Capoeira Regional is the style created by Mestre Bimba: a faster, more upright game with its own sequence of lessons and songs."
 	},
 	"religion": {
+		"group": "spirit",
 		"description": "Songs with prayer, saints, orixás, or the church — the spiritual layer of the repertoire."
 	},
 	"revelacao-de-liminha": {
+		"group": "recording",
 		"description": "Revelação de Liminha, a named recording in the collection."
 	},
 	"roda": {
+		"group": "game",
 		"description": "Songs about the circle itself: who enters, who watches, and how the game is offered at the foot of the berimbau."
 	},
+	"saci": {
+		"group": "folklore",
+		"description": "Songs of Saci-Pererê, the one-legged trickster of Brazilian folklore."
+	},
+	"salvador": {
+		"group": "place",
+		"description": "Songs that name Salvador, the city of the roda. “São Salvador” is included."
+	},
 	"samba-de-roda": {
+		"group": "related",
 		"description": "Samba de roda from Recôncavo Baiano, a close cousin of capoeira: clapping, atabaque, and a singer in the round."
 	},
+	"santa-maria": {
+		"group": "toque",
+		"description": "Santa Maria is the toque Mestre Bimba treated as the hymn of Capoeira Regional. These songs name it."
+	},
 	"sao-bento-grande": {
+		"group": "toque",
 		"description": "São Bento Grande is a fast toque for an open, upright game — the classic Regional rhythm for kicks and escapes."
 	},
 	"sao-bento-pequeno": {
+		"group": "toque",
 		"description": "São Bento Pequeno is a quicker Angola toque, still close to the ground but livelier than the slow Angola game."
 	},
+	"saudade": {
+		"group": "life",
+		"description": "Songs of saudade: longing for a person, a place, or a time that does not come back."
+	},
+	"sereia": {
+		"group": "folklore",
+		"description": "Songs of the sereia, the mermaid who shows up in stories beside the roda."
+	},
+	"suassuna": {
+		"group": "people",
+		"description": "Songs that name Mestre Suassuna in the lyric. A title that only credits him as the author is not enough."
+	},
+	"traira": {
+		"group": "people",
+		"description": "Songs that name Mestre Traíra, an old Angola mestre usually remembered with Waldemar and Aberrê."
+	},
 	"video": {
+		"group": "recording",
 		"description": "Songs on this site that include a video recording."
+	},
+	"volta-ao-mundo": {
+		"group": "game",
+		"description": "The volta ao mundo is the walk around the circle that pauses the game and starts it again. These songs name that walk."
+	},
+	"waldemar": {
+		"group": "people",
+		"description": "Songs that name Mestre Waldemar, also sung as Valdemar, the Angola mestre remembered for his roda and his berimbau."
+	},
+	"zumbi": {
+		"group": "people",
+		"description": "Songs that name Zumbi dos Palmares, leader of the great quilombo and a symbol of the fight against slavery."
 	}
 }

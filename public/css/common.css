@@ -93,7 +93,7 @@ main {
 	padding: 0.35rem 1.25rem 0.55rem;
 }
 
-.pin:not(:has(.crumbs, .letters)) {
+.pin:not(:has(.crumbs, .letters, .tag-tools)) {
 	display: none;
 }
 

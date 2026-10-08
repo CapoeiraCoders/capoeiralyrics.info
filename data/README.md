@@ -1,5 +1,7 @@
 `data` holds the source files. Song JSON stays on this machine. `data/artists.json` and `data/tag-profiles.json` are the exceptions kept in the repo: short public descriptions (and profile links for artists) shown on artist and tag pages.
 
+Each song keeps its tags on the song itself. `node scripts/enrich-song-tags.js` previews thematic tags drawn from the Portuguese lyric and title. `node scripts/enrich-song-tags.js --write` saves them. The description and group for every tag live in `data/tag-profiles.json`.
+
 Project is a static website generated from sources that lives in JSON files from `data` folder. `data/songs` folder contains JSON sources, each of them in format:
 ```
 {

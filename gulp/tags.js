@@ -23,6 +23,19 @@ var { withLanguageMarks } = require('./song-languages');
 
 var BASE_TEMPLATE_PATH = './templates/tags/tag.mu';
 
+/**
+ * Log scale so a tag with hundreds of songs is larger than a tag with one,
+ * without making the small tags unreadably tiny.
+ */
+function cloudSize(count, minCount, maxCount) {
+	var minRem = 0.82;
+	var maxRem = 2.35;
+	if (maxCount <= minCount || count <= 0) return minRem.toFixed(2);
+	var span = Math.log(maxCount) - Math.log(minCount);
+	var place = span === 0 ? 1 : (Math.log(count) - Math.log(minCount)) / span;
+	return (minRem + place * (maxRem - minRem)).toFixed(2);
+}
+
 
 var middlewares = {
 
@@ -169,14 +182,60 @@ gulp.task('tags:build:index', () => {
 				return;
 			}
 
-			var list = Object.keys(tags).map(name => ({
-				name: name,
-				slug: slugify(name),
-				count: tags[name]
-			})).sort((a, b) => a.name.localeCompare(b.name, 'pt', { sensitivity: 'base' }));
+			var groupList = tagProfile.groups();
+			var byId = {};
+			groupList.forEach(group => {
+				byId[group.id] = {
+					id: group.id,
+					name: group.name,
+					description: group.description,
+					tags: []
+				};
+			});
+			var other = { id: 'other', name: 'Other', description: '', tags: [] };
+
+			Object.keys(tags).forEach(name => {
+				var slug = slugify(name);
+				var about = tagProfile.forSlug(slug);
+				var item = {
+					name: name,
+					slug: slug,
+					count: tags[name],
+					description: about.description,
+					hasDescription: about.hasDescription,
+					groupName: about.group || other.name
+				};
+				var bucket = (about.groupId && byId[about.groupId]) ? byId[about.groupId] : other;
+				item.groupId = bucket.id;
+				item.groupName = bucket.name;
+				bucket.tags.push(item);
+			});
+
+			var byName = (a, b) => a.name.localeCompare(b.name, 'pt', { sensitivity: 'base' });
+			var groups = groupList
+				.map(group => byId[group.id])
+				.filter(group => group.tags.length);
+			if (other.tags.length) groups.push(other);
+
+			var tagList = [];
+			groups.forEach(group => {
+				group.tags.forEach(tag => tagList.push(tag));
+			});
+			tagList.sort(byName);
+			var counts = tagList.map(tag => tag.count);
+			var minCount = counts.length ? Math.min.apply(null, counts) : 1;
+			var maxCount = counts.length ? Math.max.apply(null, counts) : 1;
+			tagList.forEach(tag => {
+				tag.size = cloudSize(tag.count, minCount, maxCount);
+				tag.countLabel = tag.count === 1 ? '1 song' : tag.count + ' songs';
+			});
+
 			var tpl = fs.readFileSync('./templates/tags/index.mu', 'utf8');
 			var page = this.sampleFile.clone({ contents: false });
-			page.contents = Buffer.from(mustache.render(tpl, { tags: list }));
+			page.contents = Buffer.from(mustache.render(tpl, {
+				groups: groups.map(group => ({ id: group.id, name: group.name })),
+				tags: tagList
+			}));
 			page.path = path.join(this.sampleFile.base, 'index.html');
 			this.push(page);
 			callback();
