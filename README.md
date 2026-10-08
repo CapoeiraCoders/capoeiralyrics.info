@@ -4,7 +4,7 @@
 
 The generator, templates, CSS, and JavaScript are licensed under the MIT terms in [LICENSE](LICENSE). Song lyrics, translations, recordings, and artwork stay with their authors. See the [rights page](http://capoeiralyrics.info/rights/) to claim authorship, ask for a correction, or request removal.
 
-If you're interested in contributing, [open a GitHub issue](https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new/choose). Rights requests go through the [rights page](http://capoeiralyrics.info/rights/).
+If you're interested in contributing, [open a GitHub issue](https://github.com/CapoeiraCoders/CapoeiraCoders.github.io/issues/new/choose). Rights requests go through the [rights page](http://capoeiralyrics.info/rights/).
 
 Concept
 ===

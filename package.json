@@ -31,7 +31,7 @@
     "sugar": "^1.4.1",
     "through2": "^0.4.2"
   },
-  "repository": "CapoeiraCoders/capoeiralyrics.info",
+  "repository": "CapoeiraCoders/CapoeiraCoders.github.io",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "build": "gulp --cwd . build",

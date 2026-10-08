@@ -1,7 +1,7 @@
 /* jshint node:true, esversion:6 */
 'use strict';
 
-const ISSUES_NEW = 'https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new';
+const ISSUES_NEW = 'https://github.com/CapoeiraCoders/CapoeiraCoders.github.io/issues/new';
 const RIGHTS_TEMPLATE = 'rights-claim.yml';
 const SITE_URL = 'http://capoeiralyrics.info';
 

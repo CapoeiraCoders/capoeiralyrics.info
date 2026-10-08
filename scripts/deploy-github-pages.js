@@ -24,7 +24,7 @@ const ROOT = path.resolve(__dirname, '..');
 const SITE_DIR = path.join(ROOT, 'public');
 const DOCS_DIR = path.join(ROOT, 'docs');
 const SONGS_DATA_DIR = path.join(ROOT, 'data', 'songs');
-const PAGES_REPO = 'CapoeiraCoders/capoeiralyrics.info';
+const PAGES_REPO = 'CapoeiraCoders/CapoeiraCoders.github.io';
 const CUSTOM_DOMAIN = 'capoeiralyrics.info';
 const SKIP_NAMES = new Set(['.DS_Store', 'README.md']);
 
