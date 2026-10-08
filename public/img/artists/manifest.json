@@ -1,0 +1,695 @@
+{
+	"abada-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/abada-capoeira.svg",
+		"portrait": "/img/artists/abada-capoeira.svg"
+	},
+	"adailton": {
+		"kind": "mark",
+		"avatar": "/img/artists/adailton.svg",
+		"portrait": "/img/artists/adailton.svg"
+	},
+	"bigodinho": {
+		"kind": "mark",
+		"avatar": "/img/artists/bigodinho.svg",
+		"portrait": "/img/artists/bigodinho.svg"
+	},
+	"boa-voz": {
+		"kind": "mark",
+		"avatar": "/img/artists/boa-voz.svg",
+		"portrait": "/img/artists/boa-voz.svg"
+	},
+	"cabeca": {
+		"kind": "mark",
+		"avatar": "/img/artists/cabeca.svg",
+		"portrait": "/img/artists/cabeca.svg"
+	},
+	"canguru": {
+		"kind": "mark",
+		"avatar": "/img/artists/canguru.svg",
+		"portrait": "/img/artists/canguru.svg"
+	},
+	"canhao": {
+		"kind": "mark",
+		"avatar": "/img/artists/canhao.svg",
+		"portrait": "/img/artists/canhao.svg"
+	},
+	"capoeira-mandinga": {
+		"kind": "mark",
+		"avatar": "/img/artists/capoeira-mandinga.svg",
+		"portrait": "/img/artists/capoeira-mandinga.svg"
+	},
+	"capoeira-nago": {
+		"kind": "mark",
+		"avatar": "/img/artists/capoeira-nago.svg",
+		"portrait": "/img/artists/capoeira-nago.svg"
+	},
+	"carolina-soares": {
+		"kind": "mark",
+		"avatar": "/img/artists/carolina-soares.svg",
+		"portrait": "/img/artists/carolina-soares.svg"
+	},
+	"caxias": {
+		"kind": "mark",
+		"avatar": "/img/artists/caxias.svg",
+		"portrait": "/img/artists/caxias.svg"
+	},
+	"cigano-associacao-capoeirarte": {
+		"kind": "mark",
+		"avatar": "/img/artists/cigano-associacao-capoeirarte.svg",
+		"portrait": "/img/artists/cigano-associacao-capoeirarte.svg"
+	},
+	"claudio-moreno": {
+		"kind": "mark",
+		"avatar": "/img/artists/claudio-moreno.svg",
+		"portrait": "/img/artists/claudio-moreno.svg"
+	},
+	"cm-barata": {
+		"kind": "mark",
+		"avatar": "/img/artists/cm-barata.svg",
+		"portrait": "/img/artists/cm-barata.svg"
+	},
+	"contra-mestre-eros": {
+		"kind": "mark",
+		"avatar": "/img/artists/contra-mestre-eros.svg",
+		"portrait": "/img/artists/contra-mestre-eros.svg"
+	},
+	"contra-mestre-kapacete-senzala": {
+		"kind": "mark",
+		"avatar": "/img/artists/contra-mestre-kapacete-senzala.svg",
+		"portrait": "/img/artists/contra-mestre-kapacete-senzala.svg"
+	},
+	"contra-mestre-prancha": {
+		"kind": "mark",
+		"avatar": "/img/artists/contra-mestre-prancha.svg",
+		"portrait": "/img/artists/contra-mestre-prancha.svg"
+	},
+	"de-sangre-with-mundo-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/de-sangre-with-mundo-capoeira.svg",
+		"portrait": "/img/artists/de-sangre-with-mundo-capoeira.svg"
+	},
+	"deraldo": {
+		"kind": "mark",
+		"avatar": "/img/artists/deraldo.svg",
+		"portrait": "/img/artists/deraldo.svg"
+	},
+	"esquilo-abada": {
+		"kind": "mark",
+		"avatar": "/img/artists/esquilo-abada.svg",
+		"portrait": "/img/artists/esquilo-abada.svg"
+	},
+	"fala-mansa": {
+		"kind": "mark",
+		"avatar": "/img/artists/fala-mansa.svg",
+		"portrait": "/img/artists/fala-mansa.svg"
+	},
+	"fantasma": {
+		"kind": "mark",
+		"avatar": "/img/artists/fantasma.svg",
+		"portrait": "/img/artists/fantasma.svg"
+	},
+	"farinha": {
+		"kind": "mark",
+		"avatar": "/img/artists/farinha.svg",
+		"portrait": "/img/artists/farinha.svg"
+	},
+	"feijao": {
+		"kind": "mark",
+		"avatar": "/img/artists/feijao.svg",
+		"portrait": "/img/artists/feijao.svg"
+	},
+	"fica": {
+		"kind": "mark",
+		"avatar": "/img/artists/fica.svg",
+		"portrait": "/img/artists/fica.svg"
+	},
+	"fifi": {
+		"kind": "mark",
+		"avatar": "/img/artists/fifi.svg",
+		"portrait": "/img/artists/fifi.svg"
+	},
+	"gato": {
+		"kind": "mark",
+		"avatar": "/img/artists/gato.svg",
+		"portrait": "/img/artists/gato.svg"
+	},
+	"geraldo-vandre": {
+		"kind": "mark",
+		"avatar": "/img/artists/geraldo-vandre.svg",
+		"portrait": "/img/artists/geraldo-vandre.svg"
+	},
+	"graduado-voador-capoeira-nago": {
+		"kind": "mark",
+		"avatar": "/img/artists/graduado-voador-capoeira-nago.svg",
+		"portrait": "/img/artists/graduado-voador-capoeira-nago.svg"
+	},
+	"indio": {
+		"kind": "mark",
+		"avatar": "/img/artists/indio.svg",
+		"portrait": "/img/artists/indio.svg"
+	},
+	"instructor-morcego-capoeira-luanda": {
+		"kind": "mark",
+		"avatar": "/img/artists/instructor-morcego-capoeira-luanda.svg",
+		"portrait": "/img/artists/instructor-morcego-capoeira-luanda.svg"
+	},
+	"instrutor-jerry-ulm": {
+		"kind": "mark",
+		"avatar": "/img/artists/instrutor-jerry-ulm.svg",
+		"portrait": "/img/artists/instrutor-jerry-ulm.svg"
+	},
+	"jaquara": {
+		"kind": "mark",
+		"avatar": "/img/artists/jaquara.svg",
+		"portrait": "/img/artists/jaquara.svg"
+	},
+	"korvao": {
+		"kind": "mark",
+		"avatar": "/img/artists/korvao.svg",
+		"portrait": "/img/artists/korvao.svg"
+	},
+	"kwanza-abada": {
+		"kind": "mark",
+		"avatar": "/img/artists/kwanza-abada.svg",
+		"portrait": "/img/artists/kwanza-abada.svg"
+	},
+	"leleu": {
+		"kind": "mark",
+		"avatar": "/img/artists/leleu.svg",
+		"portrait": "/img/artists/leleu.svg"
+	},
+	"luis-renato": {
+		"kind": "mark",
+		"avatar": "/img/artists/luis-renato.svg",
+		"portrait": "/img/artists/luis-renato.svg"
+	},
+	"macaco-preto-abada-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/macaco-preto-abada-capoeira.svg",
+		"portrait": "/img/artists/macaco-preto-abada-capoeira.svg"
+	},
+	"maestrinha": {
+		"kind": "mark",
+		"avatar": "/img/artists/maestrinha.svg",
+		"portrait": "/img/artists/maestrinha.svg"
+	},
+	"marmute-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/marmute-capoeira.svg",
+		"portrait": "/img/artists/marmute-capoeira.svg"
+	},
+	"mestra-janja-grupo-nzinga": {
+		"kind": "photo",
+		"avatar": "/img/artists/mestra-janja-grupo-nzinga.webp",
+		"portrait": "/img/artists/mestra-janja-grupo-nzinga-384.webp",
+		"credit": "Macello Casal Jr/Agência Brasil",
+		"license": "CC BY 3.0 br",
+		"source": "https://commons.wikimedia.org/wiki/File:MestraJanja.jpg",
+		"page": "https://pt.wikipedia.org/wiki/Mestra_Janja"
+	},
+	"mestrando-charm-abada-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestrando-charm-abada-capoeira.svg",
+		"portrait": "/img/artists/mestrando-charm-abada-capoeira.svg"
+	},
+	"mestrando-duende-abada": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestrando-duende-abada.svg",
+		"portrait": "/img/artists/mestrando-duende-abada.svg"
+	},
+	"mestrando-tiroteio": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestrando-tiroteio.svg",
+		"portrait": "/img/artists/mestrando-tiroteio.svg"
+	},
+	"mestre-acordeon": {
+		"kind": "photo",
+		"avatar": "/img/artists/mestre-acordeon.webp",
+		"portrait": "/img/artists/mestre-acordeon-384.webp",
+		"credit": "Wikimedia Commons",
+		"license": "CC BY-SA 3.0",
+		"source": "https://commons.wikimedia.org/wiki/File:Mestre_Acordeon_teaching_at_Capoeira_Arts_Cafe_2005.jpg",
+		"page": "https://pt.wikipedia.org/wiki/Mestre_Acordeon"
+	},
+	"mestre-adilson-grupo-ile-camaleao": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-adilson-grupo-ile-camaleao.svg",
+		"portrait": "/img/artists/mestre-adilson-grupo-ile-camaleao.svg"
+	},
+	"mestre-alexandre-batata-raizes-d-africa": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-alexandre-batata-raizes-d-africa.svg",
+		"portrait": "/img/artists/mestre-alexandre-batata-raizes-d-africa.svg"
+	},
+	"mestre-ananias": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-ananias.svg",
+		"portrait": "/img/artists/mestre-ananias.svg"
+	},
+	"mestre-barrao-axe-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-barrao-axe-capoeira.svg",
+		"portrait": "/img/artists/mestre-barrao-axe-capoeira.svg"
+	},
+	"mestre-beija-flor-capoeira-palmares": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-beija-flor-capoeira-palmares.svg",
+		"portrait": "/img/artists/mestre-beija-flor-capoeira-palmares.svg"
+	},
+	"mestre-bimba": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-bimba.svg",
+		"portrait": "/img/artists/mestre-bimba.svg"
+	},
+	"mestre-boa-gente": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-boa-gente.svg",
+		"portrait": "/img/artists/mestre-boa-gente.svg"
+	},
+	"mestre-boca-rica-e-mestre-bigodinho": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-boca-rica-e-mestre-bigodinho.svg",
+		"portrait": "/img/artists/mestre-boca-rica-e-mestre-bigodinho.svg"
+	},
+	"mestre-boneco-cbla": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-boneco-cbla.svg",
+		"portrait": "/img/artists/mestre-boneco-cbla.svg"
+	},
+	"mestre-brasilia": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-brasilia.svg",
+		"portrait": "/img/artists/mestre-brasilia.svg"
+	},
+	"mestre-burgues-grupo-muzenza": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-burgues-grupo-muzenza.svg",
+		"portrait": "/img/artists/mestre-burgues-grupo-muzenza.svg"
+	},
+	"mestre-cabeca-capoeira-brasil": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-cabeca-capoeira-brasil.svg",
+		"portrait": "/img/artists/mestre-cabeca-capoeira-brasil.svg"
+	},
+	"mestre-cabello-e-tiza": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-cabello-e-tiza.svg",
+		"portrait": "/img/artists/mestre-cabello-e-tiza.svg"
+	},
+	"mestre-camisa-abada-capoeira": {
+		"kind": "photo",
+		"avatar": "/img/artists/mestre-camisa-abada-capoeira.webp",
+		"portrait": "/img/artists/mestre-camisa-abada-capoeira-384.webp",
+		"credit": "Novák Karel CZ",
+		"license": "CC BY-SA 4.0",
+		"source": "https://commons.wikimedia.org/wiki/File:Mestre_Camisa_-_ABAD%C3%81_CAPOEIRA.jpg",
+		"page": "https://pt.wikipedia.org/wiki/Mestre_Camisa"
+	},
+	"mestre-casquinha": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-casquinha.svg",
+		"portrait": "/img/artists/mestre-casquinha.svg"
+	},
+	"mestre-caxias": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-caxias.svg",
+		"portrait": "/img/artists/mestre-caxias.svg"
+	},
+	"mestre-chicote-cdo": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-chicote-cdo.svg",
+		"portrait": "/img/artists/mestre-chicote-cdo.svg"
+	},
+	"mestre-claudio-e-felipe": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-claudio-e-felipe.svg",
+		"portrait": "/img/artists/mestre-claudio-e-felipe.svg"
+	},
+	"mestre-cobra-abada-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-cobra-abada-capoeira.svg",
+		"portrait": "/img/artists/mestre-cobra-abada-capoeira.svg"
+	},
+	"mestre-di-mola": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-di-mola.svg",
+		"portrait": "/img/artists/mestre-di-mola.svg"
+	},
+	"mestre-dunga": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-dunga.svg",
+		"portrait": "/img/artists/mestre-dunga.svg"
+	},
+	"mestre-esquilo-cdo": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-esquilo-cdo.svg",
+		"portrait": "/img/artists/mestre-esquilo-cdo.svg"
+	},
+	"mestre-ezequiel": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-ezequiel.svg",
+		"portrait": "/img/artists/mestre-ezequiel.svg"
+	},
+	"mestre-fanho": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-fanho.svg",
+		"portrait": "/img/artists/mestre-fanho.svg"
+	},
+	"mestre-fuinha": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-fuinha.svg",
+		"portrait": "/img/artists/mestre-fuinha.svg"
+	},
+	"mestre-gaje": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-gaje.svg",
+		"portrait": "/img/artists/mestre-gaje.svg"
+	},
+	"mestre-gil": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-gil.svg",
+		"portrait": "/img/artists/mestre-gil.svg"
+	},
+	"mestre-itapoan": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-itapoan.svg",
+		"portrait": "/img/artists/mestre-itapoan.svg"
+	},
+	"mestre-janja": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-janja.svg",
+		"portrait": "/img/artists/mestre-janja.svg"
+	},
+	"mestre-joao-grande": {
+		"kind": "photo",
+		"avatar": "/img/artists/mestre-joao-grande.webp",
+		"portrait": "/img/artists/mestre-joao-grande-384.webp",
+		"credit": "Ministério da Cultura",
+		"license": "CC BY 2.0",
+		"source": "https://commons.wikimedia.org/wiki/File:Ordem_do_M%C3%A9rito_Cultural_(OMC)_2015_(22923787115).jpg",
+		"page": "https://pt.wikipedia.org/wiki/Mestre_Jo%C3%A3o_Grande"
+	},
+	"mestre-jogo-de-dentro-capoeira-angola": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-jogo-de-dentro-capoeira-angola.svg",
+		"portrait": "/img/artists/mestre-jogo-de-dentro-capoeira-angola.svg"
+	},
+	"mestre-kadu": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-kadu.svg",
+		"portrait": "/img/artists/mestre-kadu.svg"
+	},
+	"mestre-kim": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-kim.svg",
+		"portrait": "/img/artists/mestre-kim.svg"
+	},
+	"mestre-leopoldina": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-leopoldina.svg",
+		"portrait": "/img/artists/mestre-leopoldina.svg"
+	},
+	"mestre-limao": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-limao.svg",
+		"portrait": "/img/artists/mestre-limao.svg"
+	},
+	"mestre-liminha": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-liminha.svg",
+		"portrait": "/img/artists/mestre-liminha.svg"
+	},
+	"mestre-lua-rasta": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-lua-rasta.svg",
+		"portrait": "/img/artists/mestre-lua-rasta.svg"
+	},
+	"mestre-manchinha-cordao-de-ouro": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-manchinha-cordao-de-ouro.svg",
+		"portrait": "/img/artists/mestre-manchinha-cordao-de-ouro.svg"
+	},
+	"mestre-mao-branca-capoeira-gerais": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-mao-branca-capoeira-gerais.svg",
+		"portrait": "/img/artists/mestre-mao-branca-capoeira-gerais.svg"
+	},
+	"mestre-marcelo-capoeira-mandinga": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-marcelo-capoeira-mandinga.svg",
+		"portrait": "/img/artists/mestre-marcelo-capoeira-mandinga.svg"
+	},
+	"mestre-marrom": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-marrom.svg",
+		"portrait": "/img/artists/mestre-marrom.svg"
+	},
+	"mestre-matias": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-matias.svg",
+		"portrait": "/img/artists/mestre-matias.svg"
+	},
+	"mestre-moraes": {
+		"kind": "photo",
+		"avatar": "/img/artists/mestre-moraes.webp",
+		"portrait": "/img/artists/mestre-moraes-384.webp",
+		"credit": "Escola de Capoeira Angola do Laborarte",
+		"license": "CC BY 3.0",
+		"source": "https://commons.wikimedia.org/wiki/File:Mestre_Moraes_visita_a_Escola_Tombo_da_Ladeira_(1997).png",
+		"page": "https://pt.wikipedia.org/wiki/Mestre_Moraes"
+	},
+	"mestre-museu": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-museu.svg",
+		"portrait": "/img/artists/mestre-museu.svg"
+	},
+	"mestre-pastinha": {
+		"kind": "photo",
+		"avatar": "/img/artists/mestre-pastinha.webp",
+		"portrait": "/img/artists/mestre-pastinha-384.webp",
+		"credit": "Wikimedia Commons",
+		"license": "Public domain",
+		"source": "https://commons.wikimedia.org/wiki/File:Mestre_Pastinha_bw.jpg",
+		"page": "https://pt.wikipedia.org/wiki/Mestre_Pastinha"
+	},
+	"mestre-peixinho": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-peixinho.svg",
+		"portrait": "/img/artists/mestre-peixinho.svg"
+	},
+	"mestre-pequines-capoeira-nago": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-pequines-capoeira-nago.svg",
+		"portrait": "/img/artists/mestre-pequines-capoeira-nago.svg"
+	},
+	"mestre-pernalonga-grupo-nova-geracao-de-angola": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-pernalonga-grupo-nova-geracao-de-angola.svg",
+		"portrait": "/img/artists/mestre-pernalonga-grupo-nova-geracao-de-angola.svg"
+	},
+	"mestre-pinoquio": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-pinoquio.svg",
+		"portrait": "/img/artists/mestre-pinoquio.svg"
+	},
+	"mestre-ramos": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-ramos.svg",
+		"portrait": "/img/artists/mestre-ramos.svg"
+	},
+	"mestre-roberval": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-roberval.svg",
+		"portrait": "/img/artists/mestre-roberval.svg"
+	},
+	"mestre-roberval-e-contra-mestre-perna-gravado": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-roberval-e-contra-mestre-perna-gravado.svg",
+		"portrait": "/img/artists/mestre-roberval-e-contra-mestre-perna-gravado.svg"
+	},
+	"mestre-suassuna-cordao-de-ouro": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-suassuna-cordao-de-ouro.svg",
+		"portrait": "/img/artists/mestre-suassuna-cordao-de-ouro.svg"
+	},
+	"mestre-suino": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-suino.svg",
+		"portrait": "/img/artists/mestre-suino.svg"
+	},
+	"mestre-tamandua-cb-rj": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-tamandua-cb-rj.svg",
+		"portrait": "/img/artists/mestre-tamandua-cb-rj.svg"
+	},
+	"mestre-toni-vargas": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-toni-vargas.svg",
+		"portrait": "/img/artists/mestre-toni-vargas.svg"
+	},
+	"mestre-umoi": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-umoi.svg",
+		"portrait": "/img/artists/mestre-umoi.svg"
+	},
+	"mestre-virgilio": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-virgilio.svg",
+		"portrait": "/img/artists/mestre-virgilio.svg"
+	},
+	"mestre-waldemar": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-waldemar.svg",
+		"portrait": "/img/artists/mestre-waldemar.svg"
+	},
+	"mestre-xuxo": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-xuxo.svg",
+		"portrait": "/img/artists/mestre-xuxo.svg"
+	},
+	"mestre-ze-antonio": {
+		"kind": "mark",
+		"avatar": "/img/artists/mestre-ze-antonio.svg",
+		"portrait": "/img/artists/mestre-ze-antonio.svg"
+	},
+	"minha-velha": {
+		"kind": "mark",
+		"avatar": "/img/artists/minha-velha.svg",
+		"portrait": "/img/artists/minha-velha.svg"
+	},
+	"mintirinha": {
+		"kind": "mark",
+		"avatar": "/img/artists/mintirinha.svg",
+		"portrait": "/img/artists/mintirinha.svg"
+	},
+	"moraes": {
+		"kind": "mark",
+		"avatar": "/img/artists/moraes.svg",
+		"portrait": "/img/artists/moraes.svg"
+	},
+	"mundo-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/mundo-capoeira.svg",
+		"portrait": "/img/artists/mundo-capoeira.svg"
+	},
+	"nzinga": {
+		"kind": "mark",
+		"avatar": "/img/artists/nzinga.svg",
+		"portrait": "/img/artists/nzinga.svg"
+	},
+	"oficina-da-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/oficina-da-capoeira.svg",
+		"portrait": "/img/artists/oficina-da-capoeira.svg"
+	},
+	"paraiba": {
+		"kind": "mark",
+		"avatar": "/img/artists/paraiba.svg",
+		"portrait": "/img/artists/paraiba.svg"
+	},
+	"parana": {
+		"kind": "mark",
+		"avatar": "/img/artists/parana.svg",
+		"portrait": "/img/artists/parana.svg"
+	},
+	"paulo-dos-anjos": {
+		"kind": "mark",
+		"avatar": "/img/artists/paulo-dos-anjos.svg",
+		"portrait": "/img/artists/paulo-dos-anjos.svg"
+	},
+	"pelezinho-abada": {
+		"kind": "mark",
+		"avatar": "/img/artists/pelezinho-abada.svg",
+		"portrait": "/img/artists/pelezinho-abada.svg"
+	},
+	"perninha": {
+		"kind": "mark",
+		"avatar": "/img/artists/perninha.svg",
+		"portrait": "/img/artists/perninha.svg"
+	},
+	"pretinho-rj": {
+		"kind": "mark",
+		"avatar": "/img/artists/pretinho-rj.svg",
+		"portrait": "/img/artists/pretinho-rj.svg"
+	},
+	"prisco": {
+		"kind": "mark",
+		"avatar": "/img/artists/prisco.svg",
+		"portrait": "/img/artists/prisco.svg"
+	},
+	"professor-capu-gingado-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/professor-capu-gingado-capoeira.svg",
+		"portrait": "/img/artists/professor-capu-gingado-capoeira.svg"
+	},
+	"professor-coala-abada-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/professor-coala-abada-capoeira.svg",
+		"portrait": "/img/artists/professor-coala-abada-capoeira.svg"
+	},
+	"professor-marcelo-cacique": {
+		"kind": "mark",
+		"avatar": "/img/artists/professor-marcelo-cacique.svg",
+		"portrait": "/img/artists/professor-marcelo-cacique.svg"
+	},
+	"professor-massa": {
+		"kind": "mark",
+		"avatar": "/img/artists/professor-massa.svg",
+		"portrait": "/img/artists/professor-massa.svg"
+	},
+	"professor-pena": {
+		"kind": "mark",
+		"avatar": "/img/artists/professor-pena.svg",
+		"portrait": "/img/artists/professor-pena.svg"
+	},
+	"professor-sabia-abada-capoeira": {
+		"kind": "mark",
+		"avatar": "/img/artists/professor-sabia-abada-capoeira.svg",
+		"portrait": "/img/artists/professor-sabia-abada-capoeira.svg"
+	},
+	"professor-tijolo": {
+		"kind": "mark",
+		"avatar": "/img/artists/professor-tijolo.svg",
+		"portrait": "/img/artists/professor-tijolo.svg"
+	},
+	"repolho": {
+		"kind": "mark",
+		"avatar": "/img/artists/repolho.svg",
+		"portrait": "/img/artists/repolho.svg"
+	},
+	"rouxinol": {
+		"kind": "mark",
+		"avatar": "/img/artists/rouxinol.svg",
+		"portrait": "/img/artists/rouxinol.svg"
+	},
+	"soneca-capoeira-mandinga-shanghai": {
+		"kind": "mark",
+		"avatar": "/img/artists/soneca-capoeira-mandinga-shanghai.svg",
+		"portrait": "/img/artists/soneca-capoeira-mandinga-shanghai.svg"
+	},
+	"sorvete": {
+		"kind": "mark",
+		"avatar": "/img/artists/sorvete.svg",
+		"portrait": "/img/artists/sorvete.svg"
+	},
+	"tonho-materia": {
+		"kind": "photo",
+		"avatar": "/img/artists/tonho-materia.webp",
+		"portrait": "/img/artists/tonho-materia-384.webp",
+		"credit": "Ministério da Cultura",
+		"license": "CC BY 2.0",
+		"source": "https://commons.wikimedia.org/wiki/File:Tonho_Mat%C3%A9ria.jpg",
+		"page": "https://pt.wikipedia.org/wiki/Tonho_Mat%C3%A9ria"
+	},
+	"topazio": {
+		"kind": "mark",
+		"avatar": "/img/artists/topazio.svg",
+		"portrait": "/img/artists/topazio.svg"
+	},
+	"ze-baixinho": {
+		"kind": "mark",
+		"avatar": "/img/artists/ze-baixinho.svg",
+		"portrait": "/img/artists/ze-baixinho.svg"
+	}
+}

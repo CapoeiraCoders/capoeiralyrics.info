@@ -46,6 +46,6 @@
     "songs:build:index": "gulp songs:build:index",
     "songs:build:sitemap": "gulp songs:build:sitemap"
   },
-  "author": "Vlad Borg <reg.yeti@gmail.com>",
-  "license": "UNLICENSED"
+  "author": "Vlad Borg",
+  "license": "SEE LICENSE IN LICENSE"
 }

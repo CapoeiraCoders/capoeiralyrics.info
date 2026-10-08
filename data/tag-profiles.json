@@ -1,0 +1,128 @@
+{
+	"afoxe": {
+		"description": "Afoxé is carnival street music from Bahia with a candomblé ijexá beat. Some capoeira groups bring these songs into demonstrations and the roda."
+	},
+	"africa": {
+		"description": "Songs that remember Africa as origin, ancestry, and return — the root many lyrics name when they talk about where capoeira comes from."
+	},
+	"amazonas": {
+		"description": "Songs that name Amazonas, the river and the state, as a place in the repertoire."
+	},
+	"angola": {
+		"description": "Capoeira Angola is the older, closer game: played low and slow, with a strong ritual around the berimbau. The ladainha and chula belong to this circle."
+	},
+	"areia": {
+		"description": "Work-song images of gathering sand (areia) on the shore — a theme that turns up in corridos such as “Vamos apanhar areia.”"
+	},
+	"axe": {
+		"description": "Axé is life force and blessing, a word from candomblé that the roda uses when the energy is high."
+	},
+	"axe-capoeira-vol-1": {
+		"description": "First Axé Capoeira album with Mestre Barrão."
+	},
+	"axe-capoeira-vol-2": {
+		"description": "Second Axé Capoeira album with Mestre Barrão."
+	},
+	"axe-capoeira-vol-3": {
+		"description": "Third Axé Capoeira album with Mestre Barrão."
+	},
+	"axe-capoeira-vol-4": {
+		"description": "Fourth Axé Capoeira album with Mestre Barrão."
+	},
+	"barrao": {
+		"description": "Songs associated with Mestre Barrão and the Axé Capoeira repertoire."
+	},
+	"benguela": {
+		"description": "Benguela is a mid-tempo toque and game, between Angola and São Bento Grande: grounded, tricky, and less of a fight than the fast games."
+	},
+	"berimbau": {
+		"description": "Songs about the berimbau, the musical bow that leads the roda: its toques, its voice, and the respect due to it."
+	},
+	"capoeira": {
+		"description": "Songs that speak of capoeira itself — what it is, who plays, and why it matters — rather than a side story in the lyric."
+	},
+	"cavalaria": {
+		"description": "Cavalaria is a warning toque. It once told the roda that police or outsiders were coming, so the game could change or stop."
+	},
+	"chula": {
+		"description": "In Capoeira Angola, the chula is the praise song after the ladainha. Players stay at the foot of the berimbau; the game begins when it finishes."
+	},
+	"corrido": {
+		"description": "Corridos are call-and-response songs sung while the game is on. The soloist calls a line and the chorus answers, keeping the roda moving."
+	},
+	"culture": {
+		"description": "Songs about custom and everyday Bahia around the roda: food, feast days, and the life beside the game."
+	},
+	"folklore": {
+		"description": "Folk themes that sit next to the fight: animals, work, and feast-day stories sung in the round."
+	},
+	"ginga": {
+		"description": "Songs about the ginga, the swaying base step of capoeira, and the malícia inside that movement."
+	},
+	"history": {
+		"description": "Songs that tell capoeira’s past: quilombos, persecution, revolt, and mestres who kept the game alive."
+	},
+	"idalina": {
+		"description": "Traditional corridos that call Idalina — and sometimes Catarina — into the game."
+	},
+	"instruments": {
+		"description": "Songs that name the orchestra of the roda: berimbau, pandeiro, atabaque, agogô, and reco-reco."
+	},
+	"iuna": {
+		"description": "Iúna is a solemn toque reserved for high-graduation games and demonstrations, usually without the usual call-and-response singing."
+	},
+	"ladainha": {
+		"description": "The ladainha is the opening litany of a Capoeira Angola roda. One voice sings a story or prayer while the circle listens; the game does not start until it ends."
+	},
+	"legends": {
+		"description": "Story songs of the game: Besouro, Saci, and other folk figures whose names still get called in the roda."
+	},
+	"louvacao": {
+		"description": "Songs of praise (louvação), often for mestres, orixás, or capoeira itself, sung before the game opens."
+	},
+	"maculele": {
+		"description": "Maculelê is a stick dance from Bahia, often taught alongside capoeira. These songs belong to that game, not to the roda proper."
+	},
+	"mandinga": {
+		"description": "Songs about mandinga: the cunning, almost magical side of capoeira — feints, charm, and not showing everything you know."
+	},
+	"mestres": {
+		"description": "Songs that name teachers and lineage: who taught whom, and who is owed respect in the roda."
+	},
+	"mestres-boca-rica-e-bigodinho-capoeira-angola": {
+		"description": "Capoeira Angola recording by Mestres Boca Rica and Bigodinho."
+	},
+	"orixa": {
+		"description": "Songs that greet or tell of the orixás of candomblé, whose stories sit under much of the ritual around the roda."
+	},
+	"places": {
+		"description": "Songs that name Bahia, Salvador, the sea, or other places the repertoire keeps coming back to."
+	},
+	"quadra": {
+		"description": "Quadras are short four-line verses. They often sit between the ladainha and the corridos, or stand as compact songs of their own."
+	},
+	"regional": {
+		"description": "Capoeira Regional is the style created by Mestre Bimba: a faster, more upright game with its own sequence of lessons and songs."
+	},
+	"religion": {
+		"description": "Songs with prayer, saints, orixás, or the church — the spiritual layer of the repertoire."
+	},
+	"revelacao-de-liminha": {
+		"description": "Revelação de Liminha, a named recording in the collection."
+	},
+	"roda": {
+		"description": "Songs about the circle itself: who enters, who watches, and how the game is offered at the foot of the berimbau."
+	},
+	"samba-de-roda": {
+		"description": "Samba de roda from Recôncavo Baiano, a close cousin of capoeira: clapping, atabaque, and a singer in the round."
+	},
+	"sao-bento-grande": {
+		"description": "São Bento Grande is a fast toque for an open, upright game — the classic Regional rhythm for kicks and escapes."
+	},
+	"sao-bento-pequeno": {
+		"description": "São Bento Pequeno is a quicker Angola toque, still close to the ground but livelier than the slow Angola game."
+	},
+	"video": {
+		"description": "Songs on this site that include a video recording."
+	}
+}

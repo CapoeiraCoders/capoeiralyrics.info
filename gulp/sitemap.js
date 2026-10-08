@@ -9,7 +9,8 @@ gulp.task('sitemap:build', () => {
 	return gulp.src([
 			'public/songs/*.html',
 			'public/tags/*.html',
-			'public/artists/*.html'
+			'public/artists/*.html',
+			'public/rights/index.html'
 		],
 		{
 			read: false, // no need to read content of files

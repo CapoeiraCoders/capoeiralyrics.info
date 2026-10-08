@@ -19,6 +19,10 @@ const foreach = require('gulp-foreach');
 const sitemap = require('gulp-sitemap');
 const slugify = require('speakingurl');
 const compareSongTitles = require('./compare-song-titles');
+const { skipHidden } = require('./song-visibility');
+const { songIssueLinks } = require('./rights-contact');
+const artistAvatar = require('./artist-avatar');
+const { withLanguageMarks } = require('./song-languages');
 
 
 const SONG_TEMPLATE_PATH = './templates/songs/song.mu';
@@ -76,6 +80,7 @@ const middlewares = {
 			data.slug = slugify(`${data.Name}`);
 			data.artistName = data.Artist || 'Unknown artist';
 			data.artistSlug = slugify(data.artistName);
+			Object.assign(data, artistAvatar.forSlug(data.artistSlug), songIssueLinks(data), withLanguageMarks(data));
 			return data;
 		});
 	},
@@ -104,15 +109,17 @@ const middlewares = {
 	 */
 	languages: () => {
 		return jsonModifier(data => {
-			var languages = [];
-			if (data.Text) languages.push({ id: 'pt', lang: 'pt', label: 'Português', html: data.Text });
-			if (data.EngText) languages.push({ id: 'en', lang: 'en', label: 'English', html: data.EngText });
-			if (data.RusText) languages.push({ id: 'ru', lang: 'ru', label: 'Русский', html: data.RusText });
+			var marks = withLanguageMarks(data);
+			var htmlFor = { pt: data.Text, en: data.EngText, ru: data.RusText };
+			var languages = marks.languageMarks.map((mark, index) => ({
+				id: mark.code,
+				lang: mark.code,
+				label: mark.label,
+				html: htmlFor[mark.code],
+				active: index === 0
+			}));
 
-			languages.forEach((language, index) => {
-				language.active = index === 0;
-			});
-
+			Object.assign(data, marks);
 			data.languages = languages;
 			data.showLanguageTabs = languages.length > 1;
 			data.noLyrics = languages.length === 0;
@@ -180,6 +187,7 @@ const concatSongJson = (fileName) => {
 const chains = {
 	buildPages: () => {
 		return src('data/songs/*.json') // read all source files
+			.pipe(skipHidden())
 			.pipe(middlewares.markdown()) // process markdown
 			.pipe(middlewares.meta()) // process markdown
 			.pipe(middlewares.youtube()) // generate youtube embed
@@ -202,6 +210,7 @@ const chains = {
 		});
 
 		return gulp.src(options.src)
+			.pipe(skipHidden())
 			.pipe(middlewares.slug())
 			.pipe(middlewares.tags())
 			.pipe(concatSongJson('concated-songs.tmp.json'))

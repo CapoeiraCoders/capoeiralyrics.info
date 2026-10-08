@@ -19,31 +19,27 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/unknown-artist.html">Unknown artist</a></li>
-					<li aria-current="page">Quando Eu Venho De Iluanda</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>Quando Eu Venho De Iluanda</h1>
+		<h1>Quando Eu Venho De Iluanda <span class="langs"><abbr class="lang" title="Português">pt</abbr><abbr class="lang" title="English">en</abbr></span></h1>
 		<p class="byline">
-			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">Unknown artist</a>
+			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="&#x2F;img&#x2F;artists&#x2F;placeholder.svg" alt="" width="18" height="18" decoding="async">Unknown artist</a>
 		</p>
 
 
-
-		<div class="lyrics" lang="pt"><p>Quando eu venho de Iluanda
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			<button type="button" role="tab" id="tab-pt" aria-controls="panel-pt" aria-selected="true" tabindex="0">Português</button>
+			<button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" tabindex="-1">English</button>
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-pt" aria-labelledby="tab-pt" lang="pt" tabindex="0" >
+			<p>Quando eu venho de Iluanda
 Na sua terra o negro era
 gente.
 Mas foi arrancado de la
@@ -116,8 +112,91 @@ Quando eu venho de Iluanda
 eu, não venho só,
 Quando eu venho de Iluanda
 eu, não venho só,</p>
-</div>
+
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-en" aria-labelledby="tab-en" lang="en" tabindex="0" hidden>
+			<p>When I come from Luanda
+In your land the black man was
+a person.
+But was torn away from there
+In your land the black man was
+strong
+But was torn away from there
+In your land the black man was
+handsome, was pure
+But was torn away from there
+In your land the black man was
+a warrior
+But was torn away from there
+In your land the black man was King.
+But was torn away from there
+Here the black man is nothing, now
+the black man is little, humiliated,
+Beaten, his courage in
+shreds.
+But sleeping in the black man&#39;s breast,
+is a latent hatred, and a shout of
+Freedom.
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,
+I bring my tired body,
+My bitter heart,
+longing, makes of
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,
+I was taken by betrayal,
+brought in cowardice,
+And if it were an honest fight,
+from there no one would take me,
+On my skin I wear the night,
+in my mouth the moonlight shines,
+I bring strength and magic
+a gift from the orixás
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,
+I bring burning on my
+back, the weight of this cruelty,
+I bring echoing in my breast, the
+shout of freedom,
+And a shout of a noble race,
+a shout of a warrior race,
+And a shout of the black race, a
+shout of capoeira.
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,
+When I come from Luanda
+I do not come alone,</p>
+
+		</div>
+
 
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Credit+me+as+the+author&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fquando-eu-venho-de-iluanda.html">Claim authorship</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Remove+the+song&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fquando-eu-venho-de-iluanda.html">Request removal</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Correct+the+text+or+attribution&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fquando-eu-venho-de-iluanda.html">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
+	<script src="/js/language-tabs.js"></script>
 </body>
 </html>

@@ -19,31 +19,27 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/unknown-artist.html">Unknown artist</a></li>
-					<li aria-current="page">Para a roda, capoeira</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>Para a roda, capoeira</h1>
+		<h1>Para a roda, capoeira <span class="langs"><abbr class="lang" title="Português">pt</abbr><abbr class="lang" title="English">en</abbr></span></h1>
 		<p class="byline">
-			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">Unknown artist</a>
+			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="&#x2F;img&#x2F;artists&#x2F;placeholder.svg" alt="" width="18" height="18" decoding="async">Unknown artist</a>
 		</p>
 
 
-
-		<div class="lyrics" lang="pt"><p>(version one)
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			<button type="button" role="tab" id="tab-pt" aria-controls="panel-pt" aria-selected="true" tabindex="0">Português</button>
+			<button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" tabindex="-1">English</button>
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-pt" aria-labelledby="tab-pt" lang="pt" tabindex="0" >
+			<p>(version one)
 Para a roda, capoeira
 Para, vai ter que parar.
 Eu não paro, eu já disse que não
@@ -83,8 +79,58 @@ para roda capoeira, para vai ter que parar
 eu não para repito de novo 
 esse jogo de povo e vai continuar
 para roda capoeira, para vai ter que parar</p>
-</div>
+
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-en" aria-labelledby="tab-en" lang="en" tabindex="0" hidden>
+			<p>(version one)
+Stop the roda, capoeira
+Stop, you will have to stop.
+I do not stop, I already said no
+I only stop this roda if the mestre commands (look and)
+Stop the roda, capoeira
+Stop, you will have to stop.
+I do not stop, I already said no
+I only stop this roda if the mestre commands
+Stop the roda, capoeira
+Stop, you will have to stop.
+I play capoeira here in any place
+My mestre was Bimba, creator of the regional (I said)
+Stop the roda, capoeira
+Stop, you will have to stop.
+Do not grab me, play a proper game
+This is not jiu-jitsu, this here is regional
+Stop the roda, capoeira
+Stop, you will have to stop.
+Mestre Bimba did not die, that is very natural,
+He is in any roda, if the game is regional
+Stop the roda, capoeira
+Stop, you will have to stop.
+(version two)
+Stop the roda capoeira, stop you will have to stop
+I do not stop the roda capoeira
+Because the cavalry has just arrived
+Stop the roda capoeira, stop you will have to stop
+I do not stop the roda capoeira
+The men are armed, he will kill you
+Stop the roda capoeira, stop you will have to stop
+I do not stop for any reason
+I am a son of Ogum and of father Oxalá
+Stop the roda capoeira, stop you will have to stop
+I do not stop, I am a quick guy
+I was born a mandingueiro, I do a mortal jump
+Stop the roda capoeira, stop you will have to stop
+I do not stop, I repeat again
+This game of the people will continue
+Stop the roda capoeira, stop you will have to stop</p>
+
+		</div>
+
 
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Credit+me+as+the+author&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fpara-a-roda-capoeira.html">Claim authorship</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Remove+the+song&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fpara-a-roda-capoeira.html">Request removal</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Correct+the+text+or+attribution&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fpara-a-roda-capoeira.html">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
+	<script src="/js/language-tabs.js"></script>
 </body>
 </html>

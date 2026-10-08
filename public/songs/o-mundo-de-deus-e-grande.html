@@ -19,26 +19,18 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/unknown-artist.html">Unknown artist</a></li>
-					<li aria-current="page">O Mundo De Deus E Grande</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>O Mundo De Deus E Grande</h1>
+		<h1>O Mundo De Deus E Grande <span class="langs"><abbr class="lang" title="Português">pt</abbr><abbr class="lang" title="English">en</abbr></span></h1>
 		<p class="byline">
-			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">Unknown artist</a>
+			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="&#x2F;img&#x2F;artists&#x2F;placeholder.svg" alt="" width="18" height="18" decoding="async">Unknown artist</a>
 		</p>
 		<ul class="tags song-tags" aria-label="Tags">
 			<li><a href="/tags/angola.html">#angola</a></li>
@@ -46,8 +38,12 @@
 		</ul>
 
 
-
-		<div class="lyrics" lang="pt"><p>O mundo de Deus e grande
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			<button type="button" role="tab" id="tab-pt" aria-controls="panel-pt" aria-selected="true" tabindex="0">Português</button>
+			<button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" tabindex="-1">English</button>
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-pt" aria-labelledby="tab-pt" lang="pt" tabindex="0" >
+			<p>O mundo de Deus e grande
 Deus ta numa mão fécháda
 O pouco com Deus e muito
 O muito sem Deus e nada
@@ -75,8 +71,46 @@ Ie, pélo mundo afora,
 camara... 
 Ie, a capoeira
 Ie, a capoeira, camara...</p>
-</div>
+
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-en" aria-labelledby="tab-en" lang="en" tabindex="0" hidden>
+			<p>God&#39;s world is big
+God is in a closed hand
+A little with God is a lot
+A lot without God is nothing
+Dark night is no good
+For hunting at dawn
+Hunter fires many shots
+Oiaia, in the morning finds nothing
+nothing
+Deer runs and jumping
+Agouti runs on the trail
+If I were governor
+Ah, My God, I would steer
+Bahia
+This that you are doing
+To me you would not do
+camará
+Ie, it is time it is time
+Ie, it is time it is time,
+camará...
+Ie, let us go
+Ie, let us go,
+camará...
+Through the wide world
+Ie, through the wide world,
+camará...
+Ie, capoeira
+Ie, capoeira, camará...</p>
+
+		</div>
+
 
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Credit+me+as+the+author&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fo-mundo-de-deus-e-grande.html">Claim authorship</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Remove+the+song&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fo-mundo-de-deus-e-grande.html">Request removal</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Correct+the+text+or+attribution&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fo-mundo-de-deus-e-grande.html">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
+	<script src="/js/language-tabs.js"></script>
 </body>
 </html>

@@ -19,34 +19,30 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/unknown-artist.html">Unknown artist</a></li>
-					<li aria-current="page">Maior que Deus ninguém</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>Maior que Deus ninguém</h1>
+		<h1>Maior que Deus ninguém <span class="langs"><abbr class="lang" title="Português">pt</abbr><abbr class="lang" title="English">en</abbr></span></h1>
 		<p class="byline">
-			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">Unknown artist</a>
+			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="&#x2F;img&#x2F;artists&#x2F;placeholder.svg" alt="" width="18" height="18" decoding="async">Unknown artist</a>
 		</p>
 		<ul class="tags song-tags" aria-label="Tags">
 			<li><a href="/tags/benguela.html">#benguela</a></li>
 		</ul>
 
 
-
-		<div class="lyrics" lang="pt"><p>Maior que Deus ninguém(2x)
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			<button type="button" role="tab" id="tab-pt" aria-controls="panel-pt" aria-selected="true" tabindex="0">Português</button>
+			<button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" tabindex="-1">English</button>
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-pt" aria-labelledby="tab-pt" lang="pt" tabindex="0" >
+			<p>Maior que Deus ninguém(2x)
 <strong>Maior que Deus ninguém</strong>(2x)</p>
 <p>Ê! Pra viver se paga um preço
 Avida assim nos convém, sabemos
@@ -78,9 +74,51 @@ moinho
 Quando Deus está conosco a gente nunca está sozinho</p>
 <p>Maior que Deus ninguém(2x)
 <strong>Maior que Deus ninguém</strong>(2x)</p>
-</div>
+
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-en" aria-labelledby="tab-en" lang="en" tabindex="0" hidden>
+			<p>No one is greater than God(2x)
+<strong>No one is greater than God</strong>(2x)</p>
+<p>Ê! To live you pay a price
+Life suits us this way, we know
+that God is great and no one is greater than God</p>
+<p>No one is greater than God(2x)
+<strong>No one is greater than God</strong>(2x)</p>
+<p>Ohh, some speak ill of me even without knowing who I am
+But if I am here today, it is because God blessed me</p>
+<p>No one is greater than God(2x)
+<strong>No one is greater than God</strong>(2x)</p>
+<p>Oii, those who speak ill of me is because they haven&#39;t forgotten me
+But speaking of me is easy, the hard part is being me</p>
+<p>No one is greater than God(2x)
+<strong>No one is greater than God</strong>(2x)</p>
+<p>I know that life here on Earth is not long, it is fleeting
+My life I dedicate to the art of Capoeira</p>
+<p>No one is greater than God(2x)
+<strong>No one is greater than God</strong>(2x)</p>
+<p>Oii, when I play the berimbau I see the moon brighten
+I look up and ask God to bless us</p>
+<p>No one is greater than God(2x)
+<strong>No one is greater than God</strong>(2x)</p>
+<p>I am a capoeirista and a singer, it is the vocation God gave me
+And you who are a capoeirista come here to play with me</p>
+<p>No one is greater than God(2x)
+<strong>No one is greater than God</strong>(2x)</p>
+<p>ÊE, so says the old saying, past waters do not move
+the mill
+When God is with us we are never alone</p>
+<p>No one is greater than God(2x)
+<strong>No one is greater than God</strong>(2x)</p>
+
+		</div>
+
 
 		<div class="video"><iframe title="Maior que Deus ninguém" src="https://www.youtube.com/embed/ajUG_KxHY3U" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div>
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Credit+me+as+the+author&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fmaior-que-deus-ninguem.html">Claim authorship</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Remove+the+song&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fmaior-que-deus-ninguem.html">Request removal</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Correct+the+text+or+attribution&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fmaior-que-deus-ninguem.html">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
+	<script src="/js/language-tabs.js"></script>
 </body>
 </html>

@@ -19,31 +19,27 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/unknown-artist.html">Unknown artist</a></li>
-					<li aria-current="page">Issó E Coisa Da Gente</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>Issó E Coisa Da Gente</h1>
+		<h1>Issó E Coisa Da Gente <span class="langs"><abbr class="lang" title="Português">pt</abbr><abbr class="lang" title="English">en</abbr></span></h1>
 		<p class="byline">
-			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">Unknown artist</a>
+			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="&#x2F;img&#x2F;artists&#x2F;placeholder.svg" alt="" width="18" height="18" decoding="async">Unknown artist</a>
 		</p>
 
 
-
-		<div class="lyrics" lang="pt"><p>Se você faz um jogo ligeiro
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			<button type="button" role="tab" id="tab-pt" aria-controls="panel-pt" aria-selected="true" tabindex="0">Português</button>
+			<button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" tabindex="-1">English</button>
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-pt" aria-labelledby="tab-pt" lang="pt" tabindex="0" >
+			<p>Se você faz um jogo ligeiro
 Da um pulo pra la e pra ca
 Não se julgue tão bom capoeira
 Que a capoeira não e tão vulgar
@@ -69,8 +65,44 @@ Mexe o corpo ligeiro,
 A mandinga não pode acabar
 Issó e coisa da gente,
 Ginga pra la e pra ca</p>
-</div>
+
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-en" aria-labelledby="tab-en" lang="en" tabindex="0" hidden>
+			<p>If you play a fast game
+Take a jump over here and there
+Do not consider yourself such a good capoeirista
+For capoeira is not so common
+To be a good capoeirista
+To have many people value you
+You must have a lot of humility
+Play instruments, be a good professor
+The capoeirista makes a beautiful chula
+Sings a lament with a lot of emotion
+When he sees his mestre playing
+He feels joy in his heart
+He plays angola softly
+If things heat up he does not run from the fight
+He has friends on all sides
+A big smile also does no harm
+This is our way,
+Ginga this way and that
+Move the body quickly,
+The mandinga must not end
+This is our way,
+Ginga this way and that
+Move the body quickly,
+The mandinga must not end
+This is our way,
+Ginga this way and that</p>
+
+		</div>
+
 
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Credit+me+as+the+author&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fisso-e-coisa-da-gente.html">Claim authorship</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Remove+the+song&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fisso-e-coisa-da-gente.html">Request removal</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Correct+the+text+or+attribution&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fisso-e-coisa-da-gente.html">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
+	<script src="/js/language-tabs.js"></script>
 </body>
 </html>

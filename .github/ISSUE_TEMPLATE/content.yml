@@ -1,0 +1,21 @@
+name: Contribute
+description: Add lyrics, a translation, or a correction
+title: "[Content] "
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What are you sending?
+      options:
+        - Add a song or lyrics
+        - Add or improve a translation
+        - Fix a mistake
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+    validations:
+      required: true

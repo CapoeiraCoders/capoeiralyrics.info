@@ -19,31 +19,27 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/unknown-artist.html">Unknown artist</a></li>
-					<li aria-current="page">Olhá Meu Deus Que E Dono Da Terra</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>Olhá Meu Deus Que E Dono Da Terra</h1>
+		<h1>Olhá Meu Deus Que E Dono Da Terra <span class="langs"><abbr class="lang" title="Português">pt</abbr><abbr class="lang" title="English">en</abbr></span></h1>
 		<p class="byline">
-			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">Unknown artist</a>
+			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="&#x2F;img&#x2F;artists&#x2F;placeholder.svg" alt="" width="18" height="18" decoding="async">Unknown artist</a>
 		</p>
 
 
-
-		<div class="lyrics" lang="pt"><p>Quando eu estava la na rua
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			<button type="button" role="tab" id="tab-pt" aria-controls="panel-pt" aria-selected="true" tabindex="0">Português</button>
+			<button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" tabindex="-1">English</button>
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-pt" aria-labelledby="tab-pt" lang="pt" tabindex="0" >
+			<p>Quando eu estava la na rua
 Eu não tinhá compromissó
 A melhor coisa do mundo
 Era catar papél no lixo
@@ -77,8 +73,52 @@ Coro:    Olhá meu Deus
         Que e dono da Lua
         Olhá ai as crianças
         Que estão la na rua...</p>
-</div>
+
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-en" aria-labelledby="tab-en" lang="en" tabindex="0" hidden>
+			<p>When I was there on the street
+I had no commitments
+The best thing in the world
+Was picking up paper in the trash
+With my feet dirty with coal
+And snot in my nose
+I would run there to the square
+To bathe in the fountain
+I only had one commitment
+Which was to beg for alms
+Every bit of money I earned
+I spent sniffing glue
+I would get annoyed
+If they sent me to school
+I would put on my uniform
+And grab my bag
+There to the mouth of the trash
+Or to the field to play ball
+Look my God
+Who is the owner of the Earth
+Look there at these people
+That we are at war
+Look my God
+Who is the owner of the Moon
+Look there at the children
+Who are there on the street
+Chorus: Look my God
+Who is the owner of the Earth
+Look there at these people
+That we are at war
+Look my God
+Who is the owner of the Moon
+Look there at the children
+Who are there on the street...</p>
+
+		</div>
+
 
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Credit+me+as+the+author&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Folha-meu-deus-que-e-dono-da-terra.html">Claim authorship</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Remove+the+song&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Folha-meu-deus-que-e-dono-da-terra.html">Request removal</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Correct+the+text+or+attribution&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Folha-meu-deus-que-e-dono-da-terra.html">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
+	<script src="/js/language-tabs.js"></script>
 </body>
 </html>

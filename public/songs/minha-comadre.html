@@ -19,34 +19,30 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/unknown-artist.html">Unknown artist</a></li>
-					<li aria-current="page">Minhá Comadre</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>Minhá Comadre</h1>
+		<h1>Minhá Comadre <span class="langs"><abbr class="lang" title="Português">pt</abbr><abbr class="lang" title="English">en</abbr></span></h1>
 		<p class="byline">
-			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">Unknown artist</a>
+			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="&#x2F;img&#x2F;artists&#x2F;placeholder.svg" alt="" width="18" height="18" decoding="async">Unknown artist</a>
 		</p>
 		<ul class="tags song-tags" aria-label="Tags">
 			<li><a href="/tags/corrido.html">#corrido</a></li>
 		</ul>
 
 
-
-		<div class="lyrics" lang="pt"><p>Até você
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			<button type="button" role="tab" id="tab-pt" aria-controls="panel-pt" aria-selected="true" tabindex="0">Português</button>
+			<button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" tabindex="-1">English</button>
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-pt" aria-labelledby="tab-pt" lang="pt" tabindex="0" >
+			<p>Até você
 Coro:    Minhá comadre
     Falou de mim
 Coro:    Minhá comadre
@@ -88,8 +84,60 @@ Coro:    Minhá comadre
 Coro:    Minhá comadre
     Até você...
 Coro:    Minhá comadre...</p>
-</div>
+
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-en" aria-labelledby="tab-en" lang="en" tabindex="0" hidden>
+			<p>Even you
+Chorus:    My dear friend
+Spoke about me
+Chorus:    My dear friend
+I did not speak
+Chorus:    My dear friend
+Said that I saw
+Chorus:    My dear friend
+You
+Chorus:    My dear friend
+Spoke about me
+Chorus:    My dear friend
+Spoke, spoke
+Chorus:    My dear friend
+Said that I saw
+Chorus:    My dear friend
+You spoke
+Chorus:    My dear friend
+Spoke about me
+Chorus:    My dear friend...</p>
+<p>[Variant:]
+I will not go to your house
+Chorus:    My dear friend
+So you do not go to mine
+Chorus:    Look my dear friend
+You have a big tongue
+Chorus:    My dear friend
+To talk about my neighbor
+Chorus:    My dear friend
+Even you...
+Chorus:    My dear friend...
+(...)
+I will not go to your house
+Chorus:    My dear friend
+So you do not go to mine
+Chorus:    Look my dear friend
+You have a big mouth
+Chorus:    My dear friend
+To eat my chicken
+Chorus:    My dear friend
+Even you...
+Chorus:    My dear friend...</p>
+
+		</div>
+
 
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Credit+me+as+the+author&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fminha-comadre.html">Claim authorship</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Remove+the+song&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fminha-comadre.html">Request removal</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Correct+the+text+or+attribution&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fminha-comadre.html">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
+	<script src="/js/language-tabs.js"></script>
 </body>
 </html>

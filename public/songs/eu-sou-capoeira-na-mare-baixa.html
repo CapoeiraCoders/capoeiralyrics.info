@@ -19,26 +19,18 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/unknown-artist.html">Unknown artist</a></li>
-					<li aria-current="page">Eu sou capoeira (Na maré baixa)</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>Eu sou capoeira (Na maré baixa)</h1>
+		<h1>Eu sou capoeira (Na maré baixa) <span class="langs"><abbr class="lang" title="Português">pt</abbr><abbr class="lang" title="English">en</abbr></span></h1>
 		<p class="byline">
-			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">Unknown artist</a>
+			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="&#x2F;img&#x2F;artists&#x2F;placeholder.svg" alt="" width="18" height="18" decoding="async">Unknown artist</a>
 		</p>
 		<ul class="tags song-tags" aria-label="Tags">
 			<li><a href="/tags/benguela.html">#benguela</a></li>
@@ -47,8 +39,12 @@
 		</ul>
 
 
-
-		<div class="lyrics" lang="pt"><p>Na maré baixa
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			<button type="button" role="tab" id="tab-pt" aria-controls="panel-pt" aria-selected="true" tabindex="0">Português</button>
+			<button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" tabindex="-1">English</button>
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-pt" aria-labelledby="tab-pt" lang="pt" tabindex="0" >
+			<p>Na maré baixa
 Na maré cheia
 No balanço do mar
 Eu sou capoeira</p>
@@ -100,9 +96,71 @@ Mas eu ta pra capoeira...</p>
 Na maré cheia
 No balanço do mar
 Eu sou capoeira</strong></p>
-</div>
+
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-en" aria-labelledby="tab-en" lang="en" tabindex="0" hidden>
+			<p>At low tide
+At high tide
+In the rocking of the sea
+I am capoeira</p>
+<p><strong>At low tide
+At high tide
+In the rocking of the sea
+I am capoeira</strong></p>
+<p>Life has highs and lows
+Like the movement of the tide
+Capoeira is my boat
+In this tide of struggle</p>
+<p>At low tide...</p>
+<p><strong>At low tide
+At high tide
+In the rocking of the sea
+I am capoeira</strong></p>
+<p>Upon leaving I got lost
+When the ship left the port
+Berimbau stayed with me
+In this tide of sorrow</p>
+<p>At low tide...</p>
+<p><strong>At low tide
+At high tide
+In the rocking of the sea
+I am capoeira</strong></p>
+<p>With longing and solitude
+But I live in the sea of calm
+Longing in my heart
+Solitude day by day</p>
+<p>At low tide...</p>
+<p><strong>At low tide
+At high tide
+In the rocking of the sea
+I am capoeira</strong></p>
+<p>But I keep carrying on my life
+Without giving up or weakening
+Let destiny tell me
+What I will be in life</p>
+<p><strong>At low tide
+At high tide
+In the rocking of the sea
+I am capoeira</strong></p>
+<p>As the saying used to go
+But I will say it this way
+The sea is not for fish
+But I am for capoeira...</p>
+<p>At low tide...</p>
+<p><strong>At low tide
+At high tide
+In the rocking of the sea
+I am capoeira</strong></p>
+
+		</div>
+
 
 		<div class="video"><iframe title="Eu sou capoeira (Na maré baixa)" src="https://www.youtube.com/embed/6UQJOlkutGQ" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div>
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Credit+me+as+the+author&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Feu-sou-capoeira-na-mare-baixa.html">Claim authorship</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Remove+the+song&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Feu-sou-capoeira-na-mare-baixa.html">Request removal</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Correct+the+text+or+attribution&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Feu-sou-capoeira-na-mare-baixa.html">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
+	<script src="/js/language-tabs.js"></script>
 </body>
 </html>

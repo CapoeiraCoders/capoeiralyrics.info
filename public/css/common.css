@@ -46,7 +46,8 @@ body {
 .toolbar {
 	display: flex;
 	align-items: center;
-	gap: 0.75rem 1rem;
+	flex-wrap: wrap;
+	gap: 0.45rem 1rem;
 	max-width: var(--page);
 	margin: 0 auto;
 	padding: 0.55rem 1.25rem;
@@ -54,9 +55,30 @@ body {
 
 .brand {
 	flex: 0 0 auto;
-	color: var(--ink);
-	font-weight: 600;
+	display: flex;
+	align-items: center;
+	line-height: 0;
 	text-decoration: none;
+}
+
+.brand img {
+	display: block;
+	width: 2.75rem;
+	height: 2.75rem;
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	object-fit: cover;
+	background: #fff;
+}
+
+.toolbar .sections {
+	flex: 0 1 auto;
+	min-width: 0;
+}
+
+.toolbar .find {
+	flex: 1 1 12rem;
+	margin-left: auto;
 }
 
 main {
@@ -71,7 +93,7 @@ main {
 	padding: 0.35rem 1.25rem 0.55rem;
 }
 
-.pin:not(:has(.sections, .crumbs, .letters)) {
+.pin:not(:has(.crumbs, .letters)) {
 	display: none;
 }
 
@@ -94,14 +116,6 @@ main {
 .sections a[aria-current="page"] {
 	color: var(--ink);
 	box-shadow: inset 0 -2px 0 var(--link);
-}
-
-.pin .sections + .crumbs {
-	margin-top: 0.15rem;
-}
-
-.crumbs {
-	margin: 0 0 0.75rem;
 }
 
 .pin .crumbs {
@@ -209,3 +223,35 @@ a:hover {
 .find-status:empty {
 	display: none;
 }
+
+.site-foot {
+	max-width: var(--page);
+	margin: 2rem auto 0;
+	padding: 1rem 1.25rem 0;
+	border-top: 1px solid var(--line);
+	color: var(--muted);
+	font-size: 0.8125rem;
+}
+
+.site-foot p {
+	margin: 0 0 0.5rem;
+}
+
+.site-foot p:last-child {
+	margin-bottom: 0;
+}
+
+.rights-hint {
+	color: var(--muted);
+}
+
+.rights-actions {
+	margin: 1rem 0;
+	padding: 0;
+	list-style: none;
+}
+
+.rights-actions li {
+	margin: 0 0 0.4rem;
+}
+

@@ -1,4 +1,4 @@
-`data` folder should contains source data files. It ignored from storing into repo. You need to put data files here from somwhere.
+`data` holds the source files. Song JSON stays on this machine. `data/artists.json` and `data/tag-profiles.json` are the exceptions kept in the repo: short public descriptions (and profile links for artists) shown on artist and tag pages.
 
 Project is a static website generated from sources that lives in JSON files from `data` folder. `data/songs` folder contains JSON sources, each of them in format:
 ```

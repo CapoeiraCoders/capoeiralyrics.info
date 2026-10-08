@@ -19,31 +19,27 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/unknown-artist.html">Unknown artist</a></li>
-					<li aria-current="page">Bahia De Outrora</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>Bahia De Outrora</h1>
+		<h1>Bahia De Outrora <span class="langs"><abbr class="lang" title="Português">pt</abbr><abbr class="lang" title="English">en</abbr></span></h1>
 		<p class="byline">
-			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">Unknown artist</a>
+			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="&#x2F;img&#x2F;artists&#x2F;placeholder.svg" alt="" width="18" height="18" decoding="async">Unknown artist</a>
 		</p>
 
 
-
-		<div class="lyrics" lang="pt"><p>Na bahia de outrora de mestre pastinhá mestre valdemar 
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			<button type="button" role="tab" id="tab-pt" aria-controls="panel-pt" aria-selected="true" tabindex="0">Português</button>
+			<button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" tabindex="-1">English</button>
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-pt" aria-labelledby="tab-pt" lang="pt" tabindex="0" >
+			<p>Na bahia de outrora de mestre pastinhá mestre valdemar 
 ladainhás de angola onde o canto me faz recordar 
 do tempo que era tão bom onde eu queria viver 
 conhecer toda a mandinga toda a malícia e também o saber 
@@ -67,8 +63,42 @@ valdemar do péro vaz
 ai ai aaaai ai ai 
 era um tempo bom demais 
 ai ai aaaai ai ai</p>
-</div>
+
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-en" aria-labelledby="tab-en" lang="en" tabindex="0" hidden>
+			<p>In the bahia of yesteryear of mestre pastinha mestre valdemar
+ladainhas of angola where the song makes me remember
+of the time that was so good where I wanted to live
+to know all the mandinga all the malícia and also the knowledge
+ai ai aaaai ai ai such a deep longing that I have
+ai ai aaaai ai ai
+of the time that doesn&#39;t come back
+ai ai aaaai ai ai
+when bimba was a young man
+ai ai aaaai ai ai
+it was such a good time
+ai ai aaaai ai ai
+capoeira was played the capoeirista who had value
+it was a time that didn&#39;t have a group that didn&#39;t have a mestre of graduation
+the eyes taught how to play each one had their own expression
+the student was a disciple learning all the lesson with the mestre
+ai ai aaaai ai ai such a deep longing that I have
+ai ai aaaai ai ai
+seu pastinha there at the pier
+ai ai aaaai ai ai
+valdemar of pero vaz
+ai ai aaaai ai ai
+it was such a good time
+ai ai aaaai ai ai</p>
+
+		</div>
+
 
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Credit+me+as+the+author&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fbahia-de-outrora.html">Claim authorship</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Remove+the+song&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fbahia-de-outrora.html">Request removal</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Correct+the+text+or+attribution&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fbahia-de-outrora.html">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
+	<script src="/js/language-tabs.js"></script>
 </body>
 </html>

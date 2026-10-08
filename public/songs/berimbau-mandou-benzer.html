@@ -19,31 +19,27 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/unknown-artist.html">Unknown artist</a></li>
-					<li aria-current="page">Berimbau Mandou Benzer</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>Berimbau Mandou Benzer</h1>
+		<h1>Berimbau Mandou Benzer <span class="langs"><abbr class="lang" title="Português">pt</abbr><abbr class="lang" title="English">en</abbr></span></h1>
 		<p class="byline">
-			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">Unknown artist</a>
+			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="&#x2F;img&#x2F;artists&#x2F;placeholder.svg" alt="" width="18" height="18" decoding="async">Unknown artist</a>
 		</p>
 
 
-
-		<div class="lyrics" lang="pt"><p>La, la e la</p>
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			<button type="button" role="tab" id="tab-pt" aria-controls="panel-pt" aria-selected="true" tabindex="0">Português</button>
+			<button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" tabindex="-1">English</button>
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-pt" aria-labelledby="tab-pt" lang="pt" tabindex="0" >
+			<p>La, la e la</p>
 <p>Le, le</p>
 <p>Mandinga de Angola,</p>
 <p>Berimbau mandou se benzer</p>
@@ -74,8 +70,49 @@
 <p>O que e certo na volta do mundo</p>
 <p>E que vão se encontrar</p>
 <p>E, e, e, berimbau mandou se benzer</p>
-</div>
+
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-en" aria-labelledby="tab-en" lang="en" tabindex="0" hidden>
+			<p>La, la e la</p>
+<p>Le, le</p>
+<p>Mandinga of Angola,</p>
+<p>Berimbau ordered to be blessed</p>
+<p>E, e, e, berimbau ordered to be blessed</p>
+<p>E, e, e, berimbau ordered to be blessed</p>
+<p>Capoeira is malícia and mandinga</p>
+<p>Maintaining its tradition</p>
+<p>And praying to all the saints</p>
+<p>And to its orixás asking for protection</p>
+<p>E, e, e, berimbau ordered to be blessed</p>
+<p>Crouched at the foot of the berimbau</p>
+<p>He made the sign of the cross</p>
+<p>Capoeira is your guiding star</p>
+<p>And it is she who leads you</p>
+<p>E, e, e, berimbau ordered to be blessed</p>
+<p>Berimbau is who commands the game</p>
+<p>Your faces like a cazumba</p>
+<p>The black man has a protected body</p>
+<p>For he carries his patuá</p>
+<p>E, e, e, berimbau ordered to be blessed</p>
+<p>In the air there is a desire for a fight</p>
+<p>The eyes will not look away</p>
+<p>And in the song of the mandingueiro</p>
+<p>Songs of provocation</p>
+<p>E, e, e, berimbau ordered to be blessed</p>
+<p>The handshake is crafty</p>
+<p>Without knowing how it will end</p>
+<p>What is certain in the turn of the world</p>
+<p>Is that they will meet</p>
+<p>E, e, e, berimbau ordered to be blessed</p>
+
+		</div>
+
 
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Credit+me+as+the+author&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fberimbau-mandou-benzer.html">Claim authorship</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Remove+the+song&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fberimbau-mandou-benzer.html">Request removal</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Correct+the+text+or+attribution&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fberimbau-mandou-benzer.html">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
+	<script src="/js/language-tabs.js"></script>
 </body>
 </html>

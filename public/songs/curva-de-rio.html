@@ -19,31 +19,27 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/unknown-artist.html">Unknown artist</a></li>
-					<li aria-current="page">Curva De Rio</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>Curva De Rio</h1>
+		<h1>Curva De Rio <span class="langs"><abbr class="lang" title="Português">pt</abbr><abbr class="lang" title="English">en</abbr></span></h1>
 		<p class="byline">
-			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">Unknown artist</a>
+			<a class="artist" href="/artists/unknown-artist.html"><img class="avatar" src="&#x2F;img&#x2F;artists&#x2F;placeholder.svg" alt="" width="18" height="18" decoding="async">Unknown artist</a>
 		</p>
 
 
-
-		<div class="lyrics" lang="pt"><p>Curva de rio
+		<div class="lang-tabs" role="tablist" aria-label="Language">
+			<button type="button" role="tab" id="tab-pt" aria-controls="panel-pt" aria-selected="true" tabindex="0">Português</button>
+			<button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" tabindex="-1">English</button>
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-pt" aria-labelledby="tab-pt" lang="pt" tabindex="0" >
+			<p>Curva de rio
 Ponta de areia
 Andei péla praia no rastro da sereia
 Pra jogar Capoeira, tem idade não senhor
@@ -70,8 +66,45 @@ Deixa o negro vadiar
 Coro: Da da da no negro
 No negro você não da
 Coro: Da da da no negro</p>
-</div>
+
+		</div>
+		<div class="lyrics" role="tabpanel" id="panel-en" aria-labelledby="tab-en" lang="en" tabindex="0" hidden>
+			<p>River bend
+Sandy point
+I walked along the beach on the mermaid&#39;s trail
+To play capoeira, there is no age, no sir
+Fat, old, thin, young, you have to be improvisational
+Berimbau commands the game, with pandeiro and agogô
+The atabaque in the sense that this game provokes in me
+Soft like a spring, capoeira is valuable
+Put mandinga in this game, berimbau has already complained
+The jaguar growled in the woods, the spotted ox got scared
+On the branch of the rubber tree, the monkey already jumped
+By the riverbank I saw an anaconda lasso an ox
+In the middle of the waters I saw the mermaid sing
+On the other side I saw a curassow fly
+Hit hit hit the black man
+You don&#39;t hit the black man
+Chorus: Hit hit hit the black man
+But if you hit him you are going to get beaten
+Chorus: Hit hit hit the black man
+You don&#39;t hit the black man
+Chorus: Hit hit hit the black man
+Throw the black man up in the air
+Chorus: Hit hit hit the black man
+Let the black man play
+Chorus: Hit hit hit the black man
+You don&#39;t hit the black man
+Chorus: Hit hit hit the black man</p>
+
+		</div>
+
 
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Credit+me+as+the+author&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fcurva-de-rio.html">Claim authorship</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Remove+the+song&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fcurva-de-rio.html">Request removal</a> · <a href="https://github.com/CapoeiraCoders/capoeiralyrics.info/issues/new?template=rights-claim.yml&request=Correct+the+text+or+attribution&song-url=http%3A%2F%2Fcapoeiralyrics.info%2Fsongs%2Fcurva-de-rio.html">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
+	<script src="/js/language-tabs.js"></script>
 </body>
 </html>

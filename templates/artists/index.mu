@@ -13,31 +13,33 @@
 	<a class="skip" href="#main">Skip to artists</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
+			<nav class="sections" aria-label="Sections">
+				<a href="/">Songs</a>
+				<a href="/artists/" aria-current="page">Artists</a>
+				<a href="/tags/">Tags</a>
+			</nav>
 			<form class="find" role="search">
 				<label for="find-songs">Find an artist</label>
 				<input id="find-songs" type="search" data-filter="#songs" placeholder="Artist" autocomplete="off">
 			</form>
 		</div>
-		<div class="pin">
-			<nav class="sections" aria-label="Sections">
-				<a href="/">All songs</a>
-				<a href="/tags/">Tags</a>
-				<a href="/artists/" aria-current="page">Artists</a>
-			</nav>
-		</div>
+		<div class="pin"></div>
 	</header>
 	<main id="main">
 		<p id="find-status" class="find-status" role="status"></p>
 		<ul id="songs" class="songs" data-letters data-filter-noun="artist">
 			{{#artists}}
 			<li class="song">
-				<a class="name" href="/artists/{{slug}}.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">{{name}}</a>
+				<a class="name" href="/artists/{{slug}}.html"><img class="avatar" src="{{avatar}}" alt="" width="18" height="18" decoding="async">{{name}}</a>
 				<span class="count">{{count}}</span>
 			</li>
 			{{/artists}}
 		</ul>
 	</main>
+	<footer class="site-foot">
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
 	<script src="/js/list-filter.js"></script>
 	<script src="/js/letter-nav.js"></script>
 </body>

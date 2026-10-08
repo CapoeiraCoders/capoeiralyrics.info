@@ -1,0 +1,39 @@
+name: Rights claim
+description: Ask for credit, a correction, or removal of a song
+title: "[Rights] "
+body:
+  - type: markdown
+    attributes:
+      value: Use this form if you hold rights in a song on capoeiralyrics.info.
+  - type: input
+    id: song-url
+    attributes:
+      label: Song URL
+      description: The page on capoeiralyrics.info
+      placeholder: http://capoeiralyrics.info/songs/example.html
+    validations:
+      required: true
+  - type: dropdown
+    id: request
+    attributes:
+      label: What are you asking for?
+      options:
+        - Credit me as the author
+        - Correct the text or attribution
+        - Remove the song
+    validations:
+      required: true
+  - type: textarea
+    id: right
+    attributes:
+      label: The right you assert
+      description: Who you are and the right you hold in this song
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Credit wording, the correction, or the reason for removal
+    validations:
+      required: false

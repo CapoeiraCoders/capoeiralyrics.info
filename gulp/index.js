@@ -9,6 +9,6 @@ const INDEX_TEMPLATE_PATH = './templates/index.mu';
  */
 gulp.task('index:build', songs.chains.buildIndex.bind(songs.chains, {
 	src: './data/songs/*.json',
-	dest: './docs/',
+	dest: './public/',
 	template: INDEX_TEMPLATE_PATH
 }));

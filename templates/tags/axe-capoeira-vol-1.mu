@@ -14,30 +14,34 @@
 	<a class="skip" href="#main">Skip to songs</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/">All songs</a>
-				<a href="/tags/" aria-current="page">Tags</a>
+				<a href="/">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li aria-current="page">Axe Capoeira: Volume 1</li>
-				</ol>
+				<a href="/tags/" aria-current="page">Tags</a>
 			</nav>
 		</div>
+		<div class="pin"></div>
 	</header>
 	<main id="main">
-		<h1>Axe Capoeira: Volume 1</h1>
-		<p class="lede">Mestre Barrao</p>
-		<img class="cover" src="/img/tags/axe-capoeira-vol-1.jpg" alt="Cover of Axe Capoeira volume 1">
+		<div class="profile">
+			<div>
+				<h1>Axe Capoeira: Volume 1</h1>
+				<p class="lede">Mestre Barrao</p>
+			</div>
+		</div>
+		{{#hasAbout}}
+		<section class="about" aria-label="About">
+			{{#hasDescription}}
+			<p class="bio">{{description}}</p>
+			{{/hasDescription}}
+		</section>
+		{{/hasAbout}}
 		<ul id="songs" class="songs" data-letters>
 			{{#songs}}
 			<li class="song">
 				<a class="name" href="/songs/{{slug}}.html">{{name}}</a>
-				<a class="artist" href="/artists/{{artistSlug}}.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">{{artistName}}</a>
+				<a class="artist" href="/artists/{{artistSlug}}.html"><img class="avatar" src="{{avatar}}" alt="" width="18" height="18" decoding="async">{{artistName}}</a>
 				<ul class="tags">
 					{{#tags}}
 					<li><a href="/tags/{{slug}}.html">#{{name}}</a></li>
@@ -47,6 +51,9 @@
 			{{/songs}}
 		</ul>
 	</main>
+	<footer class="site-foot">
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
 	<script src="/js/letter-nav.js"></script>
 </body>
 </html>

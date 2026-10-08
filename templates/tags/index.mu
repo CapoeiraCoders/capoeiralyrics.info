@@ -13,19 +13,18 @@
 	<a class="skip" href="#main">Skip to tags</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
+			<nav class="sections" aria-label="Sections">
+				<a href="/">Songs</a>
+				<a href="/artists/">Artists</a>
+				<a href="/tags/" aria-current="page">Tags</a>
+			</nav>
 			<form class="find" role="search">
 				<label for="find-songs">Find a tag</label>
 				<input id="find-songs" type="search" data-filter="#songs" placeholder="Tag" autocomplete="off">
 			</form>
 		</div>
-		<div class="pin">
-			<nav class="sections" aria-label="Sections">
-				<a href="/">All songs</a>
-				<a href="/tags/" aria-current="page">Tags</a>
-				<a href="/artists/">Artists</a>
-			</nav>
-		</div>
+		<div class="pin"></div>
 	</header>
 	<main id="main">
 		<p id="find-status" class="find-status" role="status"></p>
@@ -38,6 +37,9 @@
 			{{/tags}}
 		</ul>
 	</main>
+	<footer class="site-foot">
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
 	<script src="/js/list-filter.js"></script>
 	<script src="/js/letter-nav.js"></script>
 </body>

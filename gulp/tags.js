@@ -13,8 +13,12 @@ var mustache = require('mustache');
 var marked = require('marked');  
 var foreach = require('gulp-foreach');
 var slugify = require('speakingurl');
+var artistAvatar = require('./artist-avatar');
+var tagProfile = require('./tag-profile');
 var compareSongTitles = require('./compare-song-titles');
 var jsonConcat = require('gulp-concat-json');
+var { skipHidden } = require('./song-visibility');
+var { withLanguageMarks } = require('./song-languages');
 
 
 var BASE_TEMPLATE_PATH = './templates/tags/tag.mu';
@@ -78,6 +82,7 @@ gulp.task('tags:build:pages', () => {
 	var tags = {}; // container for tags
 
 	return gulp.src('./data/songs/*.json')
+	.pipe(skipHidden())
 	// group songs by tag
 	.pipe(
 		jsonTransform(data => {
@@ -102,28 +107,31 @@ gulp.task('tags:build:pages', () => {
 
 		for (var tag in tags) {
 			var songs = tags[tag].slice().sort(compareSongTitles);
+			if (!songs.length) continue;
+			var slug = slugify(tag);
 			var page = this.sampleFile.clone({ contents: false });
-			page.contents = Buffer.from(JSON.stringify({
+			page.contents = Buffer.from(JSON.stringify(Object.assign({
 				name: tag,
-				slug: slugify(tag),
+				slug: slug,
 				songs: songs.map(song => {
 					var artistName = song.Artist || 'Unknown artist';
 					var tagNames = Array.isArray(song.tags) ? song.tags : [];
-					return {
+					var artistSlug = slugify(artistName);
+					return Object.assign({
 						name: song.Name,
 						slug: slugify(song.Name),
 						artistName: artistName,
-						artistSlug: slugify(artistName),
+						artistSlug: artistSlug,
 						tags: tagNames.map(tagName => {
 							return {
 								name: tagName,
 								slug: slugify(tagName)
 							}
 						})
-					}
+					}, artistAvatar.forSlug(artistSlug), withLanguageMarks(song));
 				})
-			}));
-			page.path = path.join(this.sampleFile.base, slugify(tag) + '.json');
+			}, tagProfile.forSlug(slug))));
+			page.path = path.join(this.sampleFile.base, slug + '.json');
 			this.push(page);
 		}
 		callback();
@@ -143,6 +151,7 @@ gulp.task('tags:build:index', () => {
 	var tags = {};
 
 	return gulp.src('./data/songs/*.json')
+		.pipe(skipHidden())
 		.pipe(jsonTransform(data => {
 			if (Array.isArray(data.tags)) {
 				data.tags.forEach(tag => {

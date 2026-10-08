@@ -62,12 +62,57 @@
 }
 
 .song .name {
-	display: inline-block;
+	display: inline;
 	color: var(--ink);
 	font-size: 1.2rem;
 	font-weight: 600;
 	line-height: 1.25;
 	text-decoration: none;
+}
+
+.title {
+	display: inline;
+}
+
+.song:has(> .artist) .title {
+	display: inline-flex;
+	flex: 1 1 12rem;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.15rem 0.4rem;
+	min-width: 0;
+}
+
+.langs {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.2rem;
+	margin-left: 0.4rem;
+	vertical-align: 0.15em;
+	white-space: nowrap;
+}
+
+.song:has(> .artist) .langs {
+	margin-left: 0;
+	vertical-align: 0;
+}
+
+h1 .langs {
+	vertical-align: 0.12em;
+}
+
+.lang {
+	display: inline-block;
+	padding: 0.05rem 0.22rem;
+	border: 1px solid var(--line);
+	border-radius: 3px;
+	color: var(--muted);
+	font-size: 0.625rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	line-height: 1.3;
+	text-decoration: none;
+	text-transform: uppercase;
 }
 
 .song .name:has(.avatar) {
@@ -82,6 +127,17 @@
 	font-size: 0.8rem;
 }
 
+.song:has(> .artist):not([hidden]) {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	column-gap: 0.75rem;
+}
+
+.song:has(> .artist) .tags {
+	flex: 1 0 100%;
+}
+
 .song .artist,
 .byline .artist {
 	display: inline-flex;
@@ -94,7 +150,13 @@
 	text-decoration: none;
 }
 
-/* Shared stand-in until each artist has an icon. */
+.song:has(> .artist) .artist {
+	margin-top: 0;
+	margin-left: auto;
+	justify-content: flex-end;
+	text-align: right;
+}
+
 .avatar {
 	display: block;
 	width: 1.15rem;
@@ -102,6 +164,85 @@
 	border-radius: 50%;
 	object-fit: cover;
 	background: #d5e3db;
+	flex: 0 0 auto;
+}
+
+.profile {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin: 0 0 1.25rem;
+}
+
+.profile:has(+ .about) {
+	margin-bottom: 0.75rem;
+}
+
+.about {
+	margin: 0 0 1.5rem;
+	max-width: 40rem;
+}
+
+.bio {
+	margin: 0;
+	line-height: 1.45;
+}
+
+.profile-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin: 0.75rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.profile-links a {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.15rem 0.55rem;
+	border-radius: 999px;
+	background: var(--tag);
+	color: var(--link);
+	font-size: 0.8rem;
+	line-height: 1.35;
+	text-decoration: none;
+}
+
+.profile h1 {
+	margin: 0;
+}
+
+.profile .lede {
+	margin: 0.3rem 0 0;
+}
+
+.portrait {
+	display: block;
+	width: 8rem;
+	height: 8rem;
+	border-radius: 50%;
+	object-fit: cover;
+	background: #d5e3db;
+	flex: 0 0 auto;
+}
+
+.credit {
+	margin: 0.3rem 0 0;
+	color: var(--muted);
+	font-size: 0.75rem;
+	line-height: 1.35;
+}
+
+.credit a {
+	color: inherit;
+}
+
+@media (max-width: 380px) {
+	.portrait {
+		width: 5.5rem;
+		height: 5.5rem;
+	}
 }
 
 .tags {

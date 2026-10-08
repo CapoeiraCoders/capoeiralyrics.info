@@ -19,26 +19,18 @@
 	<a class="skip" href="#main">Skip to lyrics</a>
 	<header class="site">
 		<div class="toolbar">
-			<a class="brand" href="/">Capoeira Lyrics</a>
-		</div>
-		<div class="pin">
+			<a class="brand" href="/" aria-label="Capoeira Lyrics"><img src="/img/logo.webp" alt="Capoeira Lyrics" width="44" height="44" decoding="async"></a>
 			<nav class="sections" aria-label="Sections">
-				<a href="/" aria-current="page">All songs</a>
-				<a href="/tags/">Tags</a>
+				<a href="/" aria-current="page">Songs</a>
 				<a href="/artists/">Artists</a>
-			</nav>
-			<nav class="crumbs" aria-label="Breadcrumb">
-				<ol>
-					<li><a href="/artists/{{artistSlug}}.html">{{artistName}}</a></li>
-					<li aria-current="page">{{Name}}</li>
-				</ol>
+				<a href="/tags/">Tags</a>
 			</nav>
 		</div>
 	</header>
 	<main id="main">
-		<h1>{{Name}}</h1>
+		<h1>{{Name}}{{#hasLanguageMarks}} <span class="langs">{{#languageMarks}}<abbr class="lang" title="{{label}}">{{code}}</abbr>{{/languageMarks}}</span>{{/hasLanguageMarks}}</h1>
 		<p class="byline">
-			<a class="artist" href="/artists/{{artistSlug}}.html"><img class="avatar" src="/img/artists/placeholder.svg" alt="" width="18" height="18">{{artistName}}</a>
+			<a class="artist" href="/artists/{{artistSlug}}.html"><img class="avatar" src="{{avatar}}" alt="" width="18" height="18" decoding="async">{{artistName}}</a>
 		</p>
 		{{#hasTags}}
 		<ul class="tags song-tags" aria-label="Tags">
@@ -75,6 +67,10 @@
 		<div class="video">{{{youtubeEmbed}}}</div>
 		{{/youtubeEmbed}}
 	</main>
+	<footer class="site-foot">
+		<p class="rights-hint">This text stays with its author. <a href="{{{issueClaim}}}">Claim authorship</a> · <a href="{{{issueRemoval}}}">Request removal</a> · <a href="{{{issueCorrection}}}">Report a mistake</a></p>
+		<p>Lyrics stay with their authors. <a href="/rights/">Rights and requests</a></p>
+	</footer>
 	{{#showLanguageTabs}}
 	<script src="/js/language-tabs.js"></script>
 	{{/showLanguageTabs}}
